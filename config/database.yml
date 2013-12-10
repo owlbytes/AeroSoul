@@ -16,9 +16,6 @@ development:
   adapter: postgresql
   encoding: unicode
   database: Art_Of_The_Streets_development
-  pool: 5
-  username: Art_Of_The_Streets
-  password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -42,14 +39,10 @@ test:
   adapter: postgresql
   encoding: unicode
   database: Art_Of_The_Streets_test
-  pool: 5
-  username: Art_Of_The_Streets
-  password:
+
 
 production:
   adapter: postgresql
   encoding: unicode
   database: Art_Of_The_Streets_production
-  pool: 5
-  username: Art_Of_The_Streets
-  password:
+

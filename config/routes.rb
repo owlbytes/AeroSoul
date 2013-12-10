@@ -1,4 +1,4 @@
 ArtOfTheStreets::Application.routes.draw do
-  resources: users
-  resources: posts 
+  resources :users
+  resources :posts
 end
