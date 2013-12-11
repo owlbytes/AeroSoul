@@ -1,0 +1,4 @@
+%h2 Post.title 
+= image_tag @post.photo
+= link_to "edit", edit_post_path(@post)
+= link_to "destroy", post_path(@post).method: :delete

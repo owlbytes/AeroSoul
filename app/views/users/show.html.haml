@@ -1,0 +1,6 @@
+%h2= @user.first_name
+%h2= @user.last_name
+%h2= @user.email_name
+
+= link_to "edit", edit_user_path(@user)
+= link_to "destroy", user_path(@user).method: delete

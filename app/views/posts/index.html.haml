@@ -1,2 +1,8 @@
 %h1 posts!
 %h2 maybe you should have another name
+
+- @posts.each do |post|
+  = post.title
+  %br
+  = image_tag post.photo
+  %br
