@@ -14,5 +14,10 @@
           %li= link_to "Users", users_path
           %li= link_to "New Post", new_post_path
           %li= link_to "New User", new_user_path
+        %br
+        = form_tag searches_path do
+          = label_tag :search
+          = text_field_tag :query
+          = submit_tag "Search"
       %section
         = yield
