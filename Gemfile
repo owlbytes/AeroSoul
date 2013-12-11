@@ -9,6 +9,9 @@ gem 'pg'
 gem "haml-rails"
 gem "carrierwave"
 gem "textacular", "~> 3.0"
+gem "devise"
+gem "omniauth"
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 
 # Gems used only for assets and not required

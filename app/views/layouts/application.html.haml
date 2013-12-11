@@ -6,13 +6,25 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .container
-      %header
-        %h1= link_to "Spray Street", root_path
-        %ul
-          %li= link_to "Posts", posts_path
-          %li= link_to "Users", users_path
-          %li= link_to "New Post", new_post_path
-          %li= link_to "New User", new_user_path
+    #container
+      .user-nav
+        - if user_signed_in?
+          Logged in as
+          %b= current_user.email
+          = link_to "Posts", posts_path
+          \/\/
+          = link_to "New Post", new_post_path
+          \/\/
+          = link_to "Edit Profile", edit_user_registration_path
+          \/\/
+          = link_to "Logout", destroy_user_session_path, method: :delete
+        - else
+          = link_to "Posts", posts_path
+          \/\/
+          = link_to "Sign Up", new_user_registration_path
+          \/\/
+          = link_to "Log In", new_user_session_path
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{first_name}"
       %section
         = yield

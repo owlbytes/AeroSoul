@@ -1,6 +1,9 @@
 ArtOfTheStreets::Application.routes.draw do
-  resources :users
+  devise_for :users
+
   resources :posts
+
+  resources :sessions
 
   root :to => "posts#index"
 end
