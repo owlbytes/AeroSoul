@@ -2,6 +2,8 @@
 %br
 %h2= @user.last_name
 %br
+= image_tag @user.photo
+%br
 %h2= @user.email_name
 
 = link_to "edit", edit_user_path(@user)
