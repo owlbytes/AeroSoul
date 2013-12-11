@@ -2,7 +2,7 @@
 %h2 maybe you should have another name
 
 - @posts.each do |post|
-  = post.title
+  = link_to post.title, post
   %br
   = image_tag post.photo
   %br
