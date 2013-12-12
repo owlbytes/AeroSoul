@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_filter :authenticate_user!, except: [:index, :show]
   
   def index
@@ -7,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
+    authorize! :read, @post
   end
 
   def new
@@ -15,7 +17,12 @@ class PostsController < ApplicationController
 
   def create
     post = Post.create params[:post]
-    redirect_to post 
+    if @post.save
+      redirect_to post, notice: 'Post was successfully created!'
+    else
+      flash[:alert] = 'Post was NOT created!'
+      render :new
+    end 
   end
 
   def edit
@@ -24,8 +31,12 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find params[:id]
-    post.update_attributes params[:post]
-    redirect_to post
+    if @post.update_attributes(params[:post])
+      redirect_to @post, notice: 'Post was successfully updated!'
+    else
+      flash[:alert] = 'Post was NOT updated!'
+      render :edit
+    end
   end
 
   def destroy
@@ -33,4 +44,17 @@ class PostsController < ApplicationController
     post.delete
     redirect_to posts_path 
   end
+
+  def flag
+    @post.flagged = true
+    @post.save
+    flash[:notice] = 'Recipe was flagged!'
+    render :show
+  end
+
+  def flagged
+    @posts = Recipe.where(:flagged => true).all
+    render :index
+  end
+
 end

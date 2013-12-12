@@ -6,21 +6,10 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-<<<<<<< HEAD
-    .container
-      %header
-        %h1= link_to "Spray Street", root_path
-        %ul
-          %li= link_to "Posts", posts_path
-          %li= link_to "Users", users_path
-          %li= link_to "New Post", new_post_path
-          %li= link_to "New User", new_user_path
-        %br
-        = form_tag searches_path do
-          = label_tag :search
-          = text_field_tag :query
-          = submit_tag "Search"
-=======
+    = form_tag searches_path do
+      = label_tag :search
+      = text_field_tag :query
+      = submit_tag "Search"
     #container
       .user-nav
         - if user_signed_in?
@@ -39,8 +28,7 @@
           = link_to "Sign Up", new_user_registration_path
           \/\/
           = link_to "Log In", new_user_session_path
-        - flash.each do |name, msg|
+        - flash.each do |first_name, msg|
           = content_tag :div, msg, :id => "flash_#{first_name}"
->>>>>>> chore/devise
       %section
         = yield

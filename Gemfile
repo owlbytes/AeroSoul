@@ -12,6 +12,7 @@ gem "textacular", "~> 3.0"
 gem "devise"
 gem "omniauth"
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'cancan'
 
 
 # Gems used only for assets and not required
