@@ -14,6 +14,7 @@ gem "omniauth"
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 
 
 
