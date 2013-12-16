@@ -32,4 +32,19 @@ class UsersController < ApplicationController
     user.destroy
     redirect_to users_path
   end
+
+  def favorites
+    current_user = User.find(current_user.id)
+    fav_posts = current_user.destring(current_user)
+    @top_posts = []
+    fav_posts.each do |n|
+      post = Post.find(n)
+      @top_posts << post
+    end
+    render :favorites
+  end
+
+  def my_posts
+    @posts = Post.where(user_id: current_user)
+  end
 end

@@ -14,9 +14,11 @@
 ActiveRecord::Schema.define(:version => 20131212170215) do
 
   create_table "posts", :force => true do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.text     "artist"
     t.boolean  "commision"
+    t.boolean  "flag",         :default => false
     t.text     "description"
     t.text     "photo"
     t.text     "city"
@@ -26,8 +28,22 @@ ActiveRecord::Schema.define(:version => 20131212170215) do
     t.float    "latitude"
     t.float    "longitude"
     t.date     "date_created"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "score"
+    t.string   "upvoters"
+    t.string   "downvoters"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "scores", :force => true do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.integer "score"
+  end
+
+  create_table "stars", :force => true do |t|
+    t.integer "user_id"
+    t.integer "post_id"
   end
 
   create_table "users", :force => true do |t|
@@ -35,12 +51,14 @@ ActiveRecord::Schema.define(:version => 20131212170215) do
     t.string   "last_name"
     t.text     "photo"
     t.string   "role"
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "fav_posts",              :default => "[]"
+    t.integer  "score"
+    t.string   "email",                  :default => "",   :null => false
+    t.string   "encrypted_password",     :default => "",   :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.integer  "sign_in_count",          :default => 0,    :null => false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"

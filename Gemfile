@@ -15,11 +15,13 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem "acts-as-taggable-on"
 
 
 
 group :development do
   gem 'erb2haml'
+  gem 'pry-rails'
 end 
 
 # Gems used only for assets and not required

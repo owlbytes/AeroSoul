@@ -2,7 +2,22 @@
 %br
 = @post.description
 %br
-= image_tag @post.photo
+= "Post Score: #{@post.score}"
+
 %br
-= link_to "edit", edit_post_path(@post)
-= link_to "destroy", post_path(@post), :method => :delete
+- if current_user.present?
+  = link_to image_tag('assets/thumbs_up.gif', title: "Upvote"), vote_post_path(@post) + "?score=1", method: :put
+  = link_to image_tag('assets/thumbs_down.gif',title: "Downvote"), vote_post_path(@post) + "?score=-1", method: :put
+  = link_to image_tag('assets/star.png', title: "Favorite This Piece"), assign_favorite_post_post_path(@post), method: :put
+  
+
+- if can? :edit, @post
+  = link_to "edit", edit_post_path(@post)
+
+- if can? :destroy, @post
+  = link_to "destroy", post_path(@post), :method => :delete
+
+%br
+= image_tag @post.photo
+
+

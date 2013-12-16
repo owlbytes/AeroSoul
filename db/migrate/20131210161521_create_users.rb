@@ -5,6 +5,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.text :photo
       t.string :role
+      t.string :fav_posts, :default => "[]"
+      t.integer :score
+
     end
   end
 
