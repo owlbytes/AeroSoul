@@ -15,9 +15,9 @@ class CreatePosts < ActiveRecord::Migration
       t.float :latitude
       t.float :longitude
       t.date :date_created
-      t.integer :score
-      t.string :upvoters
-      t.string :downvoters
+      t.integer :score, default: 0
+      t.string :upvoters, default: "0"
+      t.string :downvoters, default: "0"
       t.timestamps
     end
 

@@ -12,8 +12,15 @@ ArtOfTheStreets::Application.routes.draw do
 
   # get '/users/auth/facebook/callback', to: "omniauth_callbacks#facebook"
 
+  resources :posts do 
+    member do
+      put :vote
+      put :assign_favorite_post
+    end
+  end
 
-  resources :posts
+  get 'tags/:tag', to: 'posts#show', as: :tag
+  
   resources :searches
   
   root :to => "slideshow#index"

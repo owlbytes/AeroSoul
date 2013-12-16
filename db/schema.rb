@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131212170215) do
+ActiveRecord::Schema.define(:version => 20131216160540) do
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(:version => 20131212170215) do
     t.float    "latitude"
     t.float    "longitude"
     t.date     "date_created"
-    t.integer  "score"
-    t.string   "upvoters"
-    t.string   "downvoters"
+    t.integer  "score",        :default => 0
+    t.string   "upvoters",     :default => "0"
+    t.string   "downvoters",   :default => "0"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
   end
@@ -44,6 +44,23 @@ ActiveRecord::Schema.define(:version => 20131212170215) do
   create_table "stars", :force => true do |t|
     t.integer "user_id"
     t.integer "post_id"
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       :limit => 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
   end
 
   create_table "users", :force => true do |t|

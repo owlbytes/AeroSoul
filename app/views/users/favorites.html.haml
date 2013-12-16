@@ -5,10 +5,8 @@
       .post-break
         %hr
       .post-score
+        = link_to post.title, post
         = "#{post.score}"
-      .post-comment
-        = link_to post.content, post
-      .post-commentcount
-        = "Comments: #{post.comment_count} | #{post.user.name}"
+        = image_tag post.photo
     .post-break
       %hr

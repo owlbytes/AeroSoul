@@ -4,6 +4,12 @@
 %br
 = "Post Score: #{@post.score}"
 
+
+/ the HTML for the tags has escaped, so pass this code through the raw method so that it isn’t escaped. 
+
+%br
+Tags: #{raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')} 
+
 %br
 - if current_user.present?
   = link_to image_tag('assets/thumbs_up.gif', title: "Upvote"), vote_post_path(@post) + "?score=1", method: :put

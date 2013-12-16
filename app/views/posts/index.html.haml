@@ -1,5 +1,10 @@
 %h1 posts!
-%h2 maybe you should have another name
+
+/ cloud of tags that show most popular tags as big font and less popular tags as small font
+#tag_cloud
+  - tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class|
+    = link_to tag.name, tag_path(tag.name), class: css_class
+  tag_cloud
 
 - @top_posts.each do |post|
   = link_to post.title, post
