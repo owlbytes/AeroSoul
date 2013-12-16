@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   
   def index
     if params[:tag]
-    @posts = Post.tagged_with(params[:tag])
+    @top_posts = Post.tagged_with(params[:tag])
+    @posts = []
     else
     @top_posts = Post.order("score DESC")
     @posts = Post.all
