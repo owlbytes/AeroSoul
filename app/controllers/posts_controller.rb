@@ -4,11 +4,17 @@ class PostsController < ApplicationController
   
   def index
     if params[:tag]
-    @top_posts = Post.tagged_with(params[:tag])
-    @posts = []
+      @top_posts = Post.tagged_with(params[:tag])
+      @posts = []
     else
-    @top_posts = Post.order("score DESC")
-    @posts = Post.all
+      @top_posts = Post.order("score DESC")
+      @posts = Post.all
+    end
+    
+    #when making a request outlines how the server will respond. Used in conjunction with google maps (to show data points)
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
     end
   end
 

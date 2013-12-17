@@ -1,71 +1,48 @@
-$(function(){
-  var map;
-
-  function openWindow(marker, contentString){
-
-    var infowindow = new google.maps.InfoWindow({
-      content: contentString
-    });
-    
-    infowindow.close();
-    infowindow.open(map, marker)
-  }
-
-  function renderPostsPosition(){
-    //create empty LatLngBounds object
-    var bounds = new google.maps.LatLngBounds();
-
-    $.each(window.posts, function(index, post){
-      var marker = new google.maps.Marker({
-          map: map,
-          position: new google.maps.LatLng(user.lat, user.lon)
-      });
-
-      //extend the bounds to include each marker's position
-      bounds.extend(marker.position);
-
-      google.maps.event.addListener(marker, 'click', function() {
-        // string = "<img src='"+user.avatar.url+"' width='50'><p>"+user.first_name+"</p>"
+var map;
 
 
-        string = "<img src='"+user.avatar.url+"' width='50'><p><a href='"+user.user_path+"'>'"+user.first_name+"'</a></p>"
+function showWindow(marker, string){
+  var infowindow = new google.maps.InfoWindow({
+    content: string
+  });
 
-        openWindow(marker, string)
-      });
-    });
-
-    map.fitBounds(bounds);
-  }
-
-  //define a latitude longitude for a given address
-  function codeAddress(address) {
-    geocoder = new google.maps.Geocoder();
-    geocoder.geocode( { 'address': address}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        console.log(results[0].geometry.location)
-
-      } else {
-        alert("Geocode was not successful for the following reason: " + status);
-      }
-    });
-  }
+  infowindow.open(map, marker);
+}
 
 
-  function initialize() {
-    var mapOptions = {
-      zoom: 2,
-      center: new google.maps.LatLng(0, 0)
-    };
+function initialize() {
 
-    map = new google.maps.Map(document.getElementById('map-canvas-global'),
-        mapOptions);
+  var mapOptions = {
+    zoom: 2,
+    center: new google.maps.LatLng(0, 0)
+  };
 
-    
-    
-    renderUsersPosition();
-  }
+  map = new google.maps.Map(document.getElementById("map-canvas-global"), mapOptions);
 
-  initialize();
-  
-  
-})
+  var input = document.getElementById("autocomplete");
+  var types = document.getElementById('type-selector');
+  // uncomment the following two lines if you want the search bar(for places) inside the map instead of outside the map
+  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
+
+  var autocomplete = new google.maps.places.Autocomplete(input);
+  autocomplete.bindTo('bounds', map);
+
+  console.log(7);
+  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+    var place = autocomplete.getPlace();
+    if (!place.geometry) {
+      return;
+    }
+
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);  // Why 17? Because it looks good.
+    }
+  });
+}
+
+
+google.maps.event.addDomListener(window, 'load', initialize);

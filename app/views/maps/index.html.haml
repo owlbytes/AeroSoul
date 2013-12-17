@@ -1,5 +1,42 @@
 
 %br
+
+%input#autocomplete.controls{type: :text}
 .row
   .col-md-2
     #map-canvas-global
+
+/ making an AJAX request to contact the server to get posts' addresses
+:javascript
+  $(function() {
+    $.ajax({
+      url: "/posts",
+      type: "GET",
+      dataType: "json",
+      success: function(data) {
+        // creating a marker bounds object to use for zooming in to the deepest point in which all of the markers are included 
+        var markerBounds = new google.maps.LatLngBounds();
+
+        // iterating through all of my data points
+        $.each(data, function(index, post) {
+          // this takes latitude and longitude points and puts it in a LatLon object
+          var myLatLng = new google.maps.LatLng(post.latitude, post.longitude);
+          // this creates a marker that uses the LatLon coordinates to make the marker
+          var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+          });
+          // when you click on the marker it calls the function that creates the info window (code in map.js)
+          google.maps.event.addListener(marker, 'click', function() {
+            var string = "<img src='"+ post.photo.url+"'>";
+            showWindow(marker, string);
+          });
+
+          // Extend markerBounds with each marker. Essentially saying "hey bounds, include this marker"
+          markerBounds.extend(marker.position);
+        });
+
+        map.fitBounds(markerBounds);
+      }
+    });
+  });
