@@ -5,6 +5,8 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyCmfrzXEicBQQ8TYMV6A7--tcZL2nyYIjE&sensor=false"}
+
   %body
     = form_tag searches_path do
       = label_tag :search
@@ -15,7 +17,9 @@
         - if user_signed_in?
           Logged in as
           %b= current_user.email
-          = link_to "Posts", posts_path
+          = link_to "Curate", posts_path
+          \/\/
+          = link_to "Discover", maps_path
           \/\/
           = link_to "New Post", new_post_path
           \/\/
@@ -23,11 +27,13 @@
           \/\/
           = link_to 'Logout',  destroy_user_session_path, method: :delete
         - else
-          = link_to "Posts", posts_path
+          = link_to "Curate", posts_path
           \/\/
           = link_to "Sign Up", new_user_registration_path
           \/\/
           = link_to "Log In", new_user_session_path
+          \/\/
+          = link_to "Discover", maps_path
         - flash.each do |first_name, msg|
           = content_tag :div, msg, :id => "flash_#{first_name}"
       %section

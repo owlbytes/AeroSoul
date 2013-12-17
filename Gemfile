@@ -16,7 +16,7 @@ gem 'cancan'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem "acts-as-taggable-on"
-
+gem "geocoder"
 
 
 group :development do

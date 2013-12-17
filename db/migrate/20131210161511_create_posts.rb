@@ -4,14 +4,15 @@ class CreatePosts < ActiveRecord::Migration
       t.belongs_to :user
       t.string :title
       t.text :artist
-      t.boolean :commision 
+      t.text :commision 
       t.boolean :flag, default: false
       t.text :description
       t.text :photo
       t.text :city
-      t.date :da
+      t.date :date
       t.text :medium
       t.integer :post_id
+      t.string :address
       t.float :latitude
       t.float :longitude
       t.date :date_created

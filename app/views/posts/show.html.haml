@@ -1,8 +1,22 @@
 %h2= @post.title 
 %br
+Artist:
+= @post.artist
+%br
+Commisioned?:
+= @post.commision
+%br
+Medium:
+= @post.medium
+%br
+Address:
+= @post.address
+%br
 = @post.description
 %br
-= "Post Score: #{@post.score}"
+= "Curation Score: #{@post.score}"
+
+ 
 
 
 / the HTML for the tags has escaped, so pass this code through the raw method so that it isn’t escaped. 

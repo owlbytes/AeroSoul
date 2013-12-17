@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
 
-  attr_accessible :title, :description, :photo, :remote_image_url, :tag_list, :upvoters, :downvoters
+  attr_accessible :title, :description, :photo, :remote_image_url, :tag_list, :upvoters, :downvoters, :artist, :commision, :medium, :address
   mount_uploader :photo, ImageUploader
 
   acts_as_taggable
