@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
 
   attr_accessible :title, :description, :photo, :remote_image_url, :tag_list, :upvoters, :downvoters, :artist, :commision, :medium, :address
   mount_uploader :photo, ImageUploader
+  geocoded_by :address
+  after_validation :geocode
 
   acts_as_taggable
 
