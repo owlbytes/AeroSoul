@@ -3,17 +3,19 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   
   def index
+    #for acts_as_taggable
     if params[:tag]
       @top_posts = Post.tagged_with(params[:tag])
       @posts = []
     else
-      @top_posts = Post.order("score DESC")
+      @top_posts = Post.order("score DESC").limit(6)
       @posts = Post.all
     end
     
-    #when making a request outlines how the server will respond. Used in conjunction with google maps (to show data points)
+    #when making a request, this outlines how the server will respond. Used in conjunction with google maps (to show data points) and infinite scroll (.js)
     respond_to do |format|
       format.html
+      format.js
       format.json { render json: @posts }
     end
   end
