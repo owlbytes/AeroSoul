@@ -3,10 +3,11 @@
   // general css for the nav bar
   width: 100%;
   z-index: 10;  // z-index property specifies the stack order of an element
-  background-color: red;  
+  background-color: #ffffff;  
   top: 0;
   right: 0;
   left: 0;
+  vertical-align: middle;
 
   .user-nav-left {
     // css for the logo 
@@ -20,6 +21,7 @@
     display: inline; 
     float: right;
     padding: 0.5em;
+    vertical-align: middle;
   }
 
   .user-nav-middle {
@@ -27,7 +29,7 @@
     display: inline;
     margin-left: auto;
     margin-right: auto;
-    position: fixed;
+    vertical-align: middle;
   }
 
 }
