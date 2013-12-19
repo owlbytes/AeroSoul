@@ -6,10 +6,6 @@ class PostsController < ApplicationController
     #for acts_as_taggable
     @next_page = params[:page] ? params[:page].to_i + 1 : 1
     @tag = params[:tag]
-    puts "TAG"
-    puts @tag
-    puts @tag.class
-    puts @tag.blank?
 
     if @tag.blank?
       @top_posts = Post.page(@next_page).order("score DESC").limit(2)
