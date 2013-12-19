@@ -10,7 +10,7 @@
 
 .posts
   = render :partial => 'shared/posts', :locals => { :posts => @posts }
-= link_to 'Load More Art', posts_path(:page => @posts.next_page), :class => 'load-more-posts', :remote => true if @posts.next_page
+= link_to 'Load More Art', posts_path(:page => @next_page), :class => 'load-more-posts', :remote => true if @next_page
 
 
 // not necessary any more due to partial in shared folder
