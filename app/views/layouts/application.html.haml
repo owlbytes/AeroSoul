@@ -1,41 +1,50 @@
 !!!
 %html
   %head
-    %title Aerosol Mustach.io
+    %title AeroSoul
     = stylesheet_link_tag    "application", :media => "all"
     = csrf_meta_tags
     %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyCmfrzXEicBQQ8TYMV6A7--tcZL2nyYIjE&sensor=false"}
     %script{src:"https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"}
+    %link{href: "http://fonts.googleapis.com/css?family=Fenix|Noto+Sans|Droid+Sans|Average+Sans|PT+Sans|Istok+Web|Roboto+Condensed|Roboto:400,300|Doppio+One|Varela+Round|Ruda|Carme|Titillium+Web|Maven+Pro|Vollkorn", rel: "stylesheet", type: "text/css"}/
+
     = javascript_include_tag "application"
 
   %body
-    = form_tag searches_path do
-      = label_tag :search
-      = text_field_tag :query
-      = submit_tag "Search"
+    
     #container
-      .user-nav
-        - if user_signed_in?
-          Logged in as
-          %b= current_user.email
-          = link_to "Curate", posts_path
-          \/\/
-          = link_to "Discover", maps_path
-          \/\/
-          = link_to "New Post", new_post_path
-          \/\/
-          = link_to "Edit Profile", edit_user_registration_path
-          \/\/
-          = link_to 'Logout',  destroy_user_session_path, method: :delete
-        - else
-          = link_to "Curate", posts_path
-          \/\/
-          = link_to "Sign Up", new_user_registration_path
-          \/\/
-          = link_to "Log In", new_user_session_path
-          \/\/
-          = link_to "Discover", maps_path
-        - flash.each do |first_name, msg|
-          = content_tag :div, msg, :id => "flash_#{first_name}"
+      .user-navigation-bar
+        .user-nav-left
+          = link_to image_tag('/assets/nav_bar_banner.png'), root_url
+
+        .user-nav-right
+          = form_tag searches_path do
+            / = label_tag :search
+            = text_field_tag :query
+            = submit_tag "Search"
+
+        .user-nav-middle
+          - if user_signed_in?
+            Logged in as
+            %b= current_user.email
+            = link_to "Curate", posts_path
+            \/\/
+            = link_to "Discover", maps_path
+            \/\/
+            = link_to "New Post", new_post_path
+            \/\/
+            = link_to "Edit Profile", edit_user_registration_path
+            \/\/
+            = link_to 'Logout',  destroy_user_session_path, method: :delete
+          - else
+            = link_to "Curate", posts_path
+            \/\/
+            = link_to "Sign Up", new_user_registration_path
+            \/\/
+            = link_to "Log In", new_user_session_path
+            \/\/
+            = link_to "Discover", maps_path
+          - flash.each do |first_name, msg|
+            = content_tag :div, msg, :id => "flash_#{first_name}"
       %section
         = yield

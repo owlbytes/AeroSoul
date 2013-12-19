@@ -1,33 +1,37 @@
 
-.navigation-bar {
+.user-navigation-bar {
   // general css for the nav bar
   width: 100%;
   z-index: 10;  // z-index property specifies the stack order of an element
-  background-color: red;  
+  background-color: red; 
   top: 0;
   right: 0;
   left: 0;
+  bottom: 50px;
+  height: 75px; 
 
   .user-nav-left {
     // css for the logo 
     float: left;
+    margin-left: 1em;
     padding: 0.5em;
     vertical-align: middle;
   }
 
   .user-nav-right {
-  // css for the links
-    display: inline; 
+  // css for the links 
     float: right;
+    margin-right: 1em;
+    list-style-type: none;
+
     padding: 0.5em;
+    vertical-align: middle;
   }
 
   .user-nav-middle {
     // the css for the search bar
     display: inline;
-    margin-left: auto;
-    margin-right: auto;
-    position: fixed;
+    vertical-align: middle;
   }
 
 }
