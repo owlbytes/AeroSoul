@@ -1,43 +1,74 @@
-%h2= @post.title 
-%br
-Artist:
-= @post.artist
-%br
-Commisioned?:
-= @post.commision
-%br
-Medium:
-= @post.medium
-%br
-Address:
-= @post.address
-%br
-= @post.description
-%br
-= "Curation Score: #{@post.score}"
 
- 
+.posts-show-general
+  .posts-show-title
+    %h2= @post.title 
 
+  .posts-show-description
+    = @post.description
+    
+  .posts-show-table
+    :css
+      .tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #9dcc7a;border-collapse: collapse;}
+      .tftable th {font-size:12px;background-color:#abd28e;border-width: 1px;padding: 8px;border-style: solid;border-color: #9dcc7a;text-align:left;}
+      .tftable tr {background-color:#bedda7;}
+      .tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #9dcc7a;}
+      .tftable tr:hover {background-color:#ffffff;}
+    %table.tftable{border: "1"}
+      %tr
+        %th Artist
+        %th Medium
+        %th Commission
+        %th Curation Score
+        %th Address
+        %th Tags
+      %tr
+        %td= @post.artist
+        %td= @post.medium
+        %td= @post.commision
+        %td= "Curation Score: #{@post.score}"
+        %td= @post.address
+        %td= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
 
-/ the HTML for the tags has escaped, so pass this code through the raw method so that it isn’t escaped. 
+  .posts-show-voting
+    - if current_user.present?
+      = link_to image_tag('assets/thumbs_up.gif', title: "Upvote"), vote_post_path(@post) + "?score=1", method: :put
+      = link_to image_tag('assets/thumbs_down.gif',title: "Downvote"), vote_post_path(@post) + "?score=-1", method: :put
+      = link_to image_tag('assets/star.png', title: "Favorite This Piece"), assign_favorite_post_post_path(@post), method: :put
 
-%br
-Tags: #{raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')} 
+  .posts-show-editing
+    - if can? :edit, @post
+      = link_to "edit", edit_post_path(@post)
 
-%br
-- if current_user.present?
-  = link_to image_tag('assets/thumbs_up.gif', title: "Upvote"), vote_post_path(@post) + "?score=1", method: :put
-  = link_to image_tag('assets/thumbs_down.gif',title: "Downvote"), vote_post_path(@post) + "?score=-1", method: :put
-  = link_to image_tag('assets/star.png', title: "Favorite This Piece"), assign_favorite_post_post_path(@post), method: :put
+    - if can? :destroy, @post
+      = link_to "destroy", post_path(@post), :method => :delete
+
+  .posts-show-image
+    = image_tag @post.photo
+
+  / .posts-show-artist
+  /   Artist:
+  /   = @post.artist
+  /   %br
+  / .posts-show-commision
+  /   Commisioned?:
+  /   = @post.commision
+  /   %br
+  / .posts-show-medium
+  /   Medium:
+  /   = @post.medium
+  /   %br
+  / .posts-show-address
+  /   Address:
+  /   = @post.address
+  /   %br
   
-
-- if can? :edit, @post
-  = link_to "edit", edit_post_path(@post)
-
-- if can? :destroy, @post
-  = link_to "destroy", post_path(@post), :method => :delete
-
-%br
-= image_tag @post.photo
+  / .posts-show-curation
+  /   = "Curation Score: #{@post.score}"
 
 
+  / .posts-show-tags
+  /   / the HTML for the tags has escaped, so pass this code through the raw method so that it isn’t escaped. 
+  /   %br
+  /   Tags: #{raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')} 
+
+  
