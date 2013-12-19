@@ -10,6 +10,7 @@ gem "haml-rails"
 gem "carrierwave"
 gem "textacular", "~> 3.0"
 gem "devise"
+gem 'rmagick'
 gem "omniauth"
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
