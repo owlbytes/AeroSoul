@@ -6,14 +6,18 @@
     = csrf_meta_tags
     %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyCmfrzXEicBQQ8TYMV6A7--tcZL2nyYIjE&sensor=false"}
     %script{src:"https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"}
+    %link{href: "http://fonts.googleapis.com/css?family=Fenix|Noto+Sans|Droid+Sans|Average+Sans|PT+Sans|Istok+Web|Roboto+Condensed|Roboto:400,300|Doppio+One|Varela+Round|Ruda|Carme|Titillium+Web|Maven+Pro|Vollkorn", rel: "stylesheet", type: "text/css"}/
+
     = javascript_include_tag "application"
     %link{href:"http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css"}
 
   %body
+    
     #container
-      .navigation-bar
+      .user-navigation-bar
         .user-nav-left
-          = image_tag("nav_bar_banner.png")
+          = link_to image_tag('/assets/nav_bar_banner.png'), root_url
+
         .user-nav-right
           = form_tag searches_path do
             / = label_tag :search

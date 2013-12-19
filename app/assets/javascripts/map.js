@@ -46,5 +46,8 @@ function initialize() {
 
 }
 
-
-google.maps.event.addDomListener(window, 'load', initialize);
+$(document).ready(function(){
+  if ($("#map-canvas-global").length > 0){
+    google.maps.event.addDomListener(window, 'load', initialize);
+  }
+});

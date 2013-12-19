@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require jquery.inview.min.js
 //= require_tree .
+
+* {
+  font-family: 'Droid Sans', sans-serif;
+}
