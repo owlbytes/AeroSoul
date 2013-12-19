@@ -1,4 +1,4 @@
-$('.posts').append('#{escape_javascript(render partial: "shared/posts", :locals => {:posts => @latest_posts})}');
+$('.posts-index').append('#{escape_javascript(render partial: "shared/posts", :locals => {:posts => @latest_posts})}');
 $('a.load-more-posts').attr('href', '#{posts_path page: @next_page}&tag=#{@tag}');
 
 - unless @next_page
