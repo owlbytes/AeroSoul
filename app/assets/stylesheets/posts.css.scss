@@ -10,26 +10,51 @@
       color: #E92603;
       text-decoration: none;
       font-size: 40px;
-      padding-bottom: 20px;
     }
     
     img {
       width: 100%;
       display: inline-block;
       max-height: 50%;
-      padding-bottom: 50px;
+      margin-bottom: 50px;
+      border:5px solid #BDE000;
     }
   }
 }
 
 .posts-show-general {
   background-color: #ffffff;
+  text-align: center;
+  color: #E92603;
+  padding: 10px;
+
+  .posts-show-description {
+    margin-bottom: 20px;
+  }
+
+  .posts-show-voting {
+    img {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
   
   .posts-show-image {
     img {
-      max-width: 1100px;
-      max-height: auto;
+      max-width: 800px;
+      max-height: 800px;
+      border:5px solid #BDE000;
+      margin-bottom: 50px;
+      margin-top: 20px;
     }
+
+  .posts-show-table{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+  }
   }
 }
   

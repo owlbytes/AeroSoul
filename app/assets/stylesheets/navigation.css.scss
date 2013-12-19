@@ -95,6 +95,7 @@
     .user-nav-middle-signup,
     .user-nav-middle-login {
       @include blue-button;
+      padding: 10px;
     }
   }
 }
