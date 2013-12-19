@@ -17,6 +17,8 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem "acts-as-taggable-on"
 gem "geocoder"
+gem 'will_paginate', '~> 3.0'
+
 
 
 group :development do

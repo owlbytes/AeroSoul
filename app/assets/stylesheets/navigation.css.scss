@@ -9,6 +9,7 @@
   left: 0;
   bottom: 50px;
   height: 75px; 
+  vertical-align: middle;
 
   .user-nav-left {
     // css for the logo 
@@ -23,7 +24,6 @@
     float: right;
     margin-right: 1em;
     list-style-type: none;
-
     padding: 0.5em;
     vertical-align: middle;
   }
@@ -31,6 +31,8 @@
   .user-nav-middle {
     // the css for the search bar
     display: inline;
+    margin-left: auto;
+    margin-right: auto;
     vertical-align: middle;
   }
 

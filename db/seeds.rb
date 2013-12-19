@@ -4,12 +4,11 @@ def read_asset(path)
   File.read File.join(Rails.root, path)
 end
 
-
 #posts for all! 
 post1 = Post.create!(title: "Trashbags", artist: "Francisco de Pájaro", commision: "no", description: "interacting energetic figures made out of trash bags on the sidewalk", photo: read_asset("/app/assets/images/seeds/trashbags.jpg"), medium: "recycled materials", address: "1 Rivington Street, London, United Kingdom", tag_list: "Trashbags, recycled")
 
 post2 = Post.create!(title: "Revolution", artist: "unknown", commision: "no", description: "Uncle Sam wants you to be a part of the revolution", photo: read_asset("/app/assets/images/seeds/revolution.jpg"), medium: "stencil and spray paint", address: " Christina Street, London, United Kingdom", tag_list: " Revolution, politics")
-
+ 
 post3 = Post.create!(title: "Hashtag of Ne", artist: "Neha Shah", commision: "no", description: "#Ne", photo: read_asset("/app/assets/images/seeds/hashtagneha.jpg"), medium: "stencil and spray paint", address: "3 Rivington Street, London, United Kingdom", tag_list: "tag, hashtag")
 
 post4 = Post.create!(title: "Animals", artist: "unknown", commision: "unknown", description: "Various animals heaped on top of each other", photo: read_asset("/app/assets/images/seeds/ranimal.jpg"), medium: "spray paint", address: "3 Rivington Street, London, United Kingdom", tag_list: "animals")
