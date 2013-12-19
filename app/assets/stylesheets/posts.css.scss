@@ -1,4 +1,17 @@
+.posts-index {
+  text-align: center;
 
+  .post {
+    display: inline-block;
+    width: 40%;
+    
+    img {
+      width: 100%;
+      display: inline-block;
+      max-height: auto;
+    }
+  }
+}
 
 .posts-show-general {
   background-color: #ffffff;

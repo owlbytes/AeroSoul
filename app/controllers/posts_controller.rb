@@ -5,13 +5,18 @@ class PostsController < ApplicationController
   def index
     #for acts_as_taggable
     @next_page = params[:page] ? params[:page].to_i + 1 : 1
-    if params[:tag]
-      @top_posts = Post.tagged_with(params[:tag])
+    @tag = params[:tag]
+    puts "TAG"
+    puts @tag
+    puts @tag.class
+    puts @tag.blank?
+
+    if @tag.blank?
+      @top_posts = Post.page(@next_page).order("score DESC").limit(2)
       @posts = []
     else
-      @top_posts = Post.order("score DESC").limit(6)
-      @posts = Post.page(@next_page)
-      
+      @top_posts = Post.page(@next_page).tagged_with(@tag).limit(2)
+      @posts = []
     end
     
     #when making a request, this outlines how the server will respond. Used in conjunction with google maps (to show data points) and infinite scroll (.js)
