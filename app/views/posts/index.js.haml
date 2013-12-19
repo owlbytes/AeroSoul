@@ -1,0 +1,5 @@
+$('.posts').append('#{escape_javascript(render partial: "shared/posts", :locals => {:posts => @latest_posts})}');
+$('a.load-more-posts').attr('href', '#{posts_path page: @next_page}');
+- unless @next_page
+  $('a.load-more-posts').remove();
+
