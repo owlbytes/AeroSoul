@@ -4,11 +4,20 @@
   .post {
     display: inline-block;
     width: 40%;
+    height: 40%
+
+    a {
+      color: #E92603;
+      text-decoration: none;
+      font-size: 40px;
+      padding-bottom: 20px;
+    }
     
     img {
       width: 100%;
       display: inline-block;
-      max-height: auto;
+      max-height: 50%;
+      padding-bottom: 50px;
     }
   }
 }
