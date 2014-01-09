@@ -5,29 +5,29 @@ def read_asset(path)
 end
 
 #posts for all! 
-post1 = Post.create!(title: "Trashbags", artist: "Francisco de Pejaro", commision: "no", description: "interacting energetic figures made out of trash bags on the sidewalk", photo: read_asset("/app/assets/images/seeds/trashbags.jpg"), medium: "recycled materials", address: "1 Rivington Street, London, United Kingdom", tag_list: "Trashbags, recycled")
+post1 = Post.create!(title: "Trashbags", artist: "Francisco de Pejaro", commision: "no", description: "interacting energetic figures made out of trash bags on the sidewalk", photo: read_asset("/app/assets/images/trashbags.jpg"), medium: "recycled materials", address: "1 Rivington Street, London, United Kingdom", tag_list: "Trashbags, recycled")
 
-post2 = Post.create!(title: "Revolution", artist: "unknown", commision: "no", description: "Uncle Sam wants you to be a part of the revolution", photo: read_asset("/app/assets/images/seeds/revolution.jpg"), medium: "stencil and spray paint", address: " Christina Street, London, United Kingdom", tag_list: " Revolution, politics")
+post2 = Post.create!(title: "Revolution", artist: "unknown", commision: "no", description: "Uncle Sam wants you to be a part of the revolution", photo: read_asset("/app/assets/images/revolution.jpg"), medium: "stencil and spray paint", address: " 2 Christina Street, London, United Kingdom", tag_list: " Revolution, politics")
  
-post3 = Post.create!(title: "Hashtag of Ne", artist: "Neha Shah", commision: "no", description: "#Ne", photo: read_asset("/app/assets/images/seeds/hashtagneha.jpg"), medium: "stencil and spray paint", address: "3 Rivington Street, London, United Kingdom", tag_list: "tag, hashtag")
+post3 = Post.create!(title: "Hashtag of Ne", artist: "Neha Shah", commision: "no", description: "#Ne", photo: read_asset("/app/assets/images/hashtagneha.jpg"), medium: "stencil and spray paint", address: "3 Rivington Street, London, United Kingdom", tag_list: "tag, hashtag")
 
-post4 = Post.create!(title: "Animals", artist: "unknown", commision: "unknown", description: "Various animals heaped on top of each other", photo: read_asset("/app/assets/images/seeds/animal.jpg"), medium: "spray paint", address: "3 Rivington Street, London, United Kingdom", tag_list: "animals")
+post4 = Post.create!(title: "Animals", artist: "unknown", commision: "unknown", description: "Various animals heaped on top of each other", photo: read_asset("/app/assets/images/animal.jpg"), medium: "spray paint", address: "3 Rivington Street, London, United Kingdom", tag_list: "animals")
 
-post5 = Post.create!(title: "Cash Machine", artist: "Banksy", commision: "no", description: "Girl & an ATM machine. Has two white stripes covering part of the piece.", photo: read_asset("/app/assets/images/seeds/banksy.jpg"), medium: "spray paint", address: "114b Farringdon Road, London, United Kingdom", tag_list:" capitalism, politics, Banksy")
+post5 = Post.create!(title: "Cash Machine", artist: "Banksy", commision: "no", description: "Girl & an ATM machine. Has two white stripes covering part of the piece.", photo: read_asset("/app/assets/images/banksy.jpg"), medium: "spray paint", address: "114 Farringdon Road, London, United Kingdom", tag_list:" capitalism, politics, Banksy")
 
-post6 = Post.create!(title: "Bird & Snake", artist: "unknown", commision: "unknown", description: "A colorful scene featuring a bird and snake", photo: read_asset("/app/assets/images/seeds/bird_and_snake.jpg"), medium: "spray paint", address: "3 Rivington Street, London, United Kingdom", tag_list: "animals")
+post6 = Post.create!(title: "Bird & Snake", artist: "unknown", commision: "unknown", description: "A colorful scene featuring a bird and snake", photo: read_asset("/app/assets/images/bird_and_snake.jpg"), medium: "spray paint", address: "3 Rivington Street, London, United Kingdom", tag_list: "animals")
 
-post7 = Post.create!(title: "Skull", artist: "unknown", commision: "unknown", description: "A striking skull presides over Shoreditch", photo: read_asset("/app/assets/images/seeds/blacksull.jpg"), medium: "unknown", address: "3 Rivington Street, London, United Kingdom", tag_list: "skull, scultpure")
+post7 = Post.create!(title: "Skull", artist: "unknown", commision: "unknown", description: "A striking skull presides over Shoreditch", photo: read_asset("/app/assets/images/blacksull.jpg"), medium: "unknown", address: "3 Rivington Street, London, United Kingdom", tag_list: "skull, scultpure")
 
-post8 = Post.create!(title: "Buzz", artist: "unknown", commision: "unknown", description: "Cartoonish figures appear on Old Street, including Buzz Lightyear", photo: read_asset("/app/assets/images/seeds/buzz.jpg"), medium: "spray paint", address: "237 Old Street, London, United Kingdom", tag_list: "cartoons, Disney")
+post8 = Post.create!(title: "Buzz", artist: "unknown", commision: "unknown", description: "Cartoonish figures appear on Old Street, including Buzz Lightyear", photo: read_asset("/app/assets/images/buzz.jpg"), medium: "spray paint", address: "237 Old Street, London, United Kingdom", tag_list: "cartoons, Disney")
 
-post9 = Post.create!(title: "Figure", artist: "unknown", commision: "unknown", description: "Colorful figure", photo: read_asset("/app/assets/images/seeds/dude.jpg"), medium: "spray paint", address: "Ravey Street, London, United Kingdom", tag_list: "figures")
+post9 = Post.create!(title: "Figure", artist: "unknown", commision: "unknown", description: "Colorful figure", photo: read_asset("/app/assets/images/dude.jpg"), medium: "spray paint", address: "1 Ravey Street, London, United Kingdom", tag_list: "figures")
 
-post10 = Post.create!(title: "No Plan", artist: "unknown", commision: "unknown", description: "There is no plan!", photo: read_asset("/app/assets/images/seeds/no_plan.jpg"), medium: "spray paint", address: "3 Rivington Street, London, United Kingdom")
+post10 = Post.create!(title: "No Plan", artist: "unknown", commision: "unknown", description: "There is no plan!", photo: read_asset("/app/assets/images/no_plan.jpg"), medium: "spray paint", address: "3 Rivington Street, London, United Kingdom")
 
-post11 = Post.create!(title: "Reach", artist: "unknown", commision: "unknown", description: "Reaching Man", photo: read_asset("/app/assets/images/seeds/reaching_man.jpg"), medium: "spray paint", address: "3 Rivington Street, London, United Kingdom")
+post11 = Post.create!(title: "Reach", artist: "unknown", commision: "unknown", description: "Reaching Man", photo: read_asset("/app/assets/images/reaching_man.jpg"), medium: "spray paint", address: "3 Rivington Street, London, United Kingdom")
 
-post12 = Post.create!(title: "Shop Till You Drop", artist: "Banksy", commision: "no", description: "A woman falling with her shopping trolley", photo: read_asset("/app/assets/images/seeds/shop_till_you_drop.jpg"), medium: "spray paint, stencil", address: "Bruton St, Mayfair, London W1J 6QD, UK", tag_list: "capitalism, Banksy")
+post12 = Post.create!(title: "Shop Till You Drop", artist: "Banksy", commision: "no", description: "A woman falling with her shopping trolley", photo: read_asset("/app/assets/images/shop_till_you_drop.jpg"), medium: "spray paint, stencil", address: "1 Bruton St, Mayfair, London W1J 6QD, UK", tag_list: "capitalism, Banksy")
 
 
 #creates some users and admins
