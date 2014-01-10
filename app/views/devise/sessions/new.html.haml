@@ -1,30 +1,38 @@
-%h2 Sign in
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, :autofocus => true
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  - if devise_mapping.rememberable?
-    %div
-      = f.check_box :remember_me
-      = f.label :remember_me
-  %div= f.submit "Sign in"
-= render "devise/shared/links"
+/ Code for loggin in/starting a new devise session
 
-%hr
-  
-  
-.oauth
-Sign in with:
-= link_to image_tag('/assets/google_button.png'), user_omniauth_authorize_path(:google_oauth2)
-= link_to image_tag('/assets/facebook2.jpeg'), "/users/auth/facebook"
+.logingeneral
+  .login
+    .form
+      %h2 Log In
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+        .text
+          = f.label :email
+        .box
+          = f.email_field :email, :autofocus => true
+        %br/
+        .text
+          = f.label :password
+        .box
+          = f.password_field :password
+        %br/
+        - if devise_mapping.rememberable?
+          = f.check_box :remember_me
+          = f.label :remember_me
+        %br/
+        %br/
+        .button
+          = f.submit "Sign In"
+        %br/
+        .links
+          = link_to 'Forgot your password?', "/users/password/new"
+        %br
+          = link_to image_tag('google-logo.png'), "/users/auth/google_oauth2"
+          = link_to image_tag('facebook-logo.png'), "/users/auth/facebook"
+      
+    / = render "devise/shared/links"
 
-%hr
-.links
-  = link_to 'Forgot your password?', "/users/password/new"
-.links
-  = link_to "Didn't receive confirmation email?", "/users/confirmation/new"
+    
+
+    
+    / .links
+    /   = link_to "Didn't receive confirmation email?", "/users/confirmation/new"
