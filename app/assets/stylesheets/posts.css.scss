@@ -1,5 +1,22 @@
+.loadmoreart {
+  a {
+    text-decoration: none;
+    color: red; 
+  }
+}
+  
+http://www.hulu.com/watch/581500
 .posts-index {
   text-align: center;
+
+  a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #FFFFFF;
+    background-color: #F26349;
+    border-radius: 4px;
+    padding: 4px;
+  }
 
   .post {
     display: inline-block;
@@ -18,6 +35,7 @@
       max-height: 50%;
       margin-bottom: 50px;
       border:5px solid #BDE000;
+
     }
   }
 }
@@ -39,7 +57,7 @@
     }
   }
 
-  
+
   .posts-show-image {
     img {
       max-width: 800px;
