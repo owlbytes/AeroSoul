@@ -12,19 +12,12 @@
     %link{href:"http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css"}
 
   %body
-    
     #container
       .user-navigation-bar
         .user-nav-left
           = link_to image_tag('/assets/nav_bar_banner.png'), root_url
 
-        .user-nav-right
-          = form_tag searches_path do
-            / = label_tag :search
-            = text_field_tag :query
-            = submit_tag "Search"
-
-        .user-nav-middle
+        .nav-links
           - if user_signed_in?
             Logged in as
             %b= current_user.email
@@ -51,7 +44,14 @@
           .user-nav-middle-flash
             - flash.each do |first_name, msg|
               = content_tag :div, msg, :id => "flash_#{first_name}"
+      .search
+        = form_tag searches_path do
+          / = label_tag :search
+          = text_field_tag :query
+          = submit_tag "Search"
         .clearfix
       %section
 
         = yield
+      .search
+        

@@ -71,20 +71,21 @@
     vertical-align: middle;
   }
 
-  .user-nav-right {
-  // css for the links 
-    float: right;
-    margin-right: 1em;
-    list-style-type: none;
-    padding: 0.5em;
+  .search {
+  // css for the footer;
     vertical-align: middle;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+
   }
 
-  .user-nav-middle {
+  .nav-links {
     // the css for the links
     display: inline;
     margin-left: auto;
     margin-right: auto;
+    float: right;
     vertical-align: middle;
 
     .user-nav-middle-curate,

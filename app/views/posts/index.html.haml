@@ -10,4 +10,5 @@
 
 .posts-index
   = render :partial => 'shared/posts', :locals => { :posts => @posts }
+.loadmoreart
 = link_to 'Load More Art', posts_path(:page => @next_page, tag: @tag), :class => 'load-more-posts', :remote => true if @next_page
