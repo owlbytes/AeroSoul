@@ -1,28 +1,48 @@
-= form_for(@post) do |f|
-  = f.label :title, "Not sure? Give it your best shot!"
-  = f.text_field :title
-  %br
-  = f.label :artist, "Not sure? Write unkown"
-  = f.text_field :artist
-  %br
-  = f.label :commision, "Was this piece created in exchange for goods, services, or money? "
-  = f.text_field :commision
-  %br
-  = f.label :address, "Please include street, city, and country"
-  = f.text_field :address
-  %br
-  = f.label :medium, "What was this piece created with?"
-  = f.text_field :medium
-  %br
-  = f.label :description
-  = f.text_field :description
-  %br
-  = f.label :tag_list, "Tags(separated by commas)"
-  = f.text_field :tag_list
-  %br
-  = f.label :photo
-  = f.file_field :photo
-  %br
-  = f.submit
- 
+
+.newpage
+  .newpagepost
+    .newpostform
+      = form_for(@post) do |f|
+        = f.label :title, "Title"
+        %br
+        = f.text_field :title
+        %br
+        %br
+        = f.label :artist, "Arist"
+        %br
+        = f.text_field :artist
+        %br
+        %br
+        = f.label :commision, "Commissioned?"
+        %br
+        = f.text_field :commision
+        %br
+        %br
+        = f.label :address, "Address (please include street, city, and country)"
+        %br
+        = f.text_field :address
+        %br
+        %br
+        = f.label :medium, "Medium (what was this piece created with?)"
+        %br
+        = f.text_field :medium
+        %br
+        %br
+        = f.label :description
+        %br
+        = f.text_field :description
+        %br
+        %br
+        = f.label :tag_list, "Tags(separated by commas)"
+        %br
+        = f.text_field :tag_list
+        %br
+        %br
+        = f.label :photo
+        %br
+        = f.file_field :photo
+        %br
+        %br
+        = f.submit
+   
  
