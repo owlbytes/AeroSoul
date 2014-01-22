@@ -11,10 +11,29 @@
 #autocomplete {
   color: #E92603;
   width: 525px;
-  margin-right:auto;
+  // margin-right:auto;
   margin-top:10px;
   margin-bottom:15px;
-  margin-left: 190px;
+  // margin-left: 190px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: center;
 }
+
+
+.searchbar1 {
+  margin-right: auto;
+  margin-right: auto;
+  vertical-align: center;
+  text-align: center;
+  .controls {
+    text-align: center;
+    vertical-align: center;
+    border:4px solid #BDE000;
+    padding: 2px;
+  }
+}
+
+
 
