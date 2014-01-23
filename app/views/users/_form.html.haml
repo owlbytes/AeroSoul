@@ -1,15 +1,21 @@
 = form_for(@user) do |f|
   = f.label :first_name
   = f.text_field :first_name
+  %br
+  %br
   = f.label :last_name
   = f.text_field :last_name
+  %br
   = f.label :email
   = f.text_field :email
+  %br
   = f.label :password
   = f.text_field :password
+  %br
   = f.label :password_confirmation
   = f.text_field :password_confirmation
-  = f.label :photo
-  = f.file_field :photo
+  %br
+  / = f.label :photo
+  / = f.file_field :photo
   = f.submit
  
