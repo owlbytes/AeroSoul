@@ -1,9 +1,16 @@
-%h2 Search results
-%ul
-  - @posts.each do |post|
-    %li
-      = link_to post.title, post
-      %br
-      = truncate(post.description, length: 50, separator: " ")
-      %br
-      = image_tag post.photo
+
+.header
+  %h2 Search results
+
+.searchresults
+  %ul
+    - @posts.each do |post|
+      .searchresultstitle
+        %li
+          = link_to post.title, post
+      .searchresultsdescription
+        %br
+        = truncate(post.description, length: 50, separator: " ")
+      .searchresultsphoto
+        %br
+        = image_tag post.photo
