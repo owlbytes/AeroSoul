@@ -33,7 +33,7 @@
                 = link_to 'Logout',  destroy_user_session_path, method: :delete
             - else
               %span.user-nav-middle-curate
-                = link_to "Cursate", posts_path
+                = link_to "Curate", posts_path
               %span.user-nav-middle-discover
                 = link_to "Discover", maps_path
               %span.user-nav-middle-signup
@@ -44,14 +44,9 @@
             .user-nav-middle-flash
               - flash.each do |first_name, msg|
                 = content_tag :div, msg, :id => "flash_#{first_name}"
-        .search
-          = form_tag searches_path do
-            / = label_tag :search
-            = text_field_tag :query
-            = submit_tag "Search"
-          .clearfix
+        
         %section
 
         = yield
-      .search
+
         
