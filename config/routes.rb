@@ -23,9 +23,10 @@ ArtOfTheStreets::Application.routes.draw do
   end
 
   #routes for search via textacular (all hail Aaron Patterson)
-  # resources :searches 
-  get "/searches", to: "searches#search", as: :search
+  resources :searches 
 
+  # #route for find
+  # get "/finds(", to: "finds#index", as: :findart
 
   #sets routes for tags(via acts_as_taggable) and google maps
   get 'tags/:tag', to: 'posts#index', as: :tag

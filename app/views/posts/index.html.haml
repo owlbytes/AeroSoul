@@ -1,4 +1,6 @@
-
+#tag_cloud
+  - tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class|
+    = link_to tag.name, tag_path(tag.name), class: css_class
 %br
 
 / tells the index page to load the partial in shared folder. Included a test to see if there actually is a next page of content, if not – don’t display the Load More link.
