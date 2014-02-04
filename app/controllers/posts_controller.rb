@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     #for acts_as_taggable
     @next_page = params[:page] ? params[:page].to_i + 1 : 1
     @tag = params[:tag]
+    @mapposts = Post.all
 
     if @tag.blank?
       @top_posts = Post.page(@next_page).order("score DESC").limit(2)
@@ -19,7 +20,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html
       format.js
-      format.json { render json: @top_posts }
+      format.json { render json: @mapposts }
     end
   end
 
