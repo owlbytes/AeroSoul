@@ -11,12 +11,14 @@
 
 / making an AJAX request to contact the server to get posts' addresses
 :javascript
+
   $(function() {
     $.ajax({
       url: "/posts",
       type: "GET",
       dataType: "json",
       success: function(data) {
+
         // creating a marker bounds object to use for zooming in to the deepest point in which all of the markers are included 
         var markerBounds = new google.maps.LatLngBounds();
 

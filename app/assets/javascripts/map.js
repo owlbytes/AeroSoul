@@ -1,5 +1,5 @@
-var map;
 
+var map;
 
 function showWindow(marker, string){
   var infowindow = new google.maps.InfoWindow({
@@ -11,11 +11,13 @@ function showWindow(marker, string){
 
 
 function initialize() {
-
   var mapOptions = {
     zoom: 2,
-    center: new google.maps.LatLng(0, 0)
+    center: new google.maps.LatLng(0, 0),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
   };
+
+
 
   if (document.getElementById("map-canvas-global") != null) {
     map = new google.maps.Map(document.getElementById("map-canvas-global"), mapOptions);
@@ -46,8 +48,6 @@ function initialize() {
 
 }
 
-$(document).ready(function(){
-  if ($("#map-canvas-global").length > 0){
-    google.maps.event.addDomListener(window, 'load', initialize);
-  }
+$(function(){
+  initialize()
 });
