@@ -1,14 +1,19 @@
+.posttitlelink {
+  a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #FFFFFF;
+    border-radius: 4px;
+    padding: 4px;
+    background-color: #F26349;
+  }
+}
 
 .posts-index {
   text-align: center;
 
   a {
     text-decoration: none;
-    font-size: 16px;
-    color: #FFFFFF;
-    background-color: #F26349;
-    border-radius: 4px;
-    padding: 4px;
   }
 
   .post {
@@ -28,7 +33,9 @@
       max-height: 50%;
       margin-bottom: 50px;
       border:5px solid #BDE000;
-
+      a {
+        background-color: none;
+      }
     }
   }
 }
@@ -47,6 +54,9 @@
     img {
       height: 40px;
       width: 40px;
+      a {
+        background-color: none;
+      }
     }
   }
 
