@@ -1,6 +1,6 @@
 .slider {
   margin: 10px 0;
-  width: 1500px; /* width of slideshow */
+  width: 100%; /* width of slideshow */
   height: 650px; /* height of slideshow */
   position: relative; /* The element is positioned relative to its normal position */
   overflow: hidden;
@@ -14,6 +14,6 @@
 }
 
 .slider img {
-  width: 1500px; 
+  width: 100%; 
   height: 650px;
 }
