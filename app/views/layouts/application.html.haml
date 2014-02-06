@@ -6,7 +6,11 @@
     = csrf_meta_tags
     %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyCmfrzXEicBQQ8TYMV6A7--tcZL2nyYIjE&sensor=false"}
     %script{src:"https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"}
+    /[if lt IE 9]
+    %script{src: "http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"}
+
     %link{href: "http://fonts.googleapis.com/css?family=Fenix|Noto+Sans|Droid+Sans|Average+Sans|PT+Sans|Istok+Web|Roboto+Condensed|Roboto:400,300|Doppio+One|Varela+Round|Ruda|Carme|Titillium+Web|Maven+Pro|Vollkorn", rel: "stylesheet", type: "text/css"}/
+    %meta{content: "width=device-width, user-scalable=no", name: "viewport"}/
 
     = javascript_include_tag "application"
     %link{href:"http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css"}
