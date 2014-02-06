@@ -37,11 +37,12 @@
       = link_to image_tag('http://www.iconsdb.com/icons/preview/color/E92603/star-xxl.png', title: "Favorite This Piece"), assign_favorite_post_post_path(@post), method: :put
 
   .posts-show-editing
-    - if can? :edit, @post
-      = link_to "edit", edit_post_path(@post)
+    .editdestroy
+      - if can? :edit, @post
+        = link_to "edit", edit_post_path(@post)
 
-    - if can? :destroy, @post
-      = link_to "destroy", post_path(@post), :method => :delete
+      - if can? :destroy, @post
+        = link_to "destroy", post_path(@post), :method => :delete
 
   .posts-show-image
     = image_tag @post.photo
