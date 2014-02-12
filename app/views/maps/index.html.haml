@@ -1,6 +1,16 @@
 
 %br
 
+/general search  bar
+.generalsearchbarsection
+  .generalsearchbar
+    = form_tag searches_path do
+      = text_field_tag :query
+      = submit_tag "General Search"
+
+
+
+//maps!
 .searchbar1
   %input#autocomplete.controls{type: :text}
     .searchbar2
