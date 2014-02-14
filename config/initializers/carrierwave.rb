@@ -8,4 +8,3 @@ CarrierWave.configure do |config|
   config.fog_directory  = ENV['STREET_BUCKET']  # required
   config.fog_public  = true  # optional, defaults to true
 end
-
