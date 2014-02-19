@@ -35,12 +35,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.create params[:post]
-    @post.score = 0
+    @post = Post.create params[:post]
     @post.upvoters = "[-1]"
     @post.downvoters = "[-2]"
     if @post.save
-      redirect_to post, notice: 'Post was successfully created!'
+      redirect_to @post, notice: 'Post was successfully created!'
     else
       flash[:alert] = 'Post was NOT created!'
       render :new
