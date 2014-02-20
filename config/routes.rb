@@ -14,6 +14,9 @@ ArtOfTheStreets::Application.routes.draw do
 
   # get '/users/auth/facebook/callback', to: "omniauth_callbacks#facebook"
 
+#calback url from twitter
+match ‘/auth/:provider/callback’ => ‘users#twitter_login’
+
   #routes for posts
   resources :posts do 
     member do

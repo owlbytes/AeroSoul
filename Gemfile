@@ -11,16 +11,16 @@ gem "carrierwave"
 gem "textacular", "~> 3.0"
 gem "devise"
 gem 'rmagick'
-gem "omniauth"
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
+gem "omniauth"
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem "acts-as-taggable-on"
 gem "geocoder"
 gem 'will_paginate', '~> 3.0'
 gem "fog", "~> 1.3.1"
-
 
 
 group :development do
