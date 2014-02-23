@@ -7,7 +7,7 @@
 
   .signup {
     padding-top: 40px;
-    width: 23em;
+    width: 33em;
     height: 27em;
     text-align: center;
     margin: auto;
@@ -23,6 +23,30 @@
       border:5px solid #BDE000;
       vertical-align: middle;
 
+    label{
+      float:left;
+      text-align: right;
+      padding-left: 10px;
+      }
+    input{
+      float: right;
+      margin-right: 50px;
+      }
+
+    input[type="submit"] {
+      text-align: center; 
+      background-color: #BDE000;
+      color: #ffffff;   
+      text-align: center; 
+      padding-right: 10px; 
+      margin-right: 50%;
+        }
+
+     .links {
+      float: left;
+      text-align: right;
+      padding-left: 10px;
+        }
 
       a {
         text-decoration: none;
@@ -30,5 +54,15 @@
       }
 
     }
+  }
+}
+
+.signupimages
+{
+  img {
+    height: 5em;
+    width: auto;
+    padding-right: 15px;
+    padding-top: 10px;
   }
 }

@@ -7,39 +7,43 @@
         = devise_error_messages!
         .text
           = f.label :first_name
-        .box
           = f.email_field :first_name
+        %br/
         %br/
 
         .text
           = f.label :last_name
-        .box
           = f.email_field :last_name
+        %br/
         %br/
 
         .text
           = f.label :email
-        .box
           = f.email_field :email, :autofocus => true
+        %br/
         %br/
         .text
           = f.label :password
-        .box
           = f.password_field :password
+        %br/
         %br/
         .text
           = f.label :password_confirmation
-        .box
           = f.password_field :password_confirmation
+        %br/
         %br/
         .button
           = f.submit "Sign Up"
+        %br/
+        %br/
         .links
           = link_to "Didn't receive confirmation email?", "/users/confirmation/new"
         %br
-          = link_to image_tag('google-logo.png'), "/users/auth/google_oauth2"
-          = link_to image_tag('facebook-logo.png'), "/users/auth/facebook"
-
+        %br/
+        .signupimages
+          = link_to image_tag('SM-Google-G.png'), "/users/auth/google_oauth2"
+          = link_to image_tag('SM-Facebook-F.png'), "/users/auth/facebook"
+          = link_to image_tag('SM-Twitter-T.png'), "twitter.com"
 
  
   
