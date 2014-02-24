@@ -14,6 +14,8 @@ class UsersController < ApplicationController
 
   def create
     user = User.create params[:user]
+    #passing the argument "user" to which the registation confirmation will be sent
+    UserMailer.registration_confirmation(@user).deliver
     redirect_to user
   end
 
