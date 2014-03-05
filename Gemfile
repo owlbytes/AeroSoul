@@ -7,10 +7,10 @@ gem 'rails', '3.2.14'
 
 gem 'pg'
 gem "haml-rails"
-gem "carrierwave"
+gem "carrierwave", :git => "https://github.com/carrierwaveuploader/carrierwave.git"
 gem "textacular", "~> 3.0"
 gem "devise"
-gem 'rmagick'
+gem 'rmagick', '2.13.2', :require =>"RMagick"
 gem "omniauth"
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
