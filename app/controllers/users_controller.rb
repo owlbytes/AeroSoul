@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def create
     user = User.create params[:user]
     redirect_to user
+
   end
 
   def edit
