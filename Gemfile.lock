@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/carrierwaveuploader/carrierwave.git
-  revision: 97a713f1ab100ff86057ea4fc057afe35540af57
+  revision: 24a10ee97e5fdfa0da290a69c1ac69b602de5523
   specs:
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -183,7 +183,7 @@ GEM
     ruby-hmac (0.4.0)
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
-    sass (3.2.14)
+    sass (3.3.2)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -206,7 +206,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.38)
+    tzinfo (0.3.39)
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
