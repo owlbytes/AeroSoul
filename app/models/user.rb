@@ -5,9 +5,12 @@ class User < ActiveRecord::Base
 
 
   # Setup accessible (or protected) attributes for your model
-  validates :email, presence: true, uniqueness: true
   attr_accessible :first_name, :last_name, :role, :email, :photo, :remote_image_url, :password, :password_confirmation, :remember_me, :confirmed_at
   mount_uploader :photo, ImageUploader
+
+
+  # #validations 
+  validates :email, presence: true
 
   #relationships
   has_many :scores
@@ -29,7 +32,8 @@ class User < ActiveRecord::Base
   def self.from_omniauth(auth) 
     if user = User.find_by_email(auth.info.email) 
       user.provider = auth.provider 
-      user.uid = auth.uid user 
+      user.uid = auth.uid 
+      user 
     else 
       where(auth.slice(:provider, :uid)).first_or_create do |user| 
         user.provider = auth.provider 
@@ -37,10 +41,9 @@ class User < ActiveRecord::Base
         user.email = auth.info.email 
         user.password = Devise.friendly_token[0,20] 
         user.skip_confirmation! 
+        user
       end 
     end
-    user
   end
-
 
 end 

@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < ApplicationController 
 
   def index
     @users = User.all
@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def create
     user = User.create params[:user]
     redirect_to user
+
   end
 
   def edit
