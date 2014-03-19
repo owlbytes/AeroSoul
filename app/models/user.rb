@@ -9,9 +9,6 @@ class User < ActiveRecord::Base
   mount_uploader :photo, ImageUploader
 
 
-  # #validations 
-  validates :email, presence: true
-
   #relationships
   has_many :scores
   has_many :stars
