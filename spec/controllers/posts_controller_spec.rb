@@ -20,7 +20,7 @@ describe PostsController do
 
     it "should assigns @posts" do
       get :index
-      expect(assigns[:users]).to eq(@users_fake_data)
+      expect(assigns[:posts]).to eq(@posts_fake_data)
     end
   end
 
