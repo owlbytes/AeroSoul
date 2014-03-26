@@ -1,7 +1,7 @@
 require "spec_helper"
 
   describe "user signs up" do 
-    it "lets the user sign up", js:true do
+    it "lets the user sign up" do
       visit root_path 
       expect(page).to have_link("Sign Up")
 
