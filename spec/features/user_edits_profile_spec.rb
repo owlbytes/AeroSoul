@@ -34,7 +34,7 @@ describe "user edit profile" do
     visit(current_path)
     expect(page).to have_content("dan.vontrapp@apple.com")
   end
-
+e
 
 end 
  
