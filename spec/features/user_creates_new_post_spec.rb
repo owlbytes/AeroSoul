@@ -36,7 +36,7 @@ describe "user creates new post" do
 
     click_button("Create Post")
 
-    expect(page).to have_content("Post was successfully created!")
+    expect(page).to have_content("Post was successfully created!  ")
   end
   
 end
