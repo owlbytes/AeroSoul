@@ -1,8 +1,8 @@
 require "spec_helper"
 
-describe "user creates new post" do  
+describe "user edits a post" do 
 
-  # creating a fake user
+ # creating a fake user
   let!(:user) do
     User.create(email: "nehita@nehita.com", 
                 password: "password", 
@@ -10,7 +10,7 @@ describe "user creates new post" do
   end
 
 
-  # logging in the user so they can make a new post
+  # logging in the user and creating a fake post
   before do 
     visit new_user_session_path
 
@@ -18,10 +18,7 @@ describe "user creates new post" do
     fill_in("Password", with: user.password)
 
     click_button("Sign In")
-  end
 
-  # testing whether you can make a new post
-  it "lets the user create a new post" do 
     visit root_path
 
     click_link("New Post")
@@ -35,12 +32,26 @@ describe "user creates new post" do
     fill_in("Tags", with: "Dan, Test, Siri")
 
     attach_file("Photo", Rails.root.join("spec", "fixtures", "images", "fresh.jpg"))
-    #creating a platform agnostic file path
 
     click_button("Create Post")
 
     expect(page).to have_content("Post was successfully created!")
   end
-  
 
-end
+
+  it "lets the user edit post" do 
+    # visit(post_path)
+    visit(edit_post_path(post))
+
+    # visit "/posts/1"
+
+    # click_link("edit")
+
+    fill_in("Artist", with: "Nehita de Jersey")
+
+    click_button("Update Post")
+
+    expect(page).to have_content("Post was successfully updated!")
+  end
+
+end 
