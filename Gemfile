@@ -31,6 +31,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'pry-rails'
+  gem 'factory_girl_rails'
 end
 
 group :test do

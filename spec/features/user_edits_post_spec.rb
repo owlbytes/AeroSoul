@@ -3,34 +3,18 @@ require "spec_helper"
 describe "user edits a post" do 
 
  # creating a fake user
-  let!(:user) do
-    User.create(email: "dan@apple.com", 
-                password: "password", 
-                role: "user",
-                confirmed_at: Time.now)
-  end
 
-  let!(:post) do 
-    Post.create(title: "Title",
-                artist: "Dan Von Trapp",
-                address: "386 Mountain Ave, Ridgewood NJ 07450 USA",
-                medium: "spray paint",
-                description: "Dan Von Trapp creates a work of art ",
-                tag_list: "Dan, Test, Siri", 
-                photo: File.open(Rails.root.join("spec", "fixtures", "images", "fresh.jpg"))
-      )
-  end 
+  let!(:user) { FactoryGirl.create(:user) }
+
+  let!(:post) { FactoryGirl.create(:post) }
+    
 
   before do 
     post.user = user 
     #need to save post to database after creating
     post.save 
-    visit new_user_session_path
+    login_with(user.email, user.password)
 
-    fill_in("Email", with: user.email)
-    fill_in("Password", with: user.password)
-
-    click_button("Sign In")
   end
 
 
