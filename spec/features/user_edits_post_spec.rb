@@ -2,8 +2,6 @@ require "spec_helper"
 
 describe "user edits a post" do 
 
- # creating a fake user
-
   let!(:user) { FactoryGirl.create(:user) }
 
   let!(:post) { FactoryGirl.create(:post) }
