@@ -42,7 +42,7 @@
         = link_to "edit", edit_post_path(@post)
 
       - if can? :destroy, @post
-        = link_to "destroy", post_path(@post), :method => :delete
+        = link_to "delete", post_path(@post), :method => :delete
 
   .posts-show-image
     = image_tag @post.photo
