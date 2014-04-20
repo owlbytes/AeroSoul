@@ -20,6 +20,7 @@ gem "acts-as-taggable-on"
 gem "geocoder"
 gem 'will_paginate', '~> 3.0'
 gem "fog", "~> 1.3.1"
+gem 'activerecord-reputation-system', require: 'reputation_system'
 
 
 
