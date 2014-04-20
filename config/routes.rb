@@ -17,10 +17,17 @@ ArtOfTheStreets::Application.routes.draw do
   #routes for posts
   resources :posts do 
     member do
-      put :vote
+      post :vote
       put :assign_favorite_post
     end
   end
+
+  #   resources :posts do 
+  #   member do
+  #     post :vote
+  #     put :assign_favorite_post
+  #   end
+  # end
 
   #routes for search via textacular (all hail Aaron Patterson)
   resources :searches 

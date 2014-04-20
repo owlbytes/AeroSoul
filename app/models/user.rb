@@ -10,14 +10,14 @@ class User < ActiveRecord::Base
 
 
   #relationships
-  has_many :scores
   has_many :stars
   has_many :posts
+  has_many :evaluations, class_name: "RSEvaluation", as: :source
+  has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum
 
   #voting
-  def destring(user)
-    fav_posts = user.fav_posts[1..-2].split(',').collect! {|n| n.to_i}
-    return fav_posts
+  def voted_for?(post)
+    evaluations.where(target_type: post.class, target_id: post.id).present?
   end
 
 
