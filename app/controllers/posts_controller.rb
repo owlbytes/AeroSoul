@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     #for acts_as_taggable
     @tag = params[:tag] 
 
-    # @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
+    @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
     
     #when making a request, this outlines how the server will respond. Used in conjunction with google maps (to show data points) and infinite scroll (.js)
     respond_to do |format|
