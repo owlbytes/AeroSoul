@@ -5,17 +5,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     #for acts_as_taggable
-    @next_page = params[:page] ? params[:page].to_i + 1 : 1
-    @tag = params[:tag]
-    @mapposts = Post.all
-
-    if @tag.blank?
-      @top_posts = Post.page(@next_page).order("score DESC").limit(2)
-      @posts = []
-    else
-      @top_posts = Post.page(@next_page).tagged_with(@tag).limit(2)
-      @posts = []
-    end
+    @tag = params[:tag] 
 
     # @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
     
