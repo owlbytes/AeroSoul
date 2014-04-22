@@ -1,51 +1,55 @@
 
-.posts-show-general
-  .posts-show-title
-    %h2= @post.title 
+/ img- 12
+/ sidebar- 4
 
-  .posts-show-image
-    = image_tag @post.photo
-
-  .posts-show-description
-    = @post.description
-    
-  .posts-show-table
-    :css
-      .tftable {font-size:12px;color:#333333;width:70%;border-width: 1px;border-color: #F26349;border-collapse: collapse;text-align:center;margin-left:auto;margin-right:auto;}
-      .tftable th {font-size:12px;background-color:#F26349;border-width: 1px;padding: 8px;border-style: solid;border-color: #F26349;text-align:center;}
-      .tftable tr {background-color:#F26349;text-align:center;}
-      .tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #F26349;text-align:center;}
-      .tftable td:hover {background-color:#ffffff;color:#E92603;text-align:center;}
-      .tftable th:hover {background-color:#ffffff;color:#E92603;text-align:center;}
-    %table.tftable{border: "1"}
-      %tr
-        %th Artist
-        %th Medium
-        %th Commission
-        %th Curation Score
-        %th Address
-        %th Tags
-      %tr
-        %td= @post.artist
-        %td= @post.medium
-        %td= @post.commision
-        %td= @post.address
-        %td= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
-
-  .posts-show-voting
-    - if current_user.present?
-      = link_to image_tag('http://www.iconsdb.com/icons/preview/color/E92603/star-xxl.png', title: "Favorite This Piece"), assign_favorite_post_post_path(@post), method: :put
-      = link_to "up", vote_post_path(@post, type: "up"), method: "post"
-      = link_to "down", vote_post_path(@post, type: "down"), method: "post"
-
-  .posts-show-editing
-    .editdestroy
-      - if can? :edit, @post
-        = link_to "edit", edit_post_path(@post)
-
-      - if can? :destroy, @post
-        = link_to "delete", post_path(@post), :method => :delete
-
-
-
+.container.sixteen.columns
   
+  #PostShowImage.fourteen.columns.alpha
+    = image_tag @post.photo 
+
+  #PostShowSidebar.five.columns.omega
+    %h2= @post.title
+    %br
+    %br
+    %br
+    = @post.description
+    %br
+    %br
+    %h4 By: 
+    = @post.artist
+    %br
+    %br
+    %h5 Medium
+    = @post.medium
+    %br
+    %br
+    %h5 Commission
+    = @post.commision
+    %br
+    %br
+    %h5 Score
+    = @post.artist
+    %br
+    %br
+    %h5 Address
+    = @post.artist
+    %br
+    %br
+    %h5 Tags
+    = raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+    %br
+    %br
+    - if current_user.present?
+      / = link_to "Star", assign_favorite_post_path(@post), method: :put 
+      = link_to "up", vote_post_path(@post, type: "up"), method: "post"
+      %br
+      %br
+      = link_to "down", vote_post_path(@post, type: "down"), method: "post"
+      %br
+      %br
+    - if can? :edit, @post
+      = link_to "edit", edit_post_path(@post)
+      %br
+      %br
+    - if can? :destroy, @post
+      = link_to "delete", post_path(@post), :method => :delete

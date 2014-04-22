@@ -1,106 +1,53 @@
-.posttitlelink {
-  a {
-    text-decoration: none;
-    font-size: 16px;
-    color: #FFFFFF;
-    border-radius: 4px;
-    padding: 4px;
-    background-color: #F26349;
-  }
-}
+// // .posttitlelink {
+// //   a {
+// //     text-decoration: none;
+// //     font-size: 16px;
+// //     color: #FFFFFF;
+// //     border-radius: 4px;
+// //     padding: 4px;
+// //     background-color: #F26349;
+// //   }
+// // }
 
-.posts-show-editing {
-  a {
-    color: #F26349;
-    text-align: center;
-    vertical-align: center;
-  }
-}
+// // .posts-show-editing {
+// //   a {
+// //     color: #F26349;
+// //     text-align: center;
+// //     vertical-align: center;
+// //   }
+// // }
 
 
-.posts-index {
-  text-align: center;
+// .posts-index {
+//   text-align: center;
 
-  a {
-    text-decoration: none;
-  }
+//   a {
+//     text-decoration: none;
+//   }
 
-  .post {
-    display: inline-block;
-    width: 40%;
-    height: 40%
+//   .post {
+//     display: inline-block;
+//     width: 40%;
+//     height: 40%
 
-    a {
-      color: #E92603;
-      text-decoration: none;
-      font-size: 40px;
-    }
+//     a {
+//       color: #E92603;
+//       text-decoration: none;
+//       font-size: 40px;
+//     }
     
-    img {
-      width: 100%;
-      display: inline-block;
-      max-height: 50%;
-      margin-bottom: 50px;
-      border:5px solid #BDE000;
-      a {
-        background-color: none;
-      }
-    }
-  }
-}
-
-.posts-show-general {
-  background-color: #ffffff;
-  text-align: center;
-  color: #E92603;
-  padding: 10px;
-
-  .posts-show-description {
-    margin-bottom: 20px;
-  }
-
-  .posts-show-voting {
-    img {
-      height: 40px;
-      width: 40px;
-      a {
-        background-color: none;
-      }
-    }
-  }
+//     img {
+//       width: 100%;
+//       display: inline-block;
+//       max-height: 50%;
+//       margin-bottom: 50px;
+//       border:5px solid #BDE000;
+//       a {
+//         background-color: none;
+//       }
+//     }
+//   }
+// }
 
 
-  .posts-show-image {
-    img {
-      max-width: 800px;
-      max-height: 800px;
-      border:5px solid #BDE000;
-      margin-bottom: 50px;
-      margin-top: 20px;
-    }
 
-  .posts-show-table{
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto;
-
-    .tftable {
-      text-align: center;
-      margin-left: 100px;
-    }
-
-  }
-  }
-}
-
-.loadmoreart {
-  text-decoration: none;
-  color: red; 
-  a {
-    text-decoration: none;
-    color: #F26349;
-  }
-}
-  
