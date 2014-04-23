@@ -79,7 +79,8 @@ class PostsController < ApplicationController
   def vote
     value = params[:type] == "up" ? 1 : -1
     @post = Post.find(params[:id])
-    @post.add_or_update_evaluation(:votes, value, current_user)
+    # @post.add_or_update_evaluation(:votes, value, current_user)
+    @post.record_vote_of_user(current_user, value)
     redirect_to posts_path, notice: "Thank you for voting"
   end
 

@@ -26,4 +26,9 @@ class Post < ActiveRecord::Base
   has_many :scores
   has_many :stars
 
+  def record_vote_of_user(user, score)
+    add_or_update_evaluation(:votes, score, user)
+  end
+
+
 end
