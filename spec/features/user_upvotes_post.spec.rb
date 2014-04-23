@@ -9,12 +9,13 @@ describe "user upvotes post" do
     post.user = user
     post.save
     login_with(user.email, user.password)
+
   end
 
   it "lets the user upvote a post" do
     visit(post_path(post))
 
-    click_link("Up")
+    click_link("up")
 
     expect(page).to have_content("Thank you for voting")
 
