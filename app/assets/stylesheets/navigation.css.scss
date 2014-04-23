@@ -1,4 +1,4 @@
-@mixin blue-button {
+@mixin nav-button {
   vertical-align: middle;
   -moz-box-shadow:inset 0px 1px 0px 0px #F26349;
   -webkit-box-shadow:inset 0px 1px 0px 0px #F26349;
@@ -35,69 +35,24 @@
     color: #ffffff;
     text-decoration: none;}
 }
+#Nav {
+  margin-bottom: 30px;
+  margin-right: auto;
 
-
-
-
-
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: " ";
 }
 
-.clearfix:after {
-  clear: both;
+#NavImage{
+  float: left;
+}
+    
+
+#NavLinks {
+  float: left;
+  text-align: right;
+  a {
+  @include nav-button; 
+  color: #ffffff;   
+  }
+
 }
 
-
-.user-navigation-bar {
-  // general css for the nav bar
-  width: 100%;
-  z-index: 10;  // z-index property specifies the stack order of an element
-  background-color: white; 
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 50px;
-  height: 75px; 
-  vertical-align: middle;
-  margin-bottom: 50px;
-
-  .user-nav-left {
-    // css for the logo 
-    float: left;
-    margin-left: 1em;
-    padding: 0.5em;
-    vertical-align: middle;
-  }
-
-  .search {
-  // css for the footer;
-    vertical-align: middle;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-
-  }
-
-  .nav-links {
-    // the css for the links
-    display: inline;
-    margin-left: auto;
-    margin-right: auto;
-    float: right;
-    vertical-align: middle;
-
-    .user-nav-middle-curate,
-    .user-nav-middle-discover,
-    .user-nav-middle-newpost,
-    .user-nav-middle-profile,
-    .user-nav-middle-logout,
-    .user-nav-middle-signup,
-    .user-nav-middle-login {
-      @include blue-button;
-      padding: 10px;
-    }
-  }
-}

@@ -4,10 +4,10 @@
 
 .container.sixteen.columns
   
-  #PostShowImage.fourteen.columns.alpha
+  #PostShowImage.twelve.columns.alpha
     = image_tag @post.photo 
 
-  #PostShowSidebar.five.columns.omega
+  #PostShowSidebar.four.columns.omega
     %h2= @post.title
     %br
     %br
@@ -35,8 +35,8 @@
     = @post.artist
     %br
     %br
-    %h5 Tags
-    = raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+    #PostShowTags
+      = raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
     %br
     %br
     - if current_user.present?
