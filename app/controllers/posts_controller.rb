@@ -80,7 +80,7 @@ class PostsController < ApplicationController
     value = params[:type] == "up" ? 1 : -1
     @post = Post.find(params[:id])
     @post.add_or_update_evaluation(:votes, value, current_user)
-    redirect_to :index, notice: "Thank you for voting"
+    redirect_to posts_path, notice: "Thank you for voting"
   end
 
   def assign_favorite_post

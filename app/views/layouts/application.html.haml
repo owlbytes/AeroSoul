@@ -16,30 +16,32 @@
     %link{href:"http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css"}
 
   %body
-  #Nav.container.sixteen.columns
-    #NavImage.six.columns.alpha
-      = link_to image_tag('/assets/AeroLogo.png'), root_url
+    #Nav.container.sixteen.columns
+      #NavImage.six.columns.alpha
+        = link_to image_tag('/assets/AeroLogo.png'), root_url
+        - flash.each do |first_name, msg|
+          = content_tag :div, msg, :id => "flash_#{first_name}"
 
-    #NavLinks.ten.columns.alpha
-      - if user_signed_in?
-        / Logged in as
-        / %b= current_user.email
-        = link_to "Curate", posts_path
-        = link_to "Discover", maps_path
-        = link_to "New Post", new_post_path
-        = link_to "Profile", edit_user_registration_path
-        = link_to 'Logout',  destroy_user_session_path, method: :delete
-      - else
-        = link_to "Curate", posts_path
-        = link_to "Discover", maps_path
-        = link_to "Sign Up", new_user_registration_path
-        = link_to "Log In", new_user_session_path
+      #NavLinks.ten.columns.alpha
+        - if user_signed_in?
+          / Logged in as
+          / %b= current_user.email
+          = link_to "Curate", posts_path
+          = link_to "Discover", maps_path
+          = link_to "New Post", new_post_path
+          = link_to "Profile", edit_user_registration_path
+          = link_to 'Logout',  destroy_user_session_path, method: :delete
+        - else
+          = link_to "Curate", posts_path
+          = link_to "Discover", maps_path
+          = link_to "Sign Up", new_user_registration_path
+          = link_to "Log In", new_user_session_path
 
-= yield
+    = yield
 
-%footer
-.generalsearchbarsection
-  .generalsearchbar
-    = form_tag searches_path do
-      = text_field_tag :query
-      = submit_tag "Search"
+    %footer
+    .generalsearchbarsection
+      .generalsearchbar
+        = form_tag searches_path do
+          = text_field_tag :query
+          = submit_tag "Search"
