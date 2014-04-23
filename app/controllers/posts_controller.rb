@@ -3,11 +3,13 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   
   def index
-    @posts = Post.all
-    #for acts_as_taggable
-    @tag = params[:tag] 
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag])
+    else
+      @posts = Post.all 
+    end 
 
-    @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
+    # @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
     
     #when making a request, this outlines how the server will respond. Used in conjunction with google maps (to show data points) and infinite scroll (.js)
     respond_to do |format|
