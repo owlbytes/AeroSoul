@@ -1,23 +1,9 @@
 
 %br
-
-/general search  bar
-.generalsearchbarsection
-  .generalsearchbar
-    = form_tag searches_path do
-      = text_field_tag :query
-      = submit_tag "General Search"
-
-
-
-//maps!
-.searchbar1
+.container.sixteen.columns
   %input#autocomplete.controls{type: :text}
-    .searchbar2
-      .row
-      .searchbar3
-        .col-md-2
-      #map-canvas-global
+    #map-canvas-global
+
 
 / making an AJAX request to contact the server to get posts' addresses
 :javascript
