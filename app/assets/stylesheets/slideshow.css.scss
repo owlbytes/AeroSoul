@@ -1,3 +1,4 @@
+
 .slider {
   margin: 10px 0;
   width: 100%; /* width of slideshow */
@@ -14,6 +15,7 @@
 }
 
 .slider img {
-  width: 100%; 
-  height: 650px;
+  width: 99%; 
+  height: 100%;
+  border:5px solid #BDE000;
 }
