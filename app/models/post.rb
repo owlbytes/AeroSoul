@@ -1,8 +1,7 @@
 class Post < ActiveRecord::Base
-
-
   attr_accessible :title, :description, :photo, :remote_image_url, :tag_list, :artist, :commision, :medium, :address
   mount_uploader :photo, ImageUploader
+
 
 #validation
   validates :title, presence: true
@@ -29,6 +28,5 @@ class Post < ActiveRecord::Base
   def record_vote_of_user(user, score)
     add_or_update_evaluation(:votes, score, user)
   end
-
 
 end

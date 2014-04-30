@@ -23,7 +23,6 @@ gem "fog", "~> 1.3.1"
 gem 'activerecord-reputation-system', require: 'reputation_system'
 
 
-
 group :development do
   gem 'erb2haml'
 end 
