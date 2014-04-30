@@ -2,20 +2,10 @@ require "spec_helper"
 
 describe "user edit profile" do 
 
-  let!(:user) do
-    User.create(email: "nehita@nehita.com", 
-                password: "password", 
-                confirmed_at: Time.now)
-  end
-
-
+ let!(:user) { FactoryGirl.create(:user) }
+ 
   before do 
-    visit new_user_session_path
-
-    fill_in("Email", with: user.email)
-    fill_in("Password", with: user.password)
-
-    click_button("Sign In")
+    login_with(user.email, user.password)
   end
 
   it "lets the user edit profile" do 
@@ -34,7 +24,6 @@ describe "user edit profile" do
     visit(current_path)
     expect(page).to have_content("dan.vontrapp@apple.com")
   end
-
 end 
  
  

@@ -1,0 +1,68 @@
+#Index_Images {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  // display: inline;
+
+  img {
+    border:5px solid #BDE000;
+    margin-bottom: 40px;
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    margin: 4px;
+    
+  }
+}
+
+/* ------------------------------------------
+      Grid
+--------------------------------------------- */
+
+// #grid li {
+//   float: left;
+//   padding: 0;
+//   margin: 0 5px 10px 5px;
+//   } 
+
+// #grid li a {
+//   display: block;
+//   }
+
+// #grid li img {
+//   padding: 7px; margin: 0;
+//   width: 128px;
+//   height: 128px;
+//   }
+
+// #grid li a:hover img {
+// opacity:0.3; 
+//   }
+
+// .grid_display {
+//   padding: 20px;
+//   margin-left: auto; margin-right: auto;  margin-top:50px; margin-bottom:0;
+//   width: 513px; 
+
+//   text-align: center;
+//   }  
+
+// div.grid_display h2 {
+//   padding: 0; margin: 0;
+//   clear: both;
+//   font-size: 35px;
+//   font-weight: normal;
+//   background: none;
+
+//   /* reset for cascade effects that are trickling down from other h2's */
+//   text-transform: none;
+//   letter-spacing: normal;
+//   }
+
+// .grid_display p {
+//   margin:0; padding: 0;
+//   font-size: 15px;
+//   }
+
+
+

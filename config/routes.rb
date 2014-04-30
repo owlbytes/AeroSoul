@@ -17,16 +17,15 @@ ArtOfTheStreets::Application.routes.draw do
   #routes for posts
   resources :posts do 
     member do
-      put :vote
+      post :vote
       put :assign_favorite_post
     end
   end
 
+
   #routes for search via textacular (all hail Aaron Patterson)
   resources :searches 
 
-  # # #route for find
-  # get "/finds(", to: "finds#index", as: :tag
 
   #sets routes for tags(via acts_as_taggable) and google maps
   get 'tags/:tag', to: 'posts#index', as: :tag

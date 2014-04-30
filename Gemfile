@@ -20,7 +20,7 @@ gem "acts-as-taggable-on"
 gem "geocoder"
 gem 'will_paginate', '~> 3.0'
 gem "fog", "~> 1.3.1"
-
+gem 'activerecord-reputation-system', require: 'reputation_system'
 
 
 group :development do
@@ -31,11 +31,13 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'pry-rails'
+  gem 'factory_girl_rails'
 end
 
 group :test do
   gem "capybara"
   gem 'selenium-webdriver'
+  gem "launchy"
 end 
 
 
