@@ -12,12 +12,7 @@ describe "user creates new post" do
 
   # logging in the user so they can make a new post
   before do 
-    visit new_user_session_path
-
-    fill_in("Email", with: user.email)
-    fill_in("Password", with: user.password)
-
-    click_button("Sign In")
+    login_with(user.email, user.password)
   end
 
   # testing whether you can make a new post
