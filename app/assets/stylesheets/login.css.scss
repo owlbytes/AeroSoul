@@ -1,40 +1,62 @@
 #LogInPage{
-  border:5px solid #BDE000;
-  color: #ffffff;
   background-image:url('login.jpg'); 
+  padding: 10px;
+}
+
+#LogInForm {
+  background-color: rgba(255,255,255, 0.7); 
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  border:5px solid #BDE000;
+  
+
+  #CenterMe{
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  input, 
+  h1,
+  a,
+  label, 
+  input[type="checkbox"],
+  label[type="check_box"],
+  img, 
+  #LogIn,
+  #Remember,
+  #SMImages,
+  a{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    color: #F26349;
+  }
 
   input[type="submit"] {
     text-align: center; 
     background-color: #BDE000;
     color: #ffffff;   
     text-align: center; 
-    padding-right: 10px; 
-    margin-right: 50%;
+    padding: 20px; 
+    font-size:medium;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-border-top-left-radius:37px;
+    -moz-border-radius-topleft:37px;
+    border-top-left-radius:37px;
+    -webkit-border-top-right-radius:0px;
+    -moz-border-radius-topright:0px;
+    border-top-right-radius:0px;
+    -webkit-border-bottom-right-radius:37px;
+    -moz-border-radius-bottomright:37px;
+    border-bottom-right-radius:37px;
+    -webkit-border-bottom-left-radius:0px;
+    -moz-border-radius-bottomleft:0px;
+    border-bottom-left-radius:0px;
   }
 }
-
-#LogInForm {
-  background-color: rgba(242, 99, 73, 0.5);
-  // background-color: rgba(255,255,255, 0.7); 
-}
-
-
-      label{
-        float:left;
-        text-align: right;
-        padding-left: 10px;
-      }
-      input{
-        float: right;
-        // padding-right: 50px;
-        margin-right: 50px;
-      }
-      input[type="checkbox"] {
-        float: center;
-        background-color: #BDE000;
-      }
-
-        
+ 
 
  
  
