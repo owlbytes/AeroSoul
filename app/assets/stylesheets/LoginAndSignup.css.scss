@@ -3,6 +3,11 @@
   padding: 10px;
 }
 
+#SignUpPage {
+  background-image:url('signup.jpg');
+  padding: 10px;
+}
+
 #LogInForm {
   background-color: rgba(255,255,255, 0.7); 
   width: 50%;
@@ -10,12 +15,6 @@
   margin-left: auto;
   border:5px solid #BDE000;
   
-
-  #CenterMe{
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   input, 
   h1,
   a,
