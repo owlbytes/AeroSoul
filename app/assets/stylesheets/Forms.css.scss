@@ -13,6 +13,11 @@
   padding: 10px;
 }
 
+#UserProfileForm{
+  background-image:url('editprofile.jpg');
+  padding: 10px;
+}
+
 
 //////////////////////////////////////////
 #LeForm {
@@ -24,7 +29,11 @@
   
   input, 
   h1,
+  h2,
+  h3,
   a,
+  i,
+  p,
   label, 
   input[type="checkbox"],
   label[type="check_box"],
