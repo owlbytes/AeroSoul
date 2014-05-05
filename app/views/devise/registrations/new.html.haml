@@ -1,51 +1,39 @@
-/ Code for signing up to the website
-.signupgeneral
-  .signup
-    .form
-      %h2 Sign Up
-      = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-        = devise_error_messages!
-        .text
-          = f.label :first_name
-          = f.text_field :first_name
-        %br/
-        %br/
+/ signup for website
 
-        .text
-          = f.label :last_name
-          = f.text_field :last_name
-        %br/
-        %br/
+.container.sixteen.columns#SignUpForm
+  %h2 Sign Up
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    = devise_error_messages!
 
-        .text
-          = f.label :email
-          = f.email_field :email, :autofocus => true
-        %br/
-        %br/
-        .text
-          = f.label :password
-          = f.password_field :password
-        %br/
-        %br/
-        .text
-          = f.label :password_confirmation
-          = f.password_field :password_confirmation
-        %br/
-        %br/
-        .button
-          = f.submit "Sign Up"
-        %br/
-        %br/
-        .links
-          = link_to "Didn't receive confirmation email?", "/users/confirmation/new"
-        %br
-        %br/
-        .signupimages
-          = link_to image_tag('SM-Google-G.png'), "/users/auth/google_oauth2"
-          = link_to image_tag('SM-Facebook-F.png'), "/users/auth/facebook"
-          = link_to image_tag('SM-Twitter-T.png'), "twitter.com"
+    = f.label :first_name
+    = f.text_field :first_name
+    %br/
+    %br/
 
- 
-  
-     
-    
+    = f.label :last_name
+    = f.text_field :last_name
+    %br/
+    %br/
+
+    = f.label :email
+    = f.email_field :email, :autofocus => true
+    %br/
+    %br/
+    = f.label :password
+    = f.password_field :password
+    %br/
+    %br/
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+    %br/
+    %br/
+
+    = f.submit "Sign Up"
+    %br/
+    %br/
+
+    = link_to "Didn't receive confirmation email?", "/users/confirmation/new"
+
+    = link_to image_tag('SM-Google-G.png'), "/users/auth/google_oauth2"
+    = link_to image_tag('SM-Facebook-F.png'), "/users/auth/facebook"
+    = link_to image_tag('SM-Twitter-T.png'), "twitter.com"
