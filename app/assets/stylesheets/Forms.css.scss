@@ -3,12 +3,19 @@
   padding: 10px;
 }
 
-#SignUpPage {
+#SignUpPage{
   background-image:url('signup.jpg');
   padding: 10px;
 }
 
-#LogInForm {
+#PostForm{
+  background-image:url('Form.jpg');
+  padding: 10px;
+}
+
+
+//////////////////////////////////////////
+#LeForm {
   background-color: rgba(255,255,255, 0.7); 
   width: 50%;
   margin-right: auto;
@@ -22,7 +29,7 @@
   input[type="checkbox"],
   label[type="check_box"],
   img, 
-  #LogIn,
+  #SubmitButton,
   #Remember,
   #SMImages,
   a{
@@ -53,6 +60,17 @@
     -webkit-border-bottom-left-radius:0px;
     -moz-border-radius-bottomleft:0px;
     border-bottom-left-radius:0px;
+    vertical-align: middle;
+    -moz-box-shadow:inset 0px 1px 0px 0px #F26349;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #F26349;
+    box-shadow:inset 0px 1px 0px 0px #F26349;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F26349), color-stop(1, #F26349) );
+    background:-moz-linear-gradient( center top, #F26349 5%, #F26349 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79f1e1', endColorstr='#79f1e1');
+    a {
+      color: #ffffff;
+      text-decoration: none;
+    }
   }
 }
  
