@@ -1,47 +1,44 @@
 
-
-
-.editprofile
-  / #{resource_name.to_s.humanize}
-  .editprofileform
-    %h2 Edit Profile
-    = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
-      = devise_error_messages!
-      %div
-        = f.label :email
-        %br/
-        = f.email_field :email, :autofocus => true
-        %br
-        %br
+.container.sixteen.columns#UserProfileForm
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+    = devise_error_messages!
+    #LeForm
+      %h1 Edit Profile
+      = f.label :email
+      %br/
+      = f.email_field :email, :autofocus => true
+      %br
+      %br
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         %div
           Currently waiting confirmation for: #{resource.unconfirmed_email}
-      %div
-        = f.label :password
-        %i (leave blank if you don't want to change it)
-        %br/
-        = f.password_field :password, :autocomplete => "off"
-        %br
-        %br
-      %div
-
-        = f.label :password_confirmation
-        %br/
-        = f.password_field :password_confirmation
-        %br
-        %br
-      %div
-        = f.label :current_password
-        %i (we need your current password to confirm your changes)
-        %br/
-        = f.password_field :current_password
-        %br
-        %br
-      %div= f.submit "Update"
+      = f.label :password
+      %p (leave blank if you don't want to change it)
+      %br/
+      = f.password_field :password, :autocomplete => "off"
+          
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation
       %br
-  .editprofilecancelform
+      %br
+
+      = f.label :current_password
+      %p (we need your current password to confirm your changes)
+      %br/
+      = f.password_field :current_password
+      %br
+      %br
+      #SubmitButton
+        = f.submit "Update"
+      %br
+
     %br
-    %h2 Unhappy?
-    %p
-      Cancel My Account #{button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}
-  / = link_to "Back", :back
+    #LeForm
+      %br
+      %h3 Unhappy?
+      %br
+      #SubmitButton
+        #{button_to "Cancel Account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}
+        %br
+    / = link_to "Back", :back
