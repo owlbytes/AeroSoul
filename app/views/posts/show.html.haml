@@ -32,10 +32,13 @@
     = @post.address
     %br
     %br
+    %hr
     #PostShowTags
-      = raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+      = raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')
     %br
     %br
+    %br
+    %hr
     - if current_user.present?
       / = link_to "Star", assign_favorite_post_path(@post), method: :put 
       = link_to "up", vote_post_path(@post, type: "up"), method: "post"
@@ -44,6 +47,7 @@
       = link_to "down", vote_post_path(@post, type: "down"), method: "post"
       %br
       %br
+      %hr
     - if can? :edit, @post
       = link_to "edit", edit_post_path(@post)
       %br
