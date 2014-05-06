@@ -1,56 +1,60 @@
 
 
 .container.sixteen.columns
-  #PostShowImage.twelve.columns.alpha
+  #PostShowImage.sixteen.columns.alpha
     = image_tag @post.photo
 
-  #PostShowSidebar.four.columns.omega
-    %h2= @post.title
+    %h1  
+    #PostShowShareButtons
+      = link_to image_tag("email.png"), "mailto:?subject=StreetArt&body=www.aerosoul.me"
+      = link_to image_tag("fb.png"), "https://www.facebook.com/sharer/sharer.php?u=URL"
+      = link_to image_tag("twitter.png"), "https://twitter.com/intent/tweet?url=URL&text=TEXT&via=AeroSoulMe"
+      = link_to image_tag("google+.png"), "https://plus.google.com/share?url=URL"
+      = link_to image_tag("tumblr.png"), "http://www.tumblr.com/share?v=3&u=URL&t=TITLE&s="
+      = link_to image_tag("pinterest.png"), "http://pinterest.com/pin/create/button/?url=URL&media=URLTOANIMAGE&description=DESCRIPTION"
+      = link_to image_tag("pocket.png"), "https://getpocket.com/save?url=%u&title=%t"
+      = link_to image_tag("reddit.png"), "http://www.reddit.com/submit?url=URL&title=TITLE"
+      = link_to image_tag("wordpress.png"), "http://wordpress.com/press-this.php?u=URL&t=TITLE&s=DESCRIPTION&i=URLOFANIMAGE"
+      %br
+     
+  #PostShowSidebar.sixteen.columns.omega
     %br
+    %h1= @post.title
+    %h3= @post.description
     %br
-    %br
-    = @post.description
-    %br
-    %br
-    %h4 By: 
-    = @post.artist
-    %br
-    %br
-    %h5 Medium
-    = @post.medium
-    %br
-    %br
-    %h5 Commission
-    = @post.commision
-    %br
-    %br
-    %h5 Score
-    = @post.score
-    %br
-    %br
-    %h5 Address
-    = @post.address
-    %br
-    %br
-    %hr
     #PostShowTags
       = raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')
     %br
-    %br
+    %h5=@post.address
     %br
     %hr
-    - if current_user.present?
-      / = link_to "Star", assign_favorite_post_path(@post), method: :put 
-      = link_to "up", vote_post_path(@post, type: "up"), method: "post"
-      %br
-      %br
-      = link_to "down", vote_post_path(@post, type: "down"), method: "post"
-      %br
-      %br
-      %hr
-    - if can? :edit, @post
-      = link_to "edit", edit_post_path(@post)
-      %br
-      %br
-    - if can? :destroy, @post
-      = link_to "delete", post_path(@post), :method => :delete
+    #SidebyFour.four.columns.alpha
+      %h5 By: 
+      %h5= @post.artist
+    #SidebyFour.four.columns.omega
+      %h5 Medium:
+      %h5= @post.medium
+    #SidebyFour.four.columns.omega
+      %h5 Commissioned?
+      %h5= @post.commision
+    #SidebyFour.four.columns.omega
+      %h5 Score:
+      %h5= @post.score
+    %br
+    %br
+    %br
+
+    %hr
+    #SidebyFour.four.columns.alpha 
+      - if current_user.present?
+        = link_to image_tag("VoteUp.png"), vote_post_path(@post, type: "up"), method: "post"
+    #SidebyFour.four.columns.omega
+      - if current_user.present?
+        = link_to image_tag("votedown.png"), vote_post_path(@post, type: "down"), method: "post"
+        / = link_to "Star", assign_favorite_post_path(@post), method: :put
+    #SidebyFour.four.columns.omega 
+      - if can? :edit, @post
+        = link_to image_tag("edit.png"), edit_post_path(@post)
+    #SidebyFour.four.columns.omega 
+      - if can? :destroy, @post
+        = link_to image_tag("delete.png"), post_path(@post), :method => :delete
