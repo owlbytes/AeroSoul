@@ -41,10 +41,13 @@
     %hr
     - if current_user.present?
       / = link_to "Star", assign_favorite_post_path(@post), method: :put 
-      = link_to "up", vote_post_path(@post, type: "up"), method: "post"
+      = link_to image_tag("upvote.png"), vote_post_path(@post, type: "up"), method: "post"
       %br
       %br
-      = link_to "down", vote_post_path(@post, type: "down"), method: "post"
+      = link_to image_tag("downvote.png"), vote_post_path(@post, type: "down"), method: "post"
+      %br
+      %br
+      = link_to image_tag('star.png', title: "Favorite This Piece"), assign_favorite_post_post_path(@post), method: :put
       %br
       %br
       %hr

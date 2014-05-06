@@ -17,13 +17,7 @@ class PostsController < ApplicationController
       format.json { render json: @mapposts }
     end
   end
-
-  def tag
-
-
-  end
-
-    
+ 
   def show
     @post = Post.find params[:id]
     authorize! :read, @post
@@ -85,15 +79,16 @@ class PostsController < ApplicationController
   end
 
   def assign_favorite_post
-    fav_posts = current_user.destring(current_user)
+    curr_user = User.find(current_user.id)
+    fav_posts = curr_user.destring(curr_user)
     respond_to do |format|
       if fav_posts.include?(params[:id].to_i)
-        format.html { redirect_to favourites_user_path, notice: "That post is already on of your favorites!" }
+        format.html { redirect_to favourites_user_path, notice: "That post is already on of your favoorites!" }
       else
         fav_posts.push(params[:id].to_i)
-        current_user.fav_posts = fav_posts.to_s        
-        current_user.save
-        format.html { redirect_to favourites_user_path, notice: "This is added to your favorites." }
+        curr_user.fav_posts = fav_posts.to_s        
+        curr_user.save
+        format.html { redirect_to favourites_user_path, notice: "You've added to your favoorites." }
       end
     end
   end
