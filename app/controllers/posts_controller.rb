@@ -3,18 +3,12 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   
   def index
-    #for acts_as_taggable
-    @next_page = params[:page] ? params[:page].to_i + 1 : 1
-    @tag = params[:tag]
     @mapposts = Post.all
-
-    if @tag.blank?
-      @top_posts = Post.page(@next_page).order("score DESC").limit(2)
-      @posts = []
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).find_with_reputation(:votes, :all, order: "votes desc")
     else
-      @top_posts = Post.page(@next_page).tagged_with(@tag).limit(2)
-      @posts = []
-    end
+      @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
+    end 
     
     #when making a request, this outlines how the server will respond. Used in conjunction with google maps (to show data points) and infinite scroll (.js)
     respond_to do |format|
@@ -22,6 +16,11 @@ class PostsController < ApplicationController
       format.js
       format.json { render json: @mapposts }
     end
+  end
+
+  def tag
+
+
   end
 
     
@@ -36,8 +35,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create params[:post]
-    @post.upvoters = "[-1]"
-    @post.downvoters = "[-2]"
     if @post.save
       redirect_to @post, notice: 'Post was successfully created!'
     else
@@ -63,64 +60,28 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find params[:id]
     post.delete
+    flash[:alert] = "Post was destroyed!"
     redirect_to posts_path 
   end
 
   def flag
     @post.flagged = true
     @post.save
-    flash[:notice] = 'Recipe was flagged!'
+    flash[:notice] = 'Post was flagged!'
     render :show
   end
 
   def flagged
-    @posts = Recipe.where(:flagged => true).all
+    @posts = Post.where(:flagged => true).all
     render :index
   end
 
   def vote
+    value = params[:type] == "up" ? 1 : -1
     @post = Post.find(params[:id])
-    @upvoters, @downvoters = @post.deserialize(@post) #converts upvoters and downvoters from strings to arrays
-
-    #logic for upvotes
-    if (@upvoters.include? current_user.id) && (params[:score] == "1") then
-      @post.score -= 1 
-      @upvoters.delete(current_user.id)
-    elsif (@upvoters.include? current_user.id) && (params[:score] == "-1") then
-      @post.score -= 2
-      @upvoters.delete(current_user.id)
-      @downvoters.push(current_user.id)
-    elsif (@downvoters.include? current_user.id) && (params[:score] == "1") then
-      @post.score += 2
-      @downvoters.delete(current_user.id)
-      @upvoters.push(current_user.id)
-    elsif (@downvoters.include? current_user.id) && (params[:score] == "-1") then
-      @post.score += 1
-      @downvoters.delete(current_user.id)
-    elsif !(@downvoters.include? current_user.id) && !(@upvoters.include? current_user.id) then
-      case params[:score]
-      when "-1"
-        @post.score -= 1
-        @downvoters << current_user.id
-      when "1"
-        @post.score += 1
-        @upvoters << current_user.id
-      end
-    end
-    
-    @post.upvoters = @upvoters.to_s
-    @post.downvoters = @downvoters.to_s
-    respond_to do |format|
-      if @post.save
-        if params[:returnto] == "index"
-          format.html { redirect_to posts_path, notice: "You've voted! Thanks." }
-        else
-          format.html { redirect_to @post, notice: "You've voted! Thanks." }
-        end
-      else
-        format.html { redirect_to @post, notice: "Oops something went wrong, please try again" }
-      end
-    end
+    # @post.add_or_update_evaluation(:votes, value, current_user)
+    @post.record_vote_of_user(current_user, value)
+    redirect_to posts_path, notice: "Thank you for voting"
   end
 
   def assign_favorite_post

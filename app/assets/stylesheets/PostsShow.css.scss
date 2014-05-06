@@ -1,0 +1,58 @@
+@mixin tag {
+  text-indent:-4.338888883590698px;
+  display:inline;
+  color:#F26349;
+  background-color: #BDE000;
+  font-size:15px;
+  font-weight:bold;
+  font-style:normal;
+  height:30px;
+  line-height:30px;
+  width:113px;
+  text-decoration:none;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+.container.sixteen.columns {
+  padding: 0px;
+  color: #F26349;
+
+  h1 {
+    text-align: center;
+    margin-left: auto;
+    margin-left: auto;
+    padding-bottom: 10px;
+  }
+}
+
+#PostShowImage{
+  float: left;
+  img {
+    background-color: green;
+    border:5px solid #BDE000;
+    width: 100%;
+  }
+}
+
+#PostShowSidebar {
+  float: left;
+  border:5px solid #BDE000;
+  h1, h2, h3, h4, h5, a{
+    float: left;
+    text-align: left;
+    color: #F26349;
+  }
+}
+
+#PostShowTags {
+  padding: 10px; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  a {
+    @include tag
+  }
+  
+}

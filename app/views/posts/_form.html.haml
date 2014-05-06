@@ -1,49 +1,50 @@
-
-.newpage
-  .newpageimage
-    .newpagepost
-      .newpostform
-        = form_for(@post) do |f|
-          = f.label :title, "Title"
-          %br
-          = f.text_field :title
-          %br
-          %br
-          = f.label :artist, "Arist"
-          %br
-          = f.text_field :artist
-          %br
-          %br
-          = f.label :commision, "Commissioned?"
-          %br
-          = f.text_field :commision
-          %br
-          %br
-          = f.label :address, "Address (please include street, city, and country)"
-          %br
-          = f.text_field :address
-          %br
-          %br
-          = f.label :medium, "Medium (what was this piece created with?)"
-          %br
-          = f.text_field :medium
-          %br
-          %br
-          = f.label :description
-          %br
-          = f.text_field :description
-          %br
-          %br
-          = f.label :tag_list, "Tags(separated by commas)"
-          %br
-          = f.text_field :tag_list
-          %br
-          %br
-          = f.label :photo
-          %br
-          = f.file_field :photo
-          %br
-          %br
-          = f.submit
+.container.sixteen.columns#PostForm
+  = form_for(@post) do |f|
+    #LeForm
+      = f.label :title, "Title"
+      %br
+      = f.text_field :title
+      %br
+      %br
+      = f.label :artist, "Artist"
+      %br
+      = f.text_field :artist
+      %br
+      %br
+      = f.label :commision, "Commissioned?"
+      %br
+      = f.text_field :commision
+      %br
+      %br
+      = f.label :address, "Address (please include street, city, and country)"
+      %br
+      = f.text_field :address
+      %br
+      %br
+      = f.label :medium, "Medium (what was this piece created with?)"
+      %br
+      = f.text_field :medium
+      %br
+      %br
+      = f.label :description
+      %br
+      = f.text_field :description
+      %br
+      %br
+      = f.label :tag_list, "Tags(separated by commas)"
+      %br
+      = f.text_field :tag_list
+      %br
+      %br
+      #Remember
+        = f.label :photo
+        %br
+        = f.file_field :photo
+      %br
+      %br
+      #SubmitButton
+        = f.submit
+        %br
+        %br
        
      

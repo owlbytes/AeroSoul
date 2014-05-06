@@ -1,8 +1,6 @@
 
-.posts-show-general
-  .posts-show-title
-    %h2= @post.title 
 
+<<<<<<< HEAD
   .posts-show-left
     = @post.description
     %br
@@ -107,31 +105,59 @@
 
   / .posts-show-image
   /   = image_tag @post.photo
+=======
+.container.sixteen.columns
+  #PostShowImage.twelve.columns.alpha
+    = image_tag @post.photo
+>>>>>>> 98173c47a99eb179f09b92af1505669ba3d3ff29
 
-  / .posts-show-artist
-  /   Artist:
-  /   = @post.artist
-  /   %br
-  / .posts-show-commision
-  /   Commisioned?:
-  /   = @post.commision
-  /   %br
-  / .posts-show-medium
-  /   Medium:
-  /   = @post.medium
-  /   %br
-  / .posts-show-address
-  /   Address:
-  /   = @post.address
-  /   %br
-  
-  / .posts-show-curation
-  /   = "Curation Score: #{@post.score}"
-
-
-  / .posts-show-tags
-  /   / the HTML for the tags has escaped, so pass this code through the raw method so that it isn’t escaped. 
-  /   %br
-  /   Tags: #{raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')} 
-
-  
+  #PostShowSidebar.four.columns.omega
+    %h2= @post.title
+    %br
+    %br
+    %br
+    = @post.description
+    %br
+    %br
+    %h4 By: 
+    = @post.artist
+    %br
+    %br
+    %h5 Medium
+    = @post.medium
+    %br
+    %br
+    %h5 Commission
+    = @post.commision
+    %br
+    %br
+    %h5 Score
+    = @post.score
+    %br
+    %br
+    %h5 Address
+    = @post.address
+    %br
+    %br
+    %hr
+    #PostShowTags
+      = raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')
+    %br
+    %br
+    %br
+    %hr
+    - if current_user.present?
+      / = link_to "Star", assign_favorite_post_path(@post), method: :put 
+      = link_to "up", vote_post_path(@post, type: "up"), method: "post"
+      %br
+      %br
+      = link_to "down", vote_post_path(@post, type: "down"), method: "post"
+      %br
+      %br
+      %hr
+    - if can? :edit, @post
+      = link_to "edit", edit_post_path(@post)
+      %br
+      %br
+    - if can? :destroy, @post
+      = link_to "delete", post_path(@post), :method => :delete
