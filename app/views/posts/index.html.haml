@@ -1,12 +1,11 @@
-#tag_cloud
-  - tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class|
-    = link_to tag.name, tag_path(tag.name), class: css_class
-%br
+#Index.container.sixteen.columns
+  #tag_cloud
+    - tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class|
+      = link_to tag.name, tag_path(tag.name), class: css_class
 
-/ tells the index page to load the partial in shared folder. Included a test to see if there actually is a next page of content, if not – don’t display the Load More link.
+  #Index_Images
+    - [@posts].each do |posts|
+      - posts.each do |post|
+        = link_to image_tag(post.photo), post
 
-.posts-index
-  = render :partial => 'shared/posts', :locals => { :posts => @posts }
-.loadmoreart
-  .loadmoreartlink
-    = link_to 'Load More Art', posts_path(:page => @next_page, tag: @tag), :class => 'load-more-posts', :remote => true if @next_page
+   

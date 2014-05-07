@@ -1,38 +1,34 @@
 / Code for loggin in/starting a new devise session
-.logincontainer
-  .logingeneral
-    .login
-      .form
-        %h2 Log In
-        = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-          .text
-            = f.label :email
-            = f.email_field :email, :autofocus => true
-          %br/
-          .text
-            = f.label :password
-            = f.password_field :password
-          %br/
-          - if devise_mapping.rememberable?
-            = f.check_box :remember_me
-            = f.label :remember_me
-          %br/
-          %br/
-          .button
-            = f.submit "Sign In"
-          %br/
-          %br/
-          .links
-            = link_to 'New password?', "/users/password/new"
-          %br
-          %br/
-          .loginimages
-            = link_to image_tag('SM-Google-G.png'), "/users/auth/google_oauth2"
-            = link_to image_tag('SM-Facebook-F.png'), "/users/auth/facebook"
-            = link_to image_tag('SM-Twitter-T.png'), "twitter.com"
-      
+.container.sixteen.columns#LogInPage
+  
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
 
-        /       .text
-        /   = f.label :password
-        / .box
-        /   = f.password_field :password
+    #LeForm
+      %h1 Log In
+      %br/
+
+      %h4= f.label :email
+      = f.email_field :email, :autofocus => true
+      %br/
+      %br/
+      = f.label :password
+      = f.password_field :password
+      
+      %br/
+      %br/
+      #Remember
+        - if devise_mapping.rememberable?
+          = f.label :remember_me
+          = f.check_box :remember_me
+          %br
+          %br
+      #SubmitButton
+        = f.submit "Log In"
+      %br/
+      %br/
+      #SMImages
+        = link_to image_tag('Google.png'), "/users/auth/google_oauth2"
+        = link_to image_tag('Facebook.png'), "/users/auth/facebook"
+        %br
+        %br
+        = link_to 'New Password?', "/users/password/new"

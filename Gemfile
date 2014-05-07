@@ -20,11 +20,13 @@ gem "acts-as-taggable-on"
 gem "geocoder"
 gem 'will_paginate', '~> 3.0'
 gem "fog", "~> 1.3.1"
-
+gem 'activerecord-reputation-system', require: 'reputation_system'
 
 
 group :development do
   gem 'erb2haml'
+  gem "better_errors"
+  gem "binding_of_caller"
 end 
 
 group :development, :test do
@@ -37,6 +39,7 @@ end
 group :test do
   gem "capybara"
   gem 'selenium-webdriver'
+  gem "launchy"
 end 
 
 

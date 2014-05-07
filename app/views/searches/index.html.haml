@@ -1,16 +1,14 @@
-
-.header
+#Search.container.sixteen.columns
   %h2 Search results
 
 .searchresults
   %ul
     - @posts.each do |post|
-      .searchresultstitle
-        %li
-          = link_to post.title, post
-      .searchresultsdescription
+      #Index_Images
+        = image_tag post.photo
+      #searchresults 
+        %h4= link_to post.title, post
         %br
         = truncate(post.description, length: 50, separator: " ")
-      .searchresultsphoto
-        %br
-        = image_tag post.photo
+
+      
