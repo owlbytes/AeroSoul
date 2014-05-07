@@ -25,6 +25,8 @@ gem 'activerecord-reputation-system', require: 'reputation_system'
 
 group :development do
   gem 'erb2haml'
+  gem "better_errors"
+  gem "binding_of_caller"
 end 
 
 group :development, :test do
