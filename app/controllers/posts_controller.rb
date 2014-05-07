@@ -27,6 +27,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find params[:id]
     authorize! :read, @post
+    @star = @post.stars.find_by_user_id(current_user.id)  if user_signed_in?
   end
 
   def new
@@ -84,18 +85,33 @@ class PostsController < ApplicationController
     redirect_to posts_path, notice: "Thank you for voting"
   end
 
-  def assign_favorite_post
-    fav_posts = current_user.destring(current_user)
-    respond_to do |format|
-      if fav_posts.include?(params[:id].to_i)
-        format.html { redirect_to favourites_user_path, notice: "That post is already on of your favorites!" }
+  def star
+    
+    @post = Post.find(params[:id])
+    @star = @post.stars.find_by_user_id(current_user.id) 
+
+
+    if @star.present?
+    # if star present  unstar the post
+      if @star.destroy
+
+        redirect_to :back, notice: "This is removed to your favorites." 
       else
-        fav_posts.push(params[:id].to_i)
-        current_user.fav_posts = fav_posts.to_s        
-        current_user.save
-        format.html { redirect_to favourites_user_path, notice: "This is added to your favorites." }
+        redirect_to :back, alert: "Something went wrong!"
       end
-    end
+
+    else
+      #else star the post
+      @star = Star.new(:user => current_user, :post => @post)
+
+      #record instance of star
+      if @star.save
+        redirect_to :back, notice: "This is added to your favorites." 
+      else
+        redirect_to :back, alert: "Something went wrong!"
+      end
+
+    end 
   end
 
 end

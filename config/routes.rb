@@ -7,7 +7,7 @@ ArtOfTheStreets::Application.routes.draw do
     resources :users, :only => [:index] do
       member do
         get :my_posts
-        get :favourites
+        get :starred
       end
     end
   end
@@ -18,7 +18,7 @@ ArtOfTheStreets::Application.routes.draw do
   resources :posts do 
     member do
       post :vote
-      put :assign_favorite_post
+      put :star
     end
   end
 

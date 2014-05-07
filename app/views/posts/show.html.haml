@@ -51,8 +51,11 @@
         = link_to image_tag("votedown.png"), vote_post_path(@post, type: "down"), method: "post"
     #SidebyFour.four.columns.omega
       - if current_user.present?
-        
-        = link_to image_tag('star.png', title: "Star"), assign_favorite_post_post_path(@post), method: :put
+        -if @star.present?
+          = link_to "unstar", star_post_path(@post), method: :put
+        - else 
+          = link_to "star", star_post_path(@post), method: :put
+        / image_tag('star.png', title: "Star"), assign_favorite_post_post_path(@post), method: :put
     #SidebyFour.four.columns.omega 
       - if can? :edit, @post
         = link_to image_tag("edit.png"), edit_post_path(@post)

@@ -40,8 +40,10 @@ describe "user stars post" do
     click_link("star")
 
     expect(page).to have_content("This is added to your favorites.")
+    expect(page).to have_link("unstar")
 
-    
+    click_link("unstar")
+    expect(page).to have_content("This is removed to your favorites.")
   end
 
 
