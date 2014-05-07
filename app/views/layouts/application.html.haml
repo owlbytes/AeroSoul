@@ -40,8 +40,33 @@
     = yield
 
     %footer
-    .generalsearchbarsection
-      .generalsearchbar
-        = form_tag searches_path do
-          = text_field_tag :query
-          = submit_tag "Search"
+      #footer.container.sixteen.columns
+        %br
+        %br
+        %hr
+        #SidebyFour.four.columns.alpha
+          = link_to "Curate", posts_path
+          %br
+          = link_to "Discover", maps_path
+          
+        #SidebyFour.four.columns.omega
+          = link_to "Edit Profile Profile", edit_user_registration_path
+          %br
+          = link_to "New Post", new_post_path
+
+        #SidebyFour.four.columns.omega
+          = link_to "About", about_index_path
+          %br
+          = link_to "Terms of Service", terms_path
+
+        #SidebyFour.four.columns.omega
+          = link_to "Sign Up", new_user_registration_path
+          %br
+          = link_to "Log In", new_user_session_path
+      %br
+      %br
+        .generalsearchbarsection
+          .generalsearchbar
+            = form_tag searches_path do
+              = text_field_tag :query
+              = submit_tag "Search"
