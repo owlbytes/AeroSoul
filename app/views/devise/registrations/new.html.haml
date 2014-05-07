@@ -30,7 +30,12 @@
       = f.password_field :password_confirmation
       %br/
       %br/
+ 
       #SubmitButton
+        %p By registering with AeroSoul you are agreeing to our: 
+        = link_to "Terms of Service", terms_path
+        %br
+        %br
         = f.submit "Sign Up"
         %br/
         %br/
