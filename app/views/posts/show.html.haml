@@ -1,76 +1,64 @@
 
-.posts-show-general
-  .posts-show-title
-    %h2= @post.title 
 
-  .posts-show-description
-    = @post.description
-    
-  .posts-show-table
-    :css
-      .tftable {font-size:12px;color:#333333;width:70%;border-width: 1px;border-color: #F26349;border-collapse: collapse;text-align:center;margin-left:auto;margin-right:auto;}
-      .tftable th {font-size:12px;background-color:#F26349;border-width: 1px;padding: 8px;border-style: solid;border-color: #F26349;text-align:center;}
-      .tftable tr {background-color:#F26349;text-align:center;}
-      .tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #F26349;text-align:center;}
-      .tftable td:hover {background-color:#ffffff;color:#E92603;text-align:center;}
-      .tftable th:hover {background-color:#ffffff;color:#E92603;text-align:center;}
-    %table.tftable{border: "1"}
-      %tr
-        %th Artist
-        %th Medium
-        %th Commission
-        %th Curation Score
-        %th Address
-        %th Tags
-      %tr
-        %td= @post.artist
-        %td= @post.medium
-        %td= @post.commision
-        %td= "Curation Score: #{@post.score}"
-        %td= @post.address
-        %td= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
-
-  .posts-show-voting
-    - if current_user.present?
-      = link_to image_tag('http://www.iconsdb.com/icons/preview/color/E92603/arrow-141-xxl.png', title: "Upvote"), vote_post_path(@post) + "?score=1", method: :put
-      = link_to image_tag('http://www.iconsdb.com/icons/preview/color/E92603/arrow-204-xxl.png',title: "Downvote"), vote_post_path(@post) + "?score=-1", method: :put
-      = link_to image_tag('http://www.iconsdb.com/icons/preview/color/E92603/star-xxl.png', title: "Favorite This Piece"), assign_favorite_post_post_path(@post), method: :put
-
-  .posts-show-editing
-    .editdestroy
-      - if can? :edit, @post
-        = link_to "edit", edit_post_path(@post)
-
-      - if can? :destroy, @post
-        = link_to "delete", post_path(@post), :method => :delete
-
-  .posts-show-image
+.container.sixteen.columns
+  #PostShowImage.sixteen.columns.alpha
     = image_tag @post.photo
 
-  / .posts-show-artist
-  /   Artist:
-  /   = @post.artist
-  /   %br
-  / .posts-show-commision
-  /   Commisioned?:
-  /   = @post.commision
-  /   %br
-  / .posts-show-medium
-  /   Medium:
-  /   = @post.medium
-  /   %br
-  / .posts-show-address
-  /   Address:
-  /   = @post.address
-  /   %br
-  
-  / .posts-show-curation
-  /   = "Curation Score: #{@post.score}"
+    %h1  
+    #PostShowShareButtons
+      = link_to image_tag("email.png"), "mailto:?subject=StreetArt&body=www.aerosoul.me"
+      = link_to image_tag("fb.png"), "https://www.facebook.com/sharer/sharer.php?u=URL"
+      = link_to image_tag("twitter.png"), "https://twitter.com/intent/tweet?url=URL&text=TEXT&via=AeroSoulMe"
+      = link_to image_tag("google+.png"), "https://plus.google.com/share?url=URL"
+      = link_to image_tag("tumblr.png"), "http://www.tumblr.com/share?v=3&u=URL&t=TITLE&s="
+      = link_to image_tag("pinterest.png"), "http://pinterest.com/pin/create/button/?url=URL&media=URLTOANIMAGE&description=DESCRIPTION"
+      = link_to image_tag("pocket.png"), "https://getpocket.com/save?url=%u&title=%t"
+      = link_to image_tag("reddit.png"), "http://www.reddit.com/submit?url=URL&title=TITLE"
+      = link_to image_tag("wordpress.png"), "http://wordpress.com/press-this.php?u=URL&t=TITLE&s=DESCRIPTION&i=URLOFANIMAGE"
+      %br
+     
+  #PostShowSidebar.sixteen.columns.omega
+    %br
+    %h1= @post.title
+    %h3= @post.description
+    %br
+    #PostShowTags
+      = raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')
+    %br
+    %h5=@post.address
+    %br
+    %hr
+    #SidebyFour.four.columns.alpha
+      %h5 By: 
+      %h5= @post.artist
+    #SidebyFour.four.columns.omega
+      %h5 Medium:
+      %h5= @post.medium
+    #SidebyFour.four.columns.omega
+      %h5 Commissioned?
+      %h5= @post.commision
+    #SidebyFour.four.columns.omega
+      %h5 Score:
+      %h5= @post.score
+    %br
+    %br
+    %br
 
-
-  / .posts-show-tags
-  /   / the HTML for the tags has escaped, so pass this code through the raw method so that it isn’t escaped. 
-  /   %br
-  /   Tags: #{raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')} 
-
-  
+    %hr
+    #SidebyFour.four.columns.alpha 
+      - if current_user.present?
+        = link_to image_tag("VoteUp.png"), vote_post_path(@post, type: "up"), method: "post"
+        = link_to image_tag("votedown.png"), vote_post_path(@post, type: "down"), method: "post"
+    #SidebyFour.four.columns.omega
+      - if current_user.present?
+        -if @star.present?
+          = link_to "unstar", star_post_path(@post), method: :put
+        - else 
+          = link_to "star", star_post_path(@post), method: :put
+        / image_tag('star.png', title: "Star"), assign_favorite_post_post_path(@post), method: :put
+    #SidebyFour.four.columns.omega 
+      - if can? :edit, @post
+        = link_to image_tag("edit.png"), edit_post_path(@post)
+    #SidebyFour.four.columns.omega 
+      - if can? :destroy, @post
+        = link_to image_tag("delete.png"), post_path(@post), :method => :delete

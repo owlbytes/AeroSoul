@@ -41,7 +41,7 @@ function initialize() {
         map.fitBounds(place.geometry.viewport);
       } else {
         map.setCenter(place.geometry.location);
-        map.setZoom(17);  // Why 17? Because it looks good.
+        map.setZoom(14);  // Why 17? Because it looks good.
       }
     });
   }

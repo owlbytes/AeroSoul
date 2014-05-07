@@ -7,7 +7,7 @@ module LoginHelper
     fill_in("Email", with: email)
     fill_in("Password", with: password)
 
-    click_button("Sign In")
+    click_button("Log In")
 
   end 
 

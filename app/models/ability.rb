@@ -10,6 +10,9 @@ class Ability
     elsif user.role == 'user'
 
       can :read, :all
+      can :star, :all
+
+      can :vote, :all
 
       can :create, Post
       can :edit, Post do |post|

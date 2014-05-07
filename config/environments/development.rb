@@ -48,5 +48,4 @@ ArtOfTheStreets::Application.configure do
     user_name: ENV["MANDRILL_USERNAME"], 
     password: ENV["AEROSOUL_MANDRILL_API_KEY"] 
 }
-
 end

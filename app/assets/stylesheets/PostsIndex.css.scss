@@ -1,0 +1,48 @@
+
+#Index{
+}
+#Index_Images {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  // display: inline;
+
+  img {
+    // border:5px solid rgba(189, 224, 0, 1);
+    margin-bottom: 40px;
+    display: inline-block;
+    width: 29%;
+    height: 300px;
+    margin: 4px;
+    opacity: 0.5;
+    -webkit-border-top-left-radius:87px;
+    -moz-border-radius-topleft:87px;
+    border-top-left-radius:87px;
+    -webkit-border-top-right-radius:0px;
+    -moz-border-radius-topright:0px;
+    border-top-right-radius:0px;
+    -webkit-border-bottom-right-radius:87px;
+    -moz-border-radius-bottomright:87px;
+    border-bottom-right-radius:87px;
+    -webkit-border-bottom-left-radius:0px;
+    -moz-border-radius-bottomleft:0px;
+    border-bottom-left-radius:0px;
+  }
+
+  img:hover {
+    opacity: 1;
+  }
+}
+
+#Search, #searchresults {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  a, h1, h2 {
+    color: #F26349;
+  }
+}
+
+
+
