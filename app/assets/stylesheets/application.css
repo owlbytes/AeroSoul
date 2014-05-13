@@ -12,20 +12,9 @@
  *= require_tree .
  */
 
-* {
-  font-family: 'Droid Sans', sans-serif;
-  margin-left: 0px;
-  margin-right: 0px;
-}
 
-body {
-  background-color: #ffffff;
-  margin: 0px;
-}
 
-a {
-  text-decoration: none;
-}
+
 
 
 
