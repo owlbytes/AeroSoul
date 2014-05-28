@@ -45,9 +45,6 @@ GEM
     arel (3.0.3)
     atomic (1.1.15)
     bcrypt-ruby (3.0.1)
-    better_errors (1.1.0)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.0.4)
@@ -254,7 +251,6 @@ DEPENDENCIES
   activerecord-reputation-system
   acts-as-taggable-on
   bcrypt-ruby (~> 3.0.0)
-  better_errors
   binding_of_caller
   cancan
   capybara
