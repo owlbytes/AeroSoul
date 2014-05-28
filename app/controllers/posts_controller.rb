@@ -19,8 +19,6 @@ class PostsController < ApplicationController
   end
 
   def tag
-
-
   end
 
     
