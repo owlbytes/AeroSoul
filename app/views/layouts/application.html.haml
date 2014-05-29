@@ -49,23 +49,25 @@
         %br
         %hr
         #SidebyFour.four.columns.alpha#footer
-          = link_to "Curate", posts_path
-          %br
-          = link_to "Discover", maps_path
+          #FooterLinks
+            = link_to "Curate", posts_path
+            %br
+            = link_to "Discover", maps_path
           
         #SidebyFour.four.columns.omega#footer
-          = link_to "New Post", new_post_path
-          %br
-          = link_to "Edit User Profile", edit_user_registration_path
+          #FooterLinks
+            = link_to "New Post", new_post_path
+            %br
+            = link_to "Edit User Profile", edit_user_registration_path
 
         #SidebyFour.four.columns.omega
-          #footer
+          #FooterLinks
             = link_to "About", about_index_path
             %br
             = link_to "Terms of Service", terms_path
 
         #SidebyFour.four.columns.omega
-          #footer
+          #FooterLinks
             = link_to "Sign Up", new_user_registration_path
             %br
             = link_to "Log In", new_user_session_path
