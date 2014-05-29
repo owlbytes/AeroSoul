@@ -71,6 +71,15 @@ input[type="text"]{
   margin-right: auto;
 }
 
-#Black{
+#FooterLinks{
   color: #F26349;
+
+  a{
+    color: #F26349;
+  }
+
+  a:hover {
+    color: #BDE000;
+  }
 }
+
