@@ -20,7 +20,7 @@ AeroSoul was initially created by Neha Shah as a final project for General Assem
 
 *Langages/Frameworks*
 Ruby on Rails, Javascript, HTML, CSS.
-Hosted by Ninefold. 
+
 
 
 *Proposed Phase Two Features*
