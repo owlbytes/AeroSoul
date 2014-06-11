@@ -24,9 +24,9 @@ Hosted by Ninefold.
 
 
 *Proposed Phase Two Features*
-- User profiles (see uploaded pieces)
-- Artist profiles (see the works of particular artists)
-- Comment on submited posts
+- User profiles (see uploaded pieces).
+- Artist profiles (see the works of particular artists).
+- Comment on submited posts.
 
 
 
