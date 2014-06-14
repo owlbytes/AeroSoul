@@ -23,6 +23,8 @@
       ga('send', 'pageview');
 
     #Nav.container.sixteen.columns
+      #AccessibilityLink
+        = link_to "Go to main content", :anchor => "MainContent"
       #NavImage.six.columns.alpha
         = link_to image_tag('/assets/AeroLogo.png'), root_url
         - flash.each do |first_name, msg|
@@ -42,6 +44,7 @@
           = link_to "Sign Up", new_user_registration_path
           = link_to "Log In", new_user_session_path
 
+  #MainContent
     = yield
 
     %footer
