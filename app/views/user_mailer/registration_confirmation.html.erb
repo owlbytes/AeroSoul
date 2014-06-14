@@ -1,16 +1,19 @@
+<div id="mailer">
 
-<h1>AeroSoul</h1>
+  <h1 id="headings">AeroSoul</h1>
+  <h3>Discover &amp; Curate Street Art</h3>
 
-<p>Hey <%= @user.first_name %>,</p>
-<br>
-<p>Welcome to the Aerosoul Community!</p>
+  <br>
+  <p>Welcome to the Aerosoul Community <%= @user.first_name %>!</p>
+  <br>
+  <p>Now that you're here why don't you:</p>
+  <br>
+  <ul>
+    <li>Curate: <%=posts_path%></li>
+    <li>Discover: <%=maps_path%></li>
+    <li>Make A New Post: <%=new_post_path%></li>
+    <li>Edit Profile: <%=edit_user_registration_path%></li>
+  </ul>
 
-<p>Now that you're here why don't you:</p>
-<br>
-<ul>
-  <li><a href="http://aerosoul.herokuapp.com/posts/new">Create a new post</a></li>
-  <li><a href="http://aerosoul.herokuapp.com/users/edit">Edit your profile</a></li>
-  <li><a href="http://aerosoul.herokuapp.com/discover"></a>Discover street art</li>
-</ul>
 
-
+</div>

@@ -37,6 +37,7 @@
           = link_to "New Post", new_post_path
           = link_to "Profile", edit_user_registration_path
           = link_to 'Logout',  destroy_user_session_path, method: :delete
+          / = link_to "starred", star_post_path
           / = link_to "Favs", star_post_path
         - else
           = link_to "Curate", posts_path
@@ -75,6 +76,8 @@
             = link_to "Sign Up", new_user_registration_path
             %br
             = link_to "Log In", new_user_session_path
+            %br
+            
       %br
       %br
         .generalsearchbarsection
