@@ -84,7 +84,6 @@ class PostsController < ApplicationController
   end
 
   def star
-    
     @post = Post.find(params[:id])
     @star = @post.stars.find_by_user_id(current_user.id) 
 
@@ -93,7 +92,7 @@ class PostsController < ApplicationController
     # if star present  unstar the post
       if @star.destroy
 
-        redirect_to :back, notice: "This is removed to your favorites." 
+        redirect_to :back, notice: "This was removed from your favorites." 
       else
         redirect_to :back, alert: "Something went wrong!"
       end

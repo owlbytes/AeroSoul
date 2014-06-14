@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-  def favourites
+  def starred
     fav_posts = current_user.destring(current_user)
     @top_posts = []
     fav_posts.each do |n|
