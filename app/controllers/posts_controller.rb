@@ -83,33 +83,7 @@ class PostsController < ApplicationController
     redirect_to posts_path, notice: "Thank you for voting"
   end
 
-  def star
-    @post = Post.find(params[:id])
-    @star = @post.stars.find_by_user_id(current_user.id) 
 
-
-    if @star.present?
-    # if star present  unstar the post
-      if @star.destroy
-
-        redirect_to :back, notice: "This was removed from your favorites." 
-      else
-        redirect_to :back, alert: "Something went wrong!"
-      end
-
-    else
-      #else star the post
-      @star = Star.new(:user => current_user, :post => @post)
-
-      #record instance of star
-      if @star.save
-        redirect_to :back, notice: "This is added to your favorites." 
-      else
-        redirect_to :back, alert: "Something went wrong!"
-      end
-
-    end 
-  end
 
 end
 

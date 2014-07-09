@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   #relationships
   has_many :stars
   has_many :posts
+  # navigate to post via stars
+  has_many :starred_posts, through: :stars, source: :post
   
   #voting
   has_many :evaluations, class_name: "RSEvaluation", as: :source
