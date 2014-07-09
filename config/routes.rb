@@ -16,7 +16,7 @@ ArtOfTheStreets::Application.routes.draw do
 
   #routes for posts
   resources :posts do 
-    resources :stars, only: :create
+    resources :stars, only: [:create, :destroy]
     member do
       post :vote
     end
