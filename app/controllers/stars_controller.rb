@@ -1,12 +1,17 @@
 class StarsController < ApplicationController
 
   def index
-    @top_posts = User.find(params[:user_id]).starred_posts
+    @top_posts = User.find(params[:user_id]).starred_posts.order("stars.created_at asc")
   end
 
   def create
     @star = current_user.stars.create(post_id: params[:post_id])
     redirect_to user_stars_path(current_user)
+  end
+
+  def destroy
+    current_user.stars.find_by_post_id(params[:post_id]).destroy
+    redirect_to posts_path, notice: "This was removed from your favorites." 
   end
 end
 

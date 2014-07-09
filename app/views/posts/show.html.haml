@@ -52,7 +52,7 @@
     #SidebyFour.four.columns.omega
       - if current_user.present?
         -if @star.present?
-          = link_to image_tag("unstar.png"), star_post_path(@post), method: :put
+          = link_to image_tag("unstar.png"), post_star_path(@post, @star), method: :delete
         - else 
           = link_to image_tag("star.png"), post_stars_path(@post), method: :post
         / image_tag('star.png', title: "Star"), assign_favorite_post_post_path(@post), method: :put
