@@ -4,10 +4,10 @@ ArtOfTheStreets::Application.routes.draw do
   devise_for :users, controllers: {:omniauth_callbacks => "omniauth_callbacks"}
 
   devise_scope :user do
-    resources :users, :only => [:index] do
+    resources :users, only: :index do
+      resources :stars, only: :index
       member do
         get :my_posts
-        get :starred
       end
     end
   end
@@ -16,9 +16,9 @@ ArtOfTheStreets::Application.routes.draw do
 
   #routes for posts
   resources :posts do 
+    resources :stars, only: :create
     member do
       post :vote
-      put :star
     end
   end
 
