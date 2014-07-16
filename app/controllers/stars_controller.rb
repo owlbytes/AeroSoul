@@ -42,4 +42,3 @@ end
 #       else
 #         redirect_to :back, alert: "Something went wrong!"
 #       end
-

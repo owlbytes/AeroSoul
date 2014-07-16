@@ -35,7 +35,7 @@
           = link_to "Curate", posts_path
           = link_to "Discover", maps_path
           = link_to "New Post", new_post_path
-          = link_to "Profile", edit_user_registration_path
+          = link_to "Edit Profile", edit_user_registration_path
           = link_to 'Logout',  destroy_user_session_path, method: :delete
           / = link_to "starred", star_post_path
           / = link_to "Favs", star_post_path
@@ -49,44 +49,68 @@
     = yield
 
     %footer
-      #footer.container.sixteen.columns
+      - if user_signed_in?
+        #footer.container.sixteen.columns
+          %br
+          %hr
+          #SidebyFour.eight.columns.alpha#footer
+            #FooterLinks
+              = link_to "Curate", posts_path
+              %br
+              = link_to "Discover", maps_path
+              %br
+              = link_to "Starred Posts", user_stars_path(current_user)
+          #SidebyFour.eight.columns.omega#footer
+            #FooterLinks
+              = link_to "New Post", new_post_path
+              %br
+              = link_to "Edit User Profile", edit_user_registration_path
+              %br
+              = link_to "Home", root_url  
+          %br
+          %hr
+          .generalsearchbarsection
+            .generalsearchbar
+              = form_tag searches_path do
+                = label_tag(:query, "Search AeroSoul")
+                = text_field_tag :query
+                = submit_tag "Submit"                
+      - else
+        #footer.container.sixteen.columns
+          #SidebyFour.four.columns.alpha#footer
+            #FooterLinks
+              = link_to "Curate", posts_path
+              = link_to "Discover", maps_path
+            #SidebyFour.four.columns.omega
+              #FooterLinks
+                = link_to "About", about_index_path
+                %br
+                = link_to "Terms of Service", terms_path
+            #SidebyFour.four.columns.omega
+              #FooterLinks
+                = link_to "Sign Up", new_user_registration_path
+                %br
+                = link_to "Log In", new_user_session_path
+                %br              
+          %br
+          %hr
+          .generalsearchbarsection
+            .generalsearchbar
+              = form_tag searches_path do
+                = label_tag(:query, "Search AeroSoul")
+                = text_field_tag :query
+                = submit_tag "Submit"
+
         %br
         %br
         %hr
-        #SidebyFour.four.columns.alpha#footer
-          #FooterLinks
-            = link_to "Curate", posts_path
-            %br
-            = link_to "Discover", maps_path
-          
-        #SidebyFour.four.columns.omega#footer
-          #FooterLinks
-            = link_to "New Post", new_post_path
-            %br
-            = link_to "Edit User Profile", edit_user_registration_path
-            %br
-            = link_to "Starred Posts", user_stars_path(current_user)
-            
-
-        #SidebyFour.four.columns.omega
-          #FooterLinks
-            = link_to "About", about_index_path
-            %br
-            = link_to "Terms of Service", terms_path
-
-        #SidebyFour.four.columns.omega
-          #FooterLinks
-            = link_to "Sign Up", new_user_registration_path
-            %br
-            = link_to "Log In", new_user_session_path
-            %br
-            
-      %br
-      %br
         .generalsearchbarsection
           .generalsearchbar
             = form_tag searches_path do
               = label_tag(:query, "Search AeroSoul")
               = text_field_tag :query
               = submit_tag "Submit"
+        %br
+        %br
+        %hr
 
