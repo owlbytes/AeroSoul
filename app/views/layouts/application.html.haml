@@ -77,21 +77,22 @@
                 = submit_tag "Submit"                
       - else
         #footer.container.sixteen.columns
-          #SidebyFour.four.columns.alpha#footer
+          %br
+          %hr
+          #SidebyFour.eight.columns.alpha#footer
             #FooterLinks
               = link_to "Curate", posts_path
+              %br
               = link_to "Discover", maps_path
-            #SidebyFour.four.columns.omega
-              #FooterLinks
-                = link_to "About", about_index_path
-                %br
-                = link_to "Terms of Service", terms_path
-            #SidebyFour.four.columns.omega
-              #FooterLinks
-                = link_to "Sign Up", new_user_registration_path
-                %br
-                = link_to "Log In", new_user_session_path
-                %br              
+              %br
+              = link_to "Terms of Service", terms_path
+          #SidebyFour.eight.columns.omega#footer
+            #FooterLinks
+              = link_to "About", about_index_path
+              %br
+              = link_to "Sign Up", new_user_registration_path
+              %br
+              = link_to "Log In", new_user_session_path 
           %br
           %hr
           .generalsearchbarsection
@@ -99,18 +100,6 @@
               = form_tag searches_path do
                 = label_tag(:query, "Search AeroSoul")
                 = text_field_tag :query
-                = submit_tag "Submit"
+                = submit_tag "Submit"                
 
-        %br
-        %br
-        %hr
-        .generalsearchbarsection
-          .generalsearchbar
-            = form_tag searches_path do
-              = label_tag(:query, "Search AeroSoul")
-              = text_field_tag :query
-              = submit_tag "Submit"
-        %br
-        %br
-        %hr
 
