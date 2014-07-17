@@ -25,10 +25,9 @@ ArtOfTheStreets::Application.routes.draw do
 
   #routes for search via textacular (all hail Aaron Patterson)
   resources :searches 
-
-  #mumbojo
   resources :about
   resources :terms
+  resources :admin
 
 
   #sets routes for tags(via acts_as_taggable) and google maps
