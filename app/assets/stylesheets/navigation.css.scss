@@ -60,17 +60,18 @@
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  color: #F26349;
+  color: #F26349 !important;
 
   #footielinks{
-    color: #F26349;
+    color: #F26349 !important;
 
     a{
-      color: #F26349;
+      color: #F26349 !important;
     }
 
     a:hover {
-      color: #BDE000;
+      color: #BDE000 !important;
+
     }
   }
 }
