@@ -53,7 +53,16 @@
   @include nav-button; 
   color: #ffffff;   
   }
+}
 
+#footer2 {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  background-color: blue;
+  a {
+    color: #F26349 !important;
+  }
 }
 
 footer {

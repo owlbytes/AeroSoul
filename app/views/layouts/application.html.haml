@@ -48,53 +48,54 @@
   #MainContent
     = yield
 
-  %footer
-    - if user_signed_in?
-      #footie.container.sixteen.columns
-        .eight.columns
-          = link_to "Curate", posts_path
+  #footer2
+    %footer
+      - if user_signed_in?
+        #footie.container.sixteen.columns
+          .eight.columns
+            = link_to "Curate", posts_path
+            %br
+            = link_to "Discover", maps_path
+            %br
+            = link_to "Starred Posts", user_stars_path(current_user)           
+          .eight.columns
+            = link_to "New Post", new_post_path
+            %br
+            = link_to "Edit User Profile", edit_user_registration_path
+            %br
+            = link_to "Home", root_url  
           %br
-          = link_to "Discover", maps_path
+          %hr
+          .generalsearchbarsection
+            .generalsearchbar
+              = form_tag searches_path do
+                = label_tag(:query, "Search AeroSoul")
+                = text_field_tag :query
+                = submit_tag "Submit"                
+      - else
+        #footie.container.sixteen.columns
           %br
-          = link_to "Starred Posts", user_stars_path(current_user)           
-        .eight.columns
-          = link_to "New Post", new_post_path
+          %hr
+          .eight.columns.alpha
+            = link_to "Curate", posts_path
+            %br
+            = link_to "Discover", maps_path
+            %br
+            = link_to "Terms of Service", terms_path
+          .eight.columns.omega
+            = link_to "About", about_index_path
+            %br
+            = link_to "Sign Up", new_user_registration_path
+            %br
+            = link_to "Log In", new_user_session_path 
           %br
-          = link_to "Edit User Profile", edit_user_registration_path
-          %br
-          = link_to "Home", root_url  
-        %br
-        %hr
-        .generalsearchbarsection
-          .generalsearchbar
-            = form_tag searches_path do
-              = label_tag(:query, "Search AeroSoul")
-              = text_field_tag :query
-              = submit_tag "Submit"                
-    - else
-      #footie.container.sixteen.columns
-        %br
-        %hr
-        .eight.columns.alpha
-          = link_to "Curate", posts_path
-          %br
-          = link_to "Discover", maps_path
-          %br
-          = link_to "Terms of Service", terms_path
-        .eight.columns.omega
-          = link_to "About", about_index_path
-          %br
-          = link_to "Sign Up", new_user_registration_path
-          %br
-          = link_to "Log In", new_user_session_path 
-        %br
-        %hr
-        .generalsearchbarsection
-          .generalsearchbar
-            = form_tag searches_path do
-              = label_tag(:query, "Search AeroSoul")
-              = text_field_tag :query
-              = submit_tag "Submit"    
-                          
+          %hr
+          .generalsearchbarsection
+            .generalsearchbar
+              = form_tag searches_path do
+                = label_tag(:query, "Search AeroSoul")
+                = text_field_tag :query
+                = submit_tag "Submit"    
+
 
 
