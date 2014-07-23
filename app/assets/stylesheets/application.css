@@ -9,7 +9,21 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require "base"
+ *= require "layout"
+*= require "skeleton"
+*= require "fav"
+*= require "Forms"
+*= require "mailer"
+*= require "maps"
+*= require "navigation"
+*= require "new"
+*= require "PostsIndex"
+*= require "PostsShow"
+*= require "slideshow"
+*= require "stars"
+*= require "tags"
+*= require "Tos_About"
  */
 
 #footie {
