@@ -50,18 +50,18 @@
 
     %footer
       - if user_signed_in?
-        #footer.container.sixteen.columns
+        #footie.container.sixteen.columns
           %br
           %hr
-          #SidebyFour.eight.columns.alpha#footer
-            #FooterLinks
+          #SidebyFour.eight.columns.alpha#footie
+            #footielinks
               = link_to "Curate", posts_path
               %br
               = link_to "Discover", maps_path
               %br
               = link_to "Starred Posts", user_stars_path(current_user)
-          #SidebyFour.eight.columns.omega#footer
-            #FooterLinks
+          #SidebyFour.eight.columns.omega#footie
+            #footielinks
               = link_to "New Post", new_post_path
               %br
               = link_to "Edit User Profile", edit_user_registration_path
@@ -76,18 +76,18 @@
                 = text_field_tag :query
                 = submit_tag "Submit"                
       - else
-        #footer.container.sixteen.columns
+        #footie.container.sixteen.columns
           %br
           %hr
-          #SidebyFour.eight.columns.alpha#footer
-            #FooterLinks
+          #SidebyFour.eight.columns.alpha#footie
+            #footielinks
               = link_to "Curate", posts_path
               %br
               = link_to "Discover", maps_path
               %br
               = link_to "Terms of Service", terms_path
-          #SidebyFour.eight.columns.omega#footer
-            #FooterLinks
+          #SidebyFour.eight.columns.omega#footie
+            #footielinks
               = link_to "About", about_index_path
               %br
               = link_to "Sign Up", new_user_registration_path
