@@ -12,7 +12,14 @@
  *= require_tree .
  */
 
-
+#footie {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  a {
+    color: #F26349 !important;
+  }
+}
 
 
 
