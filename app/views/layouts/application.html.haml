@@ -50,7 +50,7 @@
 
     %footer
       - if user_signed_in?
-        #footie.container.sixteen.columns
+        #NavLinks.container.sixteen.columns
           .eight.columns
             = link_to "Curate", posts_path
             %br
@@ -72,16 +72,16 @@
                 = text_field_tag :query
                 = submit_tag "Submit"                
       - else
-        #footie.container.sixteen.columns
+        #Nav.container.sixteen.columns
           %br
           %hr
-          .eight.columns.alpha
+          #NavLinks.eight.columns.alpha
             = link_to "Curate", posts_path
             %br
             = link_to "Discover", maps_path
             %br
             = link_to "Terms of Service", terms_path
-          .eight.columns.omega
+          #NavLinks.eight.columns.omega
             = link_to "About", about_index_path
             %br
             = link_to "Sign Up", new_user_registration_path
