@@ -61,6 +61,18 @@
   margin-left: auto;
   text-align: center;
   color: #F26349;
+
+  #footielinks{
+    color: #F26349;
+
+    a{
+      color: #F26349;
+    }
+
+    a:hover {
+      color: #BDE000;
+    }
+  }
 }
 
 #footie2{
@@ -77,15 +89,5 @@ input[type="text"]{
   margin-right: auto;
 }
 
-#footielinks{
-  color: #F26349;
 
-  a{
-    color: #F26349;
-  }
-
-  a:hover {
-    color: #BDE000;
-  }
-}
 
