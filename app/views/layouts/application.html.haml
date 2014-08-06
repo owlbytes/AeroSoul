@@ -25,80 +25,42 @@
     #Nav.container.sixteen.columns
       #AccessibilityLink
         = link_to "Go to main content", :anchor => "MainContent"
-      #NavImage.six.columns.alpha
-        = link_to image_tag('/assets/AeroLogo.png'), root_url
-        - flash.each do |first_name, msg|
-          = content_tag :div, msg, :id => "flash_#{first_name}"
-
-      #NavLinks.ten.columns.alpha
-        - if user_signed_in?
-          = link_to "Curate", posts_path
-          = link_to "Discover", maps_path
-          = link_to "New Post", new_post_path
-          = link_to "Edit Profile", edit_user_registration_path
-          = link_to 'Logout',  destroy_user_session_path, method: :delete
-          / = link_to "starred", star_post_path
-          / = link_to "Favs", star_post_path
-        - else
-          = link_to "Curate", posts_path
-          = link_to "Discover", maps_path
-          = link_to "Sign Up", new_user_registration_path
-          = link_to "Log In", new_user_session_path
+      .row
+        #NavImage.sixteen.columns.alpha
+          = link_to image_tag('/assets/AeroLogo.png'), root_url
+          - flash.each do |first_name, msg|
+            = content_tag :div, msg, :id => "flash_#{first_name}"
+      .row
+        #NavLinks.sixteen.columns.alpha
+          - if user_signed_in?
+            = link_to "Curate", posts_path
+            = link_to "Discover", maps_path
+            = link_to "Favorites", user_stars_path(current_user)
+            = link_to "New Post", new_post_path
+            = link_to "Profile", edit_user_registration_path
+            = link_to "T & C", terms_path
+            = link_to "About", about_index_path
+            = link_to 'Logout',  destroy_user_session_path, method: :delete
+          - else
+            = link_to "Curate", posts_path
+            = link_to "Discover", maps_path
+            = link_to "About", about_index_path
+            = link_to "Terms of Service", terms_path
+            = link_to "Log In", new_user_session_path
+            = link_to "Sign Up", new_user_registration_path
+          
 
   #MainContent
     = yield
-
   %footer
-    = link_to "Log In", new_user_session_path
-
-  / #footer2
-  /   %footer
-  /     - if user_signed_in?
-  /       #footie.container.sixteen.columns
-  /         .eight.columns
-  /           = link_to "Curate", posts_path
-  /           %br
-  /           = link_to "Discover", maps_path
-  /           %br
-  /           = link_to "Starred Posts", user_stars_path(current_user)           
-  /         .eight.columns
-  /           = link_to "New Post", new_post_path
-  /           %br
-  /           = link_to "Edit User Profile", edit_user_registration_path
-  /           %br
-  /           = link_to "Home", root_url  
-  /         %br
-  /         %hr
-  /         .generalsearchbarsection
-  /           .generalsearchbar
-  /             = form_tag searches_path do
-  /               = label_tag(:query, "Search AeroSoul")
-  /               = text_field_tag :query
-  /               = submit_tag "Submit"                
-  /     - else
-  /       #footie.container.sixteen.columns
-  /         %br
-  /         %hr
-  /         .eight.columns.alpha
-  /           = link_to "Curate", posts_path
-  /           %br
-  /           = link_to "Discover", maps_path
-  /           %br
-  /           = link_to "Terms of Service", terms_path
-  /         .eight.columns.omega
-  /           = link_to "About", about_index_path
-  /           %br
-  /           = link_to "Sign Up", new_user_registration_path
-  /           %br
-  /           = link_to "Log In", new_user_session_path 
-  /         %br
-  /         %hr
-  /         .generalsearchbarsection
-  /           .generalsearchbar
-  /             = form_tag searches_path do
-  /               = label_tag(:query, "Search AeroSoul")
-  /               = text_field_tag :query
-  /               = submit_tag "Submit"    
+    %br
+    %br
+      .generalsearchbarsection
+        .generalsearchbar
+          = form_tag searches_path do
+            / = label_tag(:query, "Search AeroSoul")
+            = text_field_tag :query, "Search AeroSoul"
+               
 
 
 
