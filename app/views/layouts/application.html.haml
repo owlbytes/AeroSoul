@@ -55,12 +55,6 @@
   %footer
     %br
     %br
-      .generalsearchbarsection
-        .generalsearchbar
-          = form_tag searches_path do
-            / = label_tag(:query, "Search AeroSoul")
-            = text_field_tag :query, "Search AeroSoul"
+    = form_tag searches_path do
+      = text_field_tag :query, "Search AeroSoul"
                
-
-
-
