@@ -22,11 +22,11 @@
   text-indent:0;
   border:5px solid #BDE000;
   display:inline-block;
-  font-size:15px;
+  font-size:14px;
   font-weight:bold;
   font-style:normal;
-  height:65px;
-  line-height:65px;
+  height: 45px;
+  line-height:45px;
   width:86px;
   text-decoration:none;
   text-align:center;
@@ -42,19 +42,26 @@
 }
 
 #NavImage{
-  float: left;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
     
 
 #NavLinks {
-  float: left;
-  text-align: right;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   a {
-  @include nav-button; 
-  color: #ffffff;   
+    @include nav-button; 
+    color: #ffffff;   
   }
-
+  a:hover {
+    opacity: 0.5;
+  }
 }
+
+
 
 #footer {
   margin-right: auto;
