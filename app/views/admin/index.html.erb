@@ -1,0 +1,42 @@
+<% if user_signed_in? %>
+  <% if @user.role == "admin" %>
+    <div class="container sixteen columns" id="admin">
+      <h1>Administration</h1>
+      <div class="eight columns alpha">
+        <h4>Number of Posts:   <%= @posts.count %></h4>
+        <br>
+        <br>
+        <% @posts.reverse_each do |post| %>
+          <li><h6>Title:   <%= link_to post.title %></h6></li>
+          <li><h6>Score:   <%= post.score %></h6></li>
+          <li><h6>Created On:   <%= post.created_at %></h6></li>
+          <li><h6>Created By:   <%= link_to post.user_id  %></h6></li>
+          <hr/>
+        <% end %>
+      </div>
+      <div class="eight columns omega">
+        <h4>Number of Users:   <%= @users.count %></h4>
+        <br>
+        <br>
+        <% @users.each do |user| %>
+          <li><h6>First Name:   <%= user.first_name %></h6></li>
+          <li><h6>Last Name:   <%= user.last_name %></h6></li>
+          <li><h6>Role:   <%= user.role %></h6></li>
+          <li><h6>Email:   <%= user.email %></h6></li>
+          <li><h6>Number of Times Signed In:   <%= user.sign_in_count %></h6></li>
+          <li><h6>Last Time Signed In:   <%= user.last_sign_in_at %></h6></li>
+          <hr>
+        <% end %>    
+      </div>
+    </div>
+  <% else   %>
+    <div class="container sixteen columns" id="admin_pic">
+      <img src="/assets/admin.jpg"/>
+    </div>
+    
+  <% end %>
+<% else  %>
+    <div class="container sixteen columns" id="admin_pic">
+      <img src="/assets/admin.jpg"/>
+    </div>
+<% end %>
