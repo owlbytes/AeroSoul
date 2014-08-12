@@ -23,6 +23,7 @@
 *= require "slideshow"
 *= require "stars"
 *= require "tags"
+*= require "admin"
 *= require "Tos_About"
  */
 
