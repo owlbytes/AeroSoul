@@ -1,3 +1,5 @@
+
+////////////////
 #LogInPage{
   background-image:url('login.jpg'); 
   padding: 10px;
@@ -84,5 +86,29 @@
 }
  
 
- 
+
+
+.field {
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  input[type=confirmation],
+  input {
+    display: inline-block;
+  }
+
+  label{
+    display: inline-block;
+    padding: 4%;
+  }
+
+}
+
+#why{
+  input,
+  input[type=password]{
+    display: inline-block;
+  }
+  display: inline-block;
+}
  
