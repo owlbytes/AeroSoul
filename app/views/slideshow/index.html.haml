@@ -21,4 +21,5 @@
       %img{src: '/assets/_slideshow8.jpg'}/
     %li
       %img{src: '/assets/_slideshow9.jpg'}/
-
+      / / :post_show
+      / = image_tag @post.photo_url(:post_show)
