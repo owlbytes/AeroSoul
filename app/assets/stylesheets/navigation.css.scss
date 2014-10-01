@@ -1,3 +1,19 @@
+
+#NavModern{
+  line-height: 50px;
+  font-family: "Droid Sans";
+  a{
+    color: #000000;
+    padding-right: 2%;
+    float:right;
+  }
+  a:hover{
+    color: #000000;
+    opacity: 0.5;
+  }
+}
+
+
 @mixin nav-button {
   vertical-align: middle;
   -moz-box-shadow:inset 0px 1px 0px 0px #F26349;
