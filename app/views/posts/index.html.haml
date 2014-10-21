@@ -1,10 +1,10 @@
 #Index.container.sixteen.columns
-  #tag_cloud
+  #tag_cloud.sixteen.columns
     - tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class|
       = link_to tag.name, tag_path(tag.name), class: css_class
 
 
-  #Index_Images
+  #Index_Images.sixteen.columns
     - [@posts].each do |posts|
       - posts.each do |post|
         = link_to image_tag(post.photo_url(:post_index)), post
