@@ -46,13 +46,21 @@
     %hr
 
     %br
-    
-    
+
+
     %hr
+    
+
     #SidebyFour.four.columns.alpha 
       - if current_user.present?
         = link_to image_tag("VoteUp.png"), vote_post_path(@post, type: "up"), method: "post"
         = link_to image_tag("votedown.png"), vote_post_path(@post, type: "down"), method: "post"
+
+    #SidebyFour.four.columns.alpha 
+      - if current_user.present?    
+        %input{:name => "live_status", :type => "checkbox", :checked => @post.live}>
+        Uncheck box if art is no longer there
+        %br/
     #SidebyFour.four.columns.omega
       - if current_user.present?
         -if @star.present?
