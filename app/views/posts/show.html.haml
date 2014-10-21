@@ -58,7 +58,7 @@
 
     #SidebyFour.four.columns.alpha 
       - if current_user.present?    
-        %input{:name => "live_status", :type => "checkbox", :checked => @post.live}>
+        %input{:id => "live_status", :type => "checkbox", :checked => @post.live, "data-post-id" => @post.id}>
         Uncheck box if art is no longer there
         %br/
     #SidebyFour.four.columns.omega
