@@ -44,6 +44,11 @@
     %br
 
     %hr
+
+    %br
+    
+    
+    %hr
     #SidebyFour.four.columns.alpha 
       - if current_user.present?
         = link_to image_tag("VoteUp.png"), vote_post_path(@post, type: "up"), method: "post"
@@ -55,9 +60,11 @@
         - else 
           = link_to image_tag("star.png"), post_stars_path(@post), method: :post
         / image_tag('star.png', title: "Star"), assign_favorite_post_post_path(@post), method: :put
+
     #SidebyFour.four.columns.omega 
       - if can? :edit, @post
         = link_to image_tag("edit.png"), edit_post_path(@post)
-    #SidebyFour.four.columns.omega 
+        %br
       - if can? :destroy, @post
         = link_to image_tag("delete.png"), post_path(@post), :method => :delete
+
