@@ -1,7 +1,8 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :description, :photo, :remote_image_url, :tag_list, :artist, :commision, :medium, :address
+  attr_accessible :title, :description, :photo, :remote_image_url, :tag_list, :artist, :commision, :medium, :address, :live
   mount_uploader :photo, ImageUploader
 
+  before_create :set_default_value_for_live
 
 #validation
   validates :title, presence: true
@@ -29,4 +30,7 @@ class Post < ActiveRecord::Base
     add_or_update_evaluation(:votes, score, user)
   end
 
+  def set_default_value_for_live
+    self.live = true
+  end
 end
