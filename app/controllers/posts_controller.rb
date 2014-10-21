@@ -5,8 +5,10 @@ class PostsController < ApplicationController
   def index
     @mapposts = Post.all
     if params[:tag]
+      # @posts = Post.tagged_with(params[:tag]).sort_by{|p| p.live}
       @posts = Post.tagged_with(params[:tag]).find_with_reputation(:votes, :all, order: "votes desc")
     else
+      # @posts = Post.sort_by{|p| p.live}
       @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
     end 
     
