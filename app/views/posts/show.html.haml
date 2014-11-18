@@ -77,7 +77,7 @@
 
     #SidebyFour.four.columns.omega 
       - if can? :edit, @post
-        = link_to image_tag("edit.png"), edit_post_path(@post)
+        = link_to image_tag("_edit.png"), edit_post_path(@post)
         %br
       - if can? :destroy, @post
         = link_to image_tag("delete.png"), post_path(@post), :method => :delete
