@@ -17,18 +17,11 @@
     width: 32%;
     height: auto;
     margin: 0px;
-    // -webkit-border-top-left-radius:87px;
-    // -moz-border-radius-topleft:87px;
-    // border-top-left-radius:87px;
-    // -webkit-border-top-right-radius:0px;
-    // -moz-border-radius-topright:0px;
-    // border-top-right-radius:0px;
-    // -webkit-border-bottom-right-radius:87px;
-    // -moz-border-radius-bottomright:87px;
-    // border-bottom-right-radius:87px;
-    // -webkit-border-bottom-left-radius:0px;
-    // -moz-border-radius-bottomleft:0px;
-    // border-bottom-left-radius:0px;
+    opacity: 0.5;
+
+    &.live {
+      opacity: 1;
+    }
   }
 
   img:hover {
@@ -44,6 +37,4 @@
     color: #F26349;
   }
 }
-
-
 

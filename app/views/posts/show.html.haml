@@ -2,7 +2,13 @@
 
 .container.sixteen.columns
   #PostShowImage.sixteen.columns.alpha
-    = image_tag @post.photo_url(:post_show)
+    - if @post.live
+      = image_tag(@post.photo_url(:post_show), :class => :live)
+    - else 
+      = image_tag @post.photo_url(:post_show)
+
+
+
     %h1  
     #PostShowShareButtons
       = link_to image_tag("email.png"), "mailto:?subject=StreetArt&body=www.aerosoul.me"

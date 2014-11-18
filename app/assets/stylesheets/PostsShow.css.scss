@@ -48,6 +48,11 @@
   img {
     border:0px;
     width: 100%;
+    opacity: 0.5;
+
+    &.live {
+      opacity: 1;
+    }
   }
 }
 
