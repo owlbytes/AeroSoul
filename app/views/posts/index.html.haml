@@ -7,6 +7,10 @@
   #Index_Images.sixteen.columns
     - [@posts].each do |posts|
       - posts.each do |post|
-        = link_to image_tag(post.photo_url(:post_index)), post
+        - if post.live 
+
+          = link_to image_tag(post.photo_url(:post_index), :class => :live), post
+        - else 
+          = link_to image_tag(post.photo_url(:post_index)), post
 
    
