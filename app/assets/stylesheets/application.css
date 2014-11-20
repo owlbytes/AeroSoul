@@ -23,19 +23,10 @@
 *= require "slideshow"
 *= require "tags"
 *= require "admin"
+*= require "footer"
 *= require "Tos_About"
  */
 
-#footie {
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-  a {
-    color: #F26349 !important;
-  }
+html {
+  font-family: 'Droid Sans', sans-serif;
 }
-
-#Footer {
-  color: #000000 !important;
-}
-

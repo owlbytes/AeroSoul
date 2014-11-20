@@ -21,49 +21,55 @@
 
       ga('create', 'UA-51298840-2', 'aerosoul.herokuapp.com');
       ga('send', 'pageview');
-
-    #Nav.container.sixteen.columns
-      #AccessibilityLink
-        = link_to "Go to main content", :anchor => "MainContent"
-      .row
-        .five.columns.alpha
-          = link_to image_tag('/assets/AeroLogo.png'), root_url
-        .eleven.columns.omega#NavModern
-          - if user_signed_in?
-            = link_to 'Logout',  destroy_user_session_path, method: :delete
-            = link_to "Profile", edit_user_registration_path
-            = link_to "New Post", new_post_path
-            = link_to "Favorites", user_stars_path(current_user)
-            = link_to "Discover", maps_path
-            = link_to "Curate", posts_path
-          - else
-            = link_to "Curate", posts_path
-            = link_to "Discover", maps_path
-            = link_to "About", about_index_path
-            = link_to "Log In", new_user_session_path
-            = link_to "Sign Up", new_user_registration_path
-          .four.columns.omega
-            = form_tag searches_path do
-              = text_field_tag :query, "Search AeroSoul"
+    / #AccessibilityLink
+    /   = link_to "Go to main content", :anchor => "MainContent"
+    #Navigation.sixteen.columns
+      .four.columns.alpha
+        = link_to image_tag('/assets/AeroLogo_white.png'), root_url
+      .six.columns.omega
+        - if user_signed_in?
+          = link_to 'Logout',  destroy_user_session_path, method: :delete
+          = link_to "Profile", edit_user_registration_path
+          = link_to "New Post", new_post_path
+          = link_to "Favorites", user_stars_path(current_user)
+          = link_to "Discover", maps_path
+          = link_to "Curate", posts_path
+        - else
+          = link_to "Curate", posts_path
+          = link_to "Discover", maps_path
+          = link_to "About", about_index_path
+          = link_to "Log In", new_user_session_path
+          = link_to "Sign Up", new_user_registration_path
+        .four.columns.omega
+          = form_tag searches_path do
+            = text_field_tag :query, "Search AeroSoul"
 
 
   #MainContent
     = yield
-  %footer#Footer
-  - if user_signed_in?
-    = link_to 'Logout',  destroy_user_session_path, method: :delete
-    = link_to "T&Cs", terms_path
-    = link_to "About", about_index_path
-    = link_to "Profile", edit_user_registration_path
-    = link_to "New Post", new_post_path
-    = link_to "Favorites", user_stars_path(current_user)
-    = link_to "Discover", maps_path
-    = link_to "Curate", posts_path
-  - else
-    = link_to "Curate", posts_path
-    = link_to "Discover", maps_path
-    = link_to "About", about_index_path
-    = link_to "T&Cs", terms_path
-    = link_to "Log In", new_user_session_path
-    = link_to "Sign Up", new_user_registration_path   
+
+  #Footer
+    - if user_signed_in?
+      = link_to "Curate", posts_path
+      = link_to "Discover", maps_path  
+      = link_to "Favorites", user_stars_path(current_user)   
+      = link_to "New Post", new_post_path
+      = link_to "About", about_index_path
+      = link_to "Profile", edit_user_registration_path
+      = link_to "Terms and Conditions", terms_path
+      = link_to 'Logout',  destroy_user_session_path, method: :delete
+      
+      
+      
+      
+      
+      
+      
+    - else
+      = link_to "Curate", posts_path
+      = link_to "Discover", maps_path
+      = link_to "About", about_index_path
+      = link_to "T&Cs", terms_path
+      = link_to "Log In", new_user_session_path
+      = link_to "Sign Up", new_user_registration_path   
                
