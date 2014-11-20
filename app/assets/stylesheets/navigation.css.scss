@@ -1,89 +1,18 @@
 
-#NavModern{
-  line-height: 50px;
-  font-family: "Droid Sans";
-  a{
-    color: #000000;
-    padding-right: 2%;
-    float:right;
-  }
-  a:hover{
-    color: #000000;
-    opacity: 0.5;
-  }
+#Navigation{
+  font-family: 'Droid Sans', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  margin-top: 0px;
 }
 
-
-@mixin nav-button {
-  vertical-align: middle;
-  -moz-box-shadow:inset 0px 1px 0px 0px #F26349;
-  -webkit-box-shadow:inset 0px 1px 0px 0px #F26349;
-  box-shadow:inset 0px 1px 0px 0px #F26349;
-  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F26349), color-stop(1, #F26349) );
-  background:-moz-linear-gradient( center top, #F26349 5%, #F26349 100% );
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79f1e1', endColorstr='#79f1e1');
-  background-color:#F26349;
-  -webkit-border-top-left-radius:37px;
-  -moz-border-radius-topleft:37px;
-  border-top-left-radius:37px;
-  -webkit-border-top-right-radius:0px;
-  -moz-border-radius-topright:0px;
-  border-top-right-radius:0px;
-  -webkit-border-bottom-right-radius:37px;
-  -moz-border-radius-bottomright:37px;
-  border-bottom-right-radius:37px;
-  -webkit-border-bottom-left-radius:0px;
-  -moz-border-radius-bottomleft:0px;
-  border-bottom-left-radius:0px;
-  text-indent:0;
-  border:5px solid #BDE000;
-  display:inline-block;
-  font-size:14px;
-  font-weight:bold;
-  font-style:normal;
-  height: 45px;
-  line-height:45px;
-  width:86px;
-  text-decoration:none;
-  text-align:center;
-  margin-left: 10px;
-  a {
-    color: #ffffff;
-    text-decoration: none;}
-}
-#Nav {
-  margin-bottom: 30px;
-  margin-right: auto;
-
-}
-
-#NavImage{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-    
-
-#NavLinks {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  a {
-    @include nav-button; 
-    color: #ffffff;   
-  }
-  a:hover {
-    opacity: 0.5;
-  }
-}
-
-footer {
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-  a {
-    color: #F26349 !important;
-  }
+#AccessibilityLink{
+  font-size: 0px;
+  padding: 0px;
+  margin: 0px;
+  color: #000000;
+  background-color: #000000;
+  text-decoration: none;
 }
 
 
