@@ -71,18 +71,18 @@
 .slides-pagination a {
   border: 2px solid white;
   border-radius: 15px;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
   zoom: 1;
   *display: inline;
-  
   margin: 2px;
   overflow: hidden;
   text-indent: -100%;
+  margin-bottom: 450px;
 }
 .slides-pagination a.current {
   background: white;
@@ -106,13 +106,13 @@
   text-decoration: none;
 }
 
-.container {
-  position: relative;
-  width: 60%;
-  max-width: 600px;
-  top: 13%;
-  padding: 10px 20px;
-}
+// .container {
+//   position: relative;
+//   width: 60%;
+//   max-width: 600px;
+//   top: 13%;
+//   padding: 10px 20px;
+// }
 
 .headline{
   font-family: 'Harabara';
@@ -125,19 +125,11 @@
 
 .contrast{
   color: white;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   text-align: center;
-  padding: 1px 10px;
-  // -webkit-box-shadow: 0 0 23px 5px rgba(0, 0, 0, 0.4);
-  // -moz-box-shadow: 0 0 23px 5px rgba(0, 0, 0, 0.4);
-  // box-shadow: 0 0 23px 5px rgba(0, 0, 0, 0.4);
-  // -webkit-border-radius: 3px;
-  // -moz-border-radius: 3px;
-  // -ms-border-radius: 3px;
-  // -o-border-radius: 3px;
-  // border-radius: 3px;
-  margin-top: 10px;
-  margin-left: 18%;
+  margin-right: auto;
+  margin-left: left;
+  margin-top: 150px;
 }
 
 .explainer{
