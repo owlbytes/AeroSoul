@@ -46,7 +46,7 @@
 
   #Footer
     = form_tag searches_path do
-      = text_field_tag :query, "Search AeroSoul"
+      = text_field_tag :query, nil, :placeholder => "Search Aerosoul"
     - if user_signed_in?
       = link_to "Curate", posts_path
       = link_to "Discover", maps_path  
