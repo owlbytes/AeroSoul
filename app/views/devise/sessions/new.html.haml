@@ -1,7 +1,7 @@
 / Code for loggin in/starting a new devise session
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  .container.sixteen.columns#LogInPage
-    .CenterForm
+#LogInPage
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    .container
       .sixteen.columns#LeForm
         .row#SMImages
           .eight.columns.alpha
