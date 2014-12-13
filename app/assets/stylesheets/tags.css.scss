@@ -1,16 +1,29 @@
 #tag_cloud {
   width: 100%;
-  text-align: center;
   line-height: 1.6em;
+  text-align: center;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 40px;
   margin-top: 30px;
-  .s { font-size: 0.8em; }
-  .m { font-size: 1.2em; }
-  .l { font-size: 1.8em; }
+  .s { font-size: 0.4em; }
+  .m { font-size: 1em; }
+  .l { font-size: 2em; }
   a {
   text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  }
+  a:hover{
   color: #000000;
+  background-color: #ffffff;
   }
 }
