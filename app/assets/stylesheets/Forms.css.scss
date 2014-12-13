@@ -2,7 +2,13 @@
 ////////////////
 #LogInPage{
   background-image:url('login.jpg'); 
-  padding: 10px;
+  // background-repeat:no-repeat;
+  background-size: 100%;
+  background-size:cover;
+  background-position:center;
+  width: 100%;
+  height: 800px;
+  padding-top: 03%;
 }
 
 #SignUpPage{
@@ -22,12 +28,20 @@
 
 
 //////////////////////////////////////////
+#FormFloat1{
+  background-color: yellow;
+}
+
+#FormFloat2{
+  background-color: red;
+}
+
 #LeForm {
   background-color: rgba(255,255,255, 0.9); 
-  width: 50%;
   margin-right: auto;
   margin-left: auto;
-  border:5px solid #BDE000;
+  text-align: center;
+  border:5px solid #000000;
   
   input, 
   h1,
@@ -47,37 +61,18 @@
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-    color: #F26349;
+    color: #000000;
   }
 
   input[type="submit"] {
     text-align: center; 
-    background-color: #BDE000;
+    background-color: #000000;
     color: #ffffff;   
     text-align: center; 
     padding: 20px; 
     font-size:medium;
     margin-left: auto;
     margin-right: auto;
-    -webkit-border-top-left-radius:37px;
-    -moz-border-radius-topleft:37px;
-    border-top-left-radius:37px;
-    -webkit-border-top-right-radius:0px;
-    -moz-border-radius-topright:0px;
-    border-top-right-radius:0px;
-    -webkit-border-bottom-right-radius:37px;
-    -moz-border-radius-bottomright:37px;
-    border-bottom-right-radius:37px;
-    -webkit-border-bottom-left-radius:0px;
-    -moz-border-radius-bottomleft:0px;
-    border-bottom-left-radius:0px;
-    vertical-align: middle;
-    -moz-box-shadow:inset 0px 1px 0px 0px #F26349;
-    -webkit-box-shadow:inset 0px 1px 0px 0px #F26349;
-    box-shadow:inset 0px 1px 0px 0px #F26349;
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F26349), color-stop(1, #F26349) );
-    background:-moz-linear-gradient( center top, #F26349 5%, #F26349 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79f1e1', endColorstr='#79f1e1');
     a {
       color: #ffffff;
       text-decoration: none;
