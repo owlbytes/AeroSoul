@@ -1,34 +1,59 @@
 
-
 #TOS,
 #About {
   h1,h2, h3, h4, h5  {
     text-align: center;
-    color: #F26349;
+    color: black;
   }
 
-  h6, a {
-    color: #F26349;
+  a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 1px;
   }
+  a:hover{
+    color: #000000;
+    background-color: #ffffff;
+  }
+
   p {
     color: #000000;
+    font-size: 20px;
   }
 }
 
 #About{
   background-image:url('About.jpg');
-  padding: 100px;
+  background-repeat:no-repeat;
+  background-size: 100%;
+  background-size:cover;
+  background-position:center;
+  width: 100%;
+  height: 800px;
+  padding-top: 07%;
 }
 
 #TOS{
   background-image:url('TOS.jpg');
-  padding: 50px;
+  background-repeat:no-repeat;
+  background-size: 100%;
+  background-size:cover;
+  background-position:center;
+  width: 100%;
+  height: 100%;
+  padding-top: 03%;
+  padding-bottom: 3%;
+  p{
+  font-size: 15px;    
+  }
+
 }
 
 #Box {
   background-color: rgba(255,255,255, 0.9); 
-  border:5px solid #BDE000;
-  width: 65%;
+  border:5px solid #000000;
+  width: 88%;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
