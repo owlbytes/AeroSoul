@@ -1,34 +1,36 @@
 / Code for loggin in/starting a new devise session
-.container.sixteen.columns#LogInPage
-  
-  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-
-    #LeForm
-      %h1 Log In
-      %br/
-
-      %h4= f.label :email
-      = f.email_field :email, :autofocus => true
-      %br/
-      %br/
-      = f.label :password
-      = f.password_field :password
-      
-      %br/
-      %br/
-      #Remember
+= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  .container.sixteen.columns#LogInPage
+    .sixteen.columns#LeForm
+      .row#SMImages
+        .eight.columns.alpha
+          = link_to image_tag('Google.png'), "/users/auth/google_oauth2"
+        .eight.columns.omega
+          = link_to image_tag('Facebook.png'), "/users/auth/facebook"
+      .row
+        .eight.columns.alpha
+          = f.label :email
+        .eight.columns.omega
+          = f.email_field :email, :autofocus => true
+      .row
+        .eight.columns.alpha
+          = f.label :password
+        .eight.columns.omega
+          = f.password_field :password
+          = link_to 'New Password?', "/users/password/new"
+      .row
         - if devise_mapping.rememberable?
-          = f.label :remember_me
-          = f.check_box :remember_me
-          %br
-          %br
-      #SubmitButton
-        = f.submit "Log In"
-      %br/
-      %br/
-      #SMImages
-        %br
-        = link_to image_tag('Google.png'), "/users/auth/google_oauth2"
-        = link_to image_tag('Facebook.png'), "/users/auth/facebook"
-        %br
-        = link_to 'New Password?', "/users/password/new"
+          .eight.columns.alpha
+            = f.label :remember_me
+          .eight.columns.omega
+            = f.check_box :remember_me
+      .row
+        .eight.columns.alpha
+          = f.label :email
+        .eight.columns.omega
+          = f.email_field :email, :autofocus => true
+      .row
+        .sixteen.columns#SubmitButton
+          = f.submit "Log In"
+
+ 
