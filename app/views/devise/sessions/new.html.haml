@@ -10,26 +10,17 @@
             = link_to image_tag('Facebook.png'), "/users/auth/facebook"
         .row
           .eight.columns.alpha
-            = f.label :email
+            = f.email_field :email, :autofocus => true, :placeholder => "Email"
           .eight.columns.omega
-            = f.email_field :email, :autofocus => true
+            = f.password_field :password, :placeholder => "Password"
         .row
           .eight.columns.alpha
-            = f.label :password
-          .eight.columns.omega
-            = f.password_field :password
             = link_to 'New Password?', "/users/password/new"
-        .row
-          - if devise_mapping.rememberable?
-            .eight.columns.alpha
-              = f.label :remember_me
-            .eight.columns.omega
-              = f.check_box :remember_me
-        .row
-          .eight.columns.alpha
-            = f.label :email
           .eight.columns.omega
-            = f.email_field :email, :autofocus => true
+            - if devise_mapping.rememberable?
+              = f.check_box :remember_me
+              = f.label :remember_me           
+              
         .row
           .sixteen.columns#SubmitButton
             = f.submit "Log In"
