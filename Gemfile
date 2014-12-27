@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'dotenv-rails'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'rails', '3.2.14'
 
