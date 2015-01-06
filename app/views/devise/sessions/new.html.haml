@@ -3,49 +3,23 @@
 #LogInPage
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     .container
-      .eight.columns.offset-by-four
-        .div#LeForm
-          .row#SM
-            #SMFacebook
-              = link_to ' Log In With Facebook', "/users/auth/facebook"
-          .row#SM
-            #SMGoogle
-              = link_to 'Log In With Google', "/users/auth/google_oauth2"
-          .row
-            = f.email_field :email, :autofocus => true, :placeholder => "Email"
-          .row
+      .sixteen.columns#LeForm
+        .row#SM
+          .eight.columns.alpha#SMFacebook
+            = link_to ' Log In With Facebook', "/users/auth/facebook"
+          .eight.columns.omega#SMGoogle
+            = link_to 'Log In With Google', "/users/auth/google_oauth2"
+        .row
+          .eight.columns.alpha
+            = f.email_field :email, :autofocus => true, :placeholder => "Email"          
+          .eight.columns.omega
             = f.password_field :password, :placeholder => "Password"
-          .row
+        .row
+          .eight.columns.alpha
             = link_to 'New Password?', "/users/password/new"
-          .row
+          .eight.columns.omega
             - if devise_mapping.rememberable?
               = f.check_box :remember_me
-              = f.label :remember_me           
-          .row#SubmitButton
-            = f.submit "Log In"
-
-/ ///
-/ #LogInPage
-/   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-/     .container
-/       .eight.columns#LeForm
-/         .row#SM
-/           #SMFacebook
-/             = link_to ' Log In With Facebook', "/users/auth/facebook"
-/         .row#SM
-/           #SMGoogle
-/             = link_to 'Log In With Google', "/users/auth/google_oauth2"
-/         .row
-/           = f.email_field :email, :autofocus => true, :placeholder => "Email"
-/         .row
-/           = f.password_field :password, :placeholder => "Password"
-/         .row
-/           = link_to 'New Password?', "/users/password/new"
-/         .row
-/           - if devise_mapping.rememberable?
-/             = f.check_box :remember_me
-/             = f.label :remember_me           
-/         .row#SubmitButton
-/           = f.submit "Log In"
-
- 
+              = f.label :remember_me    
+        .row
+          = f.submit "Log In"

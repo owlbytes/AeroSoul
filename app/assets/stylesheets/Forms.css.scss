@@ -108,7 +108,7 @@
   #SM{
     margin-top: 30px;
     height: 50px;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 50px;
   }
 
@@ -127,5 +127,11 @@
       color: #ffffff;
       display: block;
     }
+  }
+
+  #user_email,
+  #user_password{
+    font-size: 22px;
+    width: 340px;
   }
  
