@@ -1,37 +1,51 @@
 / Code for loggin in/starting a new devise session
+
 #LogInPage
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     .container
-      .sixteen.columns#LeForm
-        .row#SMImages
-          .eight.columns.alpha
-            = link_to image_tag('Google.png'), "/users/auth/google_oauth2"
-          .eight.columns.omega
-            = link_to image_tag('Facebook.png'), "/users/auth/facebook"
-        .row
-          .eight.columns.alpha
-            = f.label :email
-          .eight.columns.omega
-            = f.email_field :email, :autofocus => true
-        .row
-          .eight.columns.alpha
-            = f.label :password
-          .eight.columns.omega
-            = f.password_field :password
+      .eight.columns.offset-by-four
+        .div#LeForm
+          .row#SM
+            #SMFacebook
+              = link_to ' Log In With Facebook', "/users/auth/facebook"
+          .row#SM
+            #SMGoogle
+              = link_to 'Log In With Google', "/users/auth/google_oauth2"
+          .row
+            = f.email_field :email, :autofocus => true, :placeholder => "Email"
+          .row
+            = f.password_field :password, :placeholder => "Password"
+          .row
             = link_to 'New Password?', "/users/password/new"
-        .row
-          - if devise_mapping.rememberable?
-            .eight.columns.alpha
-              = f.label :remember_me
-            .eight.columns.omega
+          .row
+            - if devise_mapping.rememberable?
               = f.check_box :remember_me
-        .row
-          .eight.columns.alpha
-            = f.label :email
-          .eight.columns.omega
-            = f.email_field :email, :autofocus => true
-        .row
-          .sixteen.columns#SubmitButton
+              = f.label :remember_me           
+          .row#SubmitButton
             = f.submit "Log In"
+
+/ ///
+/ #LogInPage
+/   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+/     .container
+/       .eight.columns#LeForm
+/         .row#SM
+/           #SMFacebook
+/             = link_to ' Log In With Facebook', "/users/auth/facebook"
+/         .row#SM
+/           #SMGoogle
+/             = link_to 'Log In With Google', "/users/auth/google_oauth2"
+/         .row
+/           = f.email_field :email, :autofocus => true, :placeholder => "Email"
+/         .row
+/           = f.password_field :password, :placeholder => "Password"
+/         .row
+/           = link_to 'New Password?', "/users/password/new"
+/         .row
+/           - if devise_mapping.rememberable?
+/             = f.check_box :remember_me
+/             = f.label :remember_me           
+/         .row#SubmitButton
+/           = f.submit "Log In"
 
  

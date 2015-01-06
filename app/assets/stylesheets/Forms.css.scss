@@ -9,9 +9,6 @@
   width: 100%;
   height: 800px;
   padding-top: 03%;
-  padding-left: left;
-  margin-right: auto;
-  margin-right: auto;
 }
 
 #SignUpPage{
@@ -107,4 +104,28 @@
   }
   display: inline-block;
 }
+ 
+  #SM{
+    margin-top: 30px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+  }
+
+  #SMFacebook{
+    background-color: #3b5998;
+    a{
+      color: #ffffff;
+      display: block;
+
+    }
+  }
+
+  #SMGoogle{
+    background-color: #ce0000;
+    a{
+      color: #ffffff;
+      display: block;
+    }
+  }
  
