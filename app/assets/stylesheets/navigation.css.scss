@@ -5,6 +5,17 @@
   color: #ffffff;
   margin-top: 0px;
 }
+#Nav{
+  height: 50px;
+  line-height: 40px;
+  padding-bottom: 20px;
+  background-color: #000000;
+  a{
+  color: #ffffff;
+  font-size: 22px;    
+  }
+
+}
 
 #AccessibilityLink{
   font-size: 0px;
@@ -25,4 +36,25 @@ input[type="text"]{
 }
 
 
-
+#NavLogo{
+  float: left;
+  width: 40%;
+  line-height: 40px;
+  img{
+    padding-left: 30px;
+    line-height: 40px;
+  }
+}
+#NavLinks{
+  float: left;
+  width: 60%;
+  line-height: 40px;
+  a{
+    float: right;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 40px;
+  }
+}
