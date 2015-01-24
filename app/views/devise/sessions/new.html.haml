@@ -16,13 +16,9 @@
           = f.password_field :password, :placeholder => "Password"
         .row
           = link_to 'New Password?', "/users/password/new"
-        .row#check
+          %br
           - if devise_mapping.rememberable?
-            .two.columns.alpha
-              %p
-            .two.column.omega
-              = f.check_box :remember_me
-            .three.column.omega
-              = f.label :remember_me   
+            = f.check_box :remember_me
+            = f.label :remember_me    
         .row
           = f.submit "Log In" 
