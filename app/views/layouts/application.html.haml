@@ -24,22 +24,22 @@
     .sixteen.columns#Navigation
       #AccessibilityLink
         = link_to "Go to main content", :anchor => "MainContent"
-      .eight.columns.alpha
-        = link_to image_tag('/assets/AeroLogo_white.png'), root_url
-      .eight.columns.omega
-        - if user_signed_in?
-          = link_to "New Post", new_post_path
-          = link_to "Favorites", user_stars_path(current_user)
-          = link_to "Curate", posts_path
-          = link_to "Discover", maps_path
-          = link_to 'Logout',  destroy_user_session_path, method: :delete
-        - else
-          = link_to "Curate", posts_path
-          = link_to "Discover", maps_path
-          = link_to "About", about_index_path
-          = link_to "Log In", new_user_session_path
-          = link_to "Sign Up", new_user_registration_path
-
+        %div#Nav
+          %div#NavLogo
+            = link_to image_tag('/assets/AeroLogo_white.png'), root_url
+          %div#NavLinks
+            - if user_signed_in?
+              = link_to "New Post", new_post_path
+              = link_to "Favorites", user_stars_path(current_user)
+              = link_to "Curate", posts_path
+              = link_to "Discover", maps_path
+              = link_to 'Logout',  destroy_user_session_path, method: :delete
+            - else
+              = link_to "Discover", maps_path
+              = link_to "About", about_index_path
+              = link_to "Log In", new_user_session_path
+              = link_to "Sign Up", new_user_registration_path 
+              = link_to "Curate", posts_path     
 
   #MainContent
     = yield
