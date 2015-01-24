@@ -33,6 +33,7 @@ input[type="text"]{
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  padding: 3px;
 }
 
 
@@ -57,4 +58,23 @@ input[type="text"]{
     color: #ffffff;
     line-height: 40px;
   }
+}
+
+
+///
+
+#Footer {
+  background-color: #000000;;
+  padding: 2px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  a{
+    padding: 15px;
+    padding-top: 70px;
+  }
+}
+
+#SearchBarGeneric{
+  padding-bottom: 10px;
 }
