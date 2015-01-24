@@ -107,31 +107,39 @@
  
   #SM{
     margin-top: 30px;
+    margin-bottom: 5%;
     height: 50px;
     font-size: 22px;
     line-height: 50px;
   }
 
-  #SMFacebook{
-    background-color: #3b5998;
-    a{
-      color: #ffffff;
-      display: block;
-
-    }
-  }
-
-  #SMGoogle{
-    background-color: #ce0000;
-    a{
-      color: #ffffff;
-      display: block;
-    }
-  }
-
+  
   #user_email,
   #user_password{
     font-size: 22px;
-    width: 340px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
   }
- 
+
+#SMFacebook{
+  a{
+    color: #ffffff;
+    display: block;
+    background-color: #3b5998;
+    padding: 10px;
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+}
+
+#SMGoogle{
+  a{
+    color: #ffffff;
+    display: block;
+    padding: 10px;
+    background-color: #ce0000;
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+}

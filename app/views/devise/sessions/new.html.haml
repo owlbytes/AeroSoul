@@ -1,14 +1,20 @@
 / Code for loggin in/starting a new devise session
 
+
+
+
 #LogInPage
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     .container
       .sixteen.columns#LeForm
         .row#SM
-          .eight.columns.alpha#SMFacebook
-            = link_to ' Log In With Facebook', "/users/auth/facebook"
-          .eight.columns.omega#SMGoogle
-            = link_to 'Log In With Google', "/users/auth/google_oauth2"
+          .eight.columns.alpha
+            %span#SMFacebook
+              %span
+                = link_to ' Log In With Facebook', "/users/auth/facebook"         
+          .eight.columns.omega
+            #SMGoogle
+              = link_to 'Log In With Google', "/users/auth/google_oauth2"
         .row
           .eight.columns.alpha
             = f.email_field :email, :autofocus => true, :placeholder => "Email"          
@@ -19,7 +25,9 @@
             = link_to 'New Password?', "/users/password/new"
           .eight.columns.omega
             - if devise_mapping.rememberable?
-              = f.check_box :remember_me
-              = f.label :remember_me    
+              .one.column.alpha
+                = f.check_box :remember_me
+              .two.column.omega
+                = f.label :remember_me    
         .row
           = f.submit "Log In"
