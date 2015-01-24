@@ -69,6 +69,11 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+  a:hover{
+  background-color: #ffffff;
+  color: #3b5998;
+  }
+
 }
 
 #SMGoogle{
@@ -80,6 +85,10 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+  a:hover{
+    background-color:#ffffff;
+    color: #ce0000;
+  }
 }
 
 #user_email,
@@ -90,7 +99,10 @@
   width: 300px;
 }
 
-
+label{
+  font-size: 22px;
+  font-weight: normal;
+}
 
 
 ////errrrr
