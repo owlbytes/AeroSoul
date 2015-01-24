@@ -38,7 +38,7 @@
   text-align: center;
   margin-right: auto;
   margin-left: auto;
-  // text-align: center;
+  text-align: center;
   border:5px solid #000000;
   
   input, 
@@ -117,7 +117,6 @@
   #user_email,
   #user_password{
     font-size: 22px;
-    width: 80%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -141,5 +140,14 @@
     background-color: #ce0000;
     margin-right: 20%;
     margin-left: 20%;
+  }
+}
+
+#check{
+  input[type=check_box],
+  input[type=checkbox],
+  {
+    background-color: blue;
+    width: 30px;
   }
 }
