@@ -29,10 +29,6 @@
 
 //////////////////////////////////////////
 
-
-
-
-
 #LeForm {
   background-color: rgba(255,255,255, 0.9); 
   text-align: center;
@@ -40,21 +36,11 @@
   margin-left: auto;
   text-align: center;
   border:5px solid #000000;
+  font-size: 22px;
+  line-height: 30px;
   
   input, 
-  h1,
-  h2,
-  h3,
-  a,
-  i,
-  p,
   label, 
-  input[type="checkbox"],
-  label[type="check_box"],
-  img, 
-  #SubmitButton,
-  #Remember,
-  #SMImages,
   a{
     margin-right: auto;
     margin-left: auto;
@@ -71,16 +57,43 @@
     font-size:medium;
     margin-left: auto;
     margin-right: auto;
-    a {
-      color: #ffffff;
-      text-decoration: none;
-    }
   }
 }
  
+#SMFacebook{
+  a{
+    color: #ffffff;
+    display: block;
+    background-color: #3b5998;
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+#SMGoogle{
+  a{
+    color: #ffffff;
+    display: block;
+    background-color: #ce0000;
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+#user_email,
+#user_password{
+  font-size: 22px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 300px;
+}
 
 
 
+
+////errrrr
 .field {
   input[type=text],
   input[type=email],
@@ -105,49 +118,7 @@
   display: inline-block;
 }
  
-  #SM{
-    margin-top: 30px;
-    margin-bottom: 5%;
-    height: 50px;
-    font-size: 22px;
-    line-height: 50px;
-  }
 
-  
-  #user_email,
-  #user_password{
-    font-size: 22px;
-    margin-right: auto;
-    margin-left: auto;
-  }
 
-#SMFacebook{
-  a{
-    color: #ffffff;
-    display: block;
-    background-color: #3b5998;
-    padding: 10px;
-    margin-right: 20%;
-    margin-left: 20%;
-  }
-}
 
-#SMGoogle{
-  a{
-    color: #ffffff;
-    display: block;
-    padding: 10px;
-    background-color: #ce0000;
-    margin-right: 20%;
-    margin-left: 20%;
-  }
-}
 
-#check{
-  input[type=check_box],
-  input[type=checkbox],
-  {
-    background-color: blue;
-    width: 30px;
-  }
-}
