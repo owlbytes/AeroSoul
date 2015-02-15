@@ -1,6 +1,6 @@
 //Background images
 
-#FormPage{
+.FormPage{
   background-size: 100%;
   background-size:cover;
   background-position:center;
@@ -9,13 +9,26 @@
   padding-top: 03%; 
 }
 
-#FormPage:nth-child(1){
+#FormPage1{
   background-image:url('forms/1.JPG');
 }
 
-#FormPage:nth-child(2){
+#FormPage2{
   background-image:url('forms/2.JPG');
 }
+
+#FormPage3{
+  background-image:url('forms/3.JPG');
+}
+
+#FormPage4{
+  background-image:url('forms/4.JPG');
+}
+
+#FormPage4{
+  background-image:url('forms/5.JPG');
+}
+
 
 ////////////////
 #LogInPage{
