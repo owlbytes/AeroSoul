@@ -23,6 +23,10 @@ gem "fog", "~> 1.3.1"
 gem 'activerecord-reputation-system', require: 'reputation_system'
 gem 'rails_12factor', group: :production
 
+group :development do
+  gem 'puma'
+end
+
 
 group :development do
   gem 'erb2haml'
