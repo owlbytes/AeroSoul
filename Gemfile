@@ -21,10 +21,11 @@ gem "geocoder"
 gem 'will_paginate', '~> 3.0'
 gem "fog", "~> 1.3.1"
 gem 'activerecord-reputation-system', require: 'reputation_system'
-gem 'rails_12factor', group: :production
+
 
 group :production do
   gem 'puma'
+  gem 'rails_12factor'
 end
 
 
