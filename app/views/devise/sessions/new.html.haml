@@ -18,6 +18,8 @@
           = f.password_field :password, :placeholder => "Password"
         .row
           = link_to 'New Password?', "/users/password/new"
+        .row
+          = link_to "Re-Send Confirmation", "/users/confirmation/new"
           %br
           - if devise_mapping.rememberable?
             = f.check_box :remember_me
