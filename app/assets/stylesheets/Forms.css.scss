@@ -1,8 +1,26 @@
 //Background images
 
+.form-background-1{
+  background: url("_slideshow1.jpg");
+}
+
+.form-background-2{
+  background: url("_slideshow2.jpg");
+}
+
+.form-background-3{
+  background: url("_slideshow3.jpg");
+}
+
+.form-background-4{
+  background: url("_slideshow4.jpg");
+}
+
+
+// ["/assets/images/forms/1.jpg", "/assets/images/forms/2.jpg", "/assets/images/forms/1.jpg"]
+
 .FormPage{
   background-size: 100%;
-  background-image:url('forms/1.jpg');
   background-size:cover;
   background-repeat:no-repeat;
   background-position:center;

@@ -1,32 +1,32 @@
 / signup for website
-
-.FormPage
-  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-    = devise_error_messages!
-    .container
-      .five.columns.alpha
-        %p
-      .seven.columns.omega#LeForm
-        .formtitle Sign Up
-        .row
-        .row#SMFacebook
-          = link_to ' Sign Up With Facebook', "/users/auth/facebook"
-        .row#SMGoogle
-          = link_to 'Sign Up  With Google', "/users/auth/google_oauth2"
-        .row
-          = f.text_field :first_name, :placeholder => "First Name"
-        .row
-          = f.text_field :last_name, :placeholder => "Last Name"
-        .row
-          = f.email_field :email, :autofocus => true, :placeholder => "Email"    
-        .row
-          = f.password_field :password, :placeholder => "Password"
-        .row
-          #why=f.password_field :password_confirmation, :placeholder => "Confirm Password"
-        .row#FormTOS
-          By registering you agree to the
-          = link_to "Terms of Service", terms_path
-        .row
-          = f.submit "Sign Up" 
-        .row#FormTOS
-          = link_to 'Resend Confirmation Instructions', "/users/confirmation/new"
+%div{:class => "form-background-#{rand(1..4)}"}
+  .FormPage
+    = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .container
+        .five.columns.alpha
+          %p
+        .seven.columns.omega#LeForm
+          .formtitle Sign Up
+          .row
+          .row#SMFacebook
+            = link_to ' Sign Up With Facebook', "/users/auth/facebook"
+          .row#SMGoogle
+            = link_to 'Sign Up  With Google', "/users/auth/google_oauth2"
+          .row
+            = f.text_field :first_name, :placeholder => "First Name"
+          .row
+            = f.text_field :last_name, :placeholder => "Last Name"
+          .row
+            = f.email_field :email, :autofocus => true, :placeholder => "Email"    
+          .row
+            = f.password_field :password, :placeholder => "Password"
+          .row
+            #why=f.password_field :password_confirmation, :placeholder => "Confirm Password"
+          .row#FormTOS
+            By registering you agree to the
+            = link_to "Terms of Service", terms_path
+          .row
+            = f.submit "Sign Up" 
+          .row#FormTOS
+            = link_to 'Resend Confirmation Instructions', "/users/confirmation/new"

@@ -1,28 +1,28 @@
 / Code for loggin in/starting a new devise session
-
-.FormPage
-  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-    .container
-      .five.columns.alpha
-        %p
-      .seven.columns.omega#LeForm
-        .formtitle Login
-        .row
-        .row#SMFacebook
-          = link_to ' Log In With Facebook', "/users/auth/facebook"
-        .row#SMGoogle
-          = link_to 'Log In With Google', "/users/auth/google_oauth2"
-        .row
-          = f.email_field :email, :autofocus => true, :placeholder => "Email"    
-        .row
-          = f.password_field :password, :placeholder => "Password"
-        .row
-          = link_to 'New Password?', "/users/password/new"
-        .row
-          = link_to "Re-Send Confirmation", "/users/confirmation/new"
-          %br
-          - if devise_mapping.rememberable?
-            = f.check_box :remember_me
-            = f.label :remember_me    
-        .row
-          = f.submit "Log In" 
+%div{:class => "form-background-#{rand(1..4)}"}
+  .FormPage
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      .container
+        .five.columns.alpha
+          %p
+        .seven.columns.omega#LeForm
+          .formtitle Login
+          .row
+          .row#SMFacebook
+            = link_to ' Log In With Facebook', "/users/auth/facebook"
+          .row#SMGoogle
+            = link_to 'Log In With Google', "/users/auth/google_oauth2"
+          .row
+            = f.email_field :email, :autofocus => true, :placeholder => "Email"    
+          .row
+            = f.password_field :password, :placeholder => "Password"
+          .row
+            = link_to 'New Password?', "/users/password/new"
+          .row
+            = link_to "Re-Send Confirmation", "/users/confirmation/new"
+            %br
+            - if devise_mapping.rememberable?
+              = f.check_box :remember_me
+              = f.label :remember_me    
+          .row
+            = f.submit "Log In" 
