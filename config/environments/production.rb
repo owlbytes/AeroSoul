@@ -75,7 +75,7 @@ ArtOfTheStreets::Application.configure do
   }
   ActionMailer::Base.delivery_method = :smtp
   # config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = {:host => "aerosoul.me"}
+  config.action_mailer.default_url_options = {:host => "http://aerosoul.me"}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true 
   config.action_mailer.default :charset => "utf-8"
