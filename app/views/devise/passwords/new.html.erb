@@ -1,0 +1,25 @@
+<style type="text/css">
+  html {
+    background: url(<%= randomized_background_image %>); 
+  }
+</style>
+<div class="FormPage">
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="container">
+      <div class="five columns alpha">
+        <p></p>
+      </div>
+      <div class="seven columns omega" id="LeForm">
+        <div class="formtitle">Forgot your password?</div>
+        <div class="row"></div>
+        <div class="row">
+          <%= f.email_field :email, :autofocus => true, :placeholder => "Email"     %>
+        </div>
+        <div class="row">
+          <%= f.submit "Reset Your Password" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
