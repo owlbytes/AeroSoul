@@ -1,61 +1,66 @@
 //Background images
 
-.form-background-1{
-  background: url("_slideshow1.jpg");
-  background-size: 100%;
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center;
-  width: 100%;
-  height: 800px;
-  padding-top: 03%; 
-}
+// .form-background-1{
+//   background: url("_slideshow1.jpg");
+//   background-size: 100%;
+//   background-size:cover;
+//   background-repeat:no-repeat;
+//   background-position:center;
+//   width: 100%;
+//   height: 800px;
+//   padding-top: 03%; 
+// }
 
-.form-background-2{
-  background: url("_slideshow2.jpg");
-  background-size: 100%;
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center;
-  width: 100%;
-  height: 800px;
-  padding-top: 03%; 
-}
+// .form-background-2{
+//   background: url("_slideshow2.jpg");
+//   background-size: 100%;
+//   background-size:cover;
+//   background-repeat:no-repeat;
+//   background-position:center;
+//   width: 100%;
+//   height: 800px;
+//   padding-top: 03%; 
+// }
 
-.form-background-3{
-  background: url("_slideshow3.jpg");
-  background-size: 100%;
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center;
-  width: 100%;
-  height: 800px;
-  padding-top: 03%; 
-}
+// .form-background-3{
+//   background: url("_slideshow3.jpg");
+//   background-size: 100%;
+//   background-size:cover;
+//   background-repeat:no-repeat;
+//   background-position:center;
+//   width: 100%;
+//   height: 800px;
+//   padding-top: 03%; 
+// }
 
-.form-background-4{
-  background: url("_slideshow4.jpg");
-  background-size: 100%;
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center;
-  width: 100%;
-  height: 800px;
-  padding-top: 03%; 
-}
+// .form-background-4{
+//   background: url("_slideshow4.jpg");
+//   background-size: 100%;
+//   background-size:cover;
+//   background-repeat:no-repeat;
+//   background-position:center;
+//   width: 100%;
+//   height: 800px;
+//   padding-top: 03%; 
+// }
 
 
 // ["/assets/images/forms/1.jpg", "/assets/images/forms/2.jpg", "/assets/images/forms/1.jpg"]
+$images: ('_slideshow1.jpg', '_slideshow8.jpg', '_slideshow6.jpg');
+// $img: nth($images, random(3)($images));
+
+// $img: nth($images, random(length($images)));
+
 
 .FormPage{
+  background: url($images);
   background-size: 100%;
-  background-size:cover;
+  background-size: cover;
   background-repeat:no-repeat;
   background-position:center;
   width: 100%;
   height: 800px;
   padding-top: 03%; 
-  // background: url("_slideshow3.jpg");
 }
 
 
