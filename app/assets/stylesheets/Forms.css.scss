@@ -46,14 +46,13 @@
 
 
 // ["/assets/images/forms/1.jpg", "/assets/images/forms/2.jpg", "/assets/images/forms/1.jpg"]
-$images: ('_slideshow1.jpg', '_slideshow8.jpg', '_slideshow6.jpg');
+// $images: ('_slideshow1.jpg', '_slideshow8.jpg', '_slideshow6.jpg');
 // $img: nth($images, random(3)($images));
 
 // $img: nth($images, random(length($images)));
 
 
 .FormPage{
-  background: url($images);
   background-size: 100%;
   background-size: cover;
   background-repeat:no-repeat;
