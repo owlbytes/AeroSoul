@@ -21,7 +21,7 @@ gem "geocoder"
 gem 'will_paginate', '~> 3.0'
 gem "fog", "~> 1.3.1"
 gem 'activerecord-reputation-system', require: 'reputation_system'
-
+gem 'dotenv-rails', :groups => [:development, :test]
 
 group :production do
   gem 'puma'
