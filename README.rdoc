@@ -16,6 +16,7 @@ AeroSoul was initially created by Neha Shah as a final project for General Assem
 - Curate street art for street art lovers to enjoy
 - Star your favorite features
 - Up/Down vote street art
+- Save your favorite street art works
 
 
 *Langages/Frameworks*
