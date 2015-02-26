@@ -1,6 +1,11 @@
 module ApplicationHelper
-
+  
+  IMAGES = ["1", "2", "3"]
+ 
   def randomized_background_image
-    images = ["/assets/images/forms/1.jpg", "/assets/images/forms/2.jpg", "/assets/images/forms/1.jpg"].shuffle
+    "/assets/forms/#{IMAGES.sample}.jpg"
+
+
   end
+  
 end

@@ -1,4 +1,10 @@
 / Code for loggin in/starting a new devise session
+:css
+  .FormPage{
+    background: url(#{randomized_background_image}) no-repeat center center fixed;;
+  }
+  
+
 .FormPage
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     .container
