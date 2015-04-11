@@ -36,23 +36,40 @@ header{
 }
 
 
-
-
-
-///
-
-#Footer {
-  background-color: #000000;;
-  padding: 2px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+footer{
+  background-color: black;
   text-align: center;
-  a{
-    padding: 15px;
-    padding-top: 70px;
+  padding: 1.25rem;
+
+  .searchbar{
+    margin-bottom: 1rem;
+  }
+  nav a {padding: 0 0.5rem;}
+
+  .column1{margin-bottom:0.5rem;}
+  &:after{
+    display:block;
+    content: "";
+    clear: both;
   }
 }
 
-#SearchBarGeneric{
-  padding-bottom: 10px;
+@media (min-width: 780px){
+  footer{
+    .searchbar {
+      float: left;
+      margin-bottom: 0;
+    }
+    div{
+      float: right;
+      display: inline-block;
+    }
+    .column1{margin-bottom:0;}
+    nav {
+      // padding-top: 0.25rem;
+    }
+  }
 }
+
+
+
