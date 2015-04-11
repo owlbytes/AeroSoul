@@ -53,7 +53,10 @@ class PostsController < ApplicationController
   def update
     post = Post.find params[:id]
     if @post.update_attributes(params[:post])
-      redirect_to @post, notice: 'Post was successfully updated!'
+      if request.xhr?
+        render json: @post
+      else redirect_to @post, notice: 'Post was successfully updated!'
+      end
     else
       flash[:alert] = 'Post was NOT updated!'
       render :edit
