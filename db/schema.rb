@@ -11,19 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141021182543) do
+ActiveRecord::Schema.define(:version => 20150411115312) do
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
-    t.text     "artist"
-    t.text     "commision"
     t.boolean  "flag",         :default => false
     t.text     "description"
     t.text     "photo"
     t.text     "city"
     t.date     "date"
-    t.text     "medium"
     t.integer  "post_id"
     t.string   "address"
     t.float    "latitude"

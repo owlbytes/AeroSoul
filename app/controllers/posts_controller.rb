@@ -36,7 +36,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create params[:post]
-    if @post.save
+    # @post.valid?
+    # raise @post.errors.inspect
+    if @post.save!
       redirect_to @post, notice: 'Post was successfully created!'
     else
       flash[:alert] = 'Post was NOT created!'

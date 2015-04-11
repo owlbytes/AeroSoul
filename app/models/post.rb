@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :description, :photo, :remote_image_url, :tag_list, :artist, :commision, :medium, :address, :live 
+  attr_accessible :title, :description, :photo, :remote_image_url, :tag_list, :address, :live 
   mount_uploader :photo, ImageUploader
 
 
