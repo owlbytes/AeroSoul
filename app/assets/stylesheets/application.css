@@ -26,3 +26,10 @@
 html {
   font-family: 'Droid Sans', sans-serif;
 }
+body {
+  margin: 0;
+}
+
+*, *:before, *:after{
+  box-sizing: border-box;
+}

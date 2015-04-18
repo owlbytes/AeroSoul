@@ -318,6 +318,9 @@ GEM
     sexp_processor (4.4.1)
     shoulda-matchers (2.5.0)
       activesupport (>= 3.0.0)
+    simple_form (2.1.2)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     slop (3.4.7)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -380,6 +383,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   selenium-webdriver
   shoulda-matchers
+  simple_form
   textacular (~> 3.0)
   uglifier (>= 1.0.3)
   will_paginate (~> 3.0)

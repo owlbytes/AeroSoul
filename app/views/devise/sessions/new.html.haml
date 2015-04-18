@@ -1,33 +1,21 @@
 / Code for loggin in/starting a new devise session
 :css
   .FormPage{
-    background: url(#{randomized_background_image}) no-repeat center center fixed;;
+    background-image: url(#{randomized_background_image});
   }
-  
-
-.FormPage
-  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-    .container
-      .five.columns.alpha
-        %p
-      .seven.columns.omega#LeForm
-        .formtitle Login
-        .row
-        .row#SMFacebook
-          = link_to ' Log In With Facebook', "/users/auth/facebook"
-        .row#SMGoogle
-          = link_to 'Log In With Google', "/users/auth/google_oauth2"
-        .row
-          = f.email_field :email, :autofocus => true, :placeholder => "Email"    
-        .row
-          = f.password_field :password, :placeholder => "Password"
-        .row
-          = link_to 'New Password?', "/users/password/new"
-        .row
-          = link_to "Re-Send Confirmation", "/users/confirmation/new"
-          %br
-          - if devise_mapping.rememberable?
-            = f.check_box :remember_me
-            = f.label :remember_me    
-        .row
-          = f.submit "Log In" 
+.FormPage  
+  .form
+    = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      %h1 Login
+      .SMFacebook
+        = link_to ' Log In With Facebook', "/users/auth/facebook"
+      .SMGoogle
+        = link_to 'Log In With Google', "/users/auth/google_oauth2"
+      = f.input :email, :autofocus => true, :placeholder => "Email"    
+      = f.input :password, :placeholder => "Password"
+      .links
+        = link_to 'New Password?', "/users/password/new"
+        = link_to "Re-Send Confirmation", "/users/confirmation/new"
+      - if devise_mapping.rememberable?
+        = f.hidden_field(:remember_me, value: 1)    
+      = f.submit "Log In" 
