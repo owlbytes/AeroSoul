@@ -2,6 +2,7 @@
 %html
   %head
   %body.slideshow
+
     #slides
       %ul.slides-container 
         %li
@@ -25,14 +26,6 @@
               %h1.headline="AeroSoul"
               %p.explainer="Collect Your Favorite Pieces"
 
-        %li
-          %img{src: '/assets/_slideshow9.jpg'}/
-          .container
-            .contrast
-              %h1.headline="AeroSoul"
-              %p.explainer="Do Other Stuff"
-              
-
 
       / %nav.slides-navigation
       /   %a.next{href: "#"}
@@ -43,8 +36,7 @@
 
   :javascript
     $(function() {
-      $('#slides').superslides({
-      });
+      $('#slides').superslides();
     });
     $(function() {
       var $slides = $('#slides');
@@ -62,29 +54,3 @@
     });
 
 
-
-
-/ .container.sixteen.columns
-
-/   / haml code for the slider (on homepage)
-/   %ul.slider
-/     %li
-/       %img{src: '/assets/_slideshow1.jpg'}/
-/     %li
-/       %img{src: '/assets/_slideshow2.jpg'}/
-/     %li
-/       %img{src: '/assets/_slideshow3.jpg'}/
-/     %li
-/       %img{src: '/assets/_slideshow4.jpg'}/
-/     %li
-/       %img{src: '/assets/_slideshow5.jpg'}/
-/     %li
-/       %img{src: '/assets/_slideshow6.jpg'}/
-/     %li
-/       %img{src: '/assets/_slideshow7.jpg'}/
-/     %li
-/       %img{src: '/assets/_slideshow8.jpg'}/
-/     %li
-/       %img{src: '/assets/_slideshow9.jpg'}/
-/       / / :post_show
-/       / = image_tag @post.photo_url(:post_show)

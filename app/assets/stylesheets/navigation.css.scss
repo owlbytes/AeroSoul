@@ -54,22 +54,27 @@ footer{
   }
 }
 
+@media (min-width: 450px){
+  footer{
+    div.column1,
+    div.column2{
+      display: inline-block;
+    }
+  }
+}
+
 @media (min-width: 780px){
   footer{
     .searchbar {
       float: left;
       margin-bottom: 0;
     }
-    div{
+    div.column1,
+    div.column2{
       float: right;
-      display: inline-block;
     }
-    .column1{margin-bottom:0;}
     nav {
-      // padding-top: 0.25rem;
+      margin-bottom:0;
     }
   }
 }
-
-
-

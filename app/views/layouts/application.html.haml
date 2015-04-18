@@ -59,9 +59,11 @@
           = link_to "T&Cs", terms_path
           = link_to 'Logout',  destroy_user_session_path, method: :delete
       - else
-        = link_to "Curate", posts_path
-        = link_to "Discover", maps_path
-        = link_to "About", about_index_path
-        = link_to "T&Cs", terms_path
-        = link_to "Log In", new_user_session_path
-        = link_to "Sign Up", new_user_registration_path   
+        %div.column1
+          = link_to "Curate", posts_path
+          = link_to "Discover", maps_path
+          = link_to "About", about_index_path
+        %div.column2
+          = link_to "T&Cs", terms_path
+          = link_to "Log In", new_user_session_path
+          = link_to "Sign Up", new_user_registration_path   
