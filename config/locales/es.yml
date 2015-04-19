@@ -1,0 +1,7 @@
+es:
+  posts:
+    show:
+      score: "Puntuación"
+      uncheck: "Desactive la casilla si el arte ha sido removido o ya no está allí"
+    edit: "Editar"
+

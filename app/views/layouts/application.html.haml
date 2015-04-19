@@ -27,6 +27,10 @@
         = link_to "Go to main content", :anchor => "MainContent"
       = link_to image_tag('/assets/AeroLogo_white.png'), root_url
       %nav
+        %div.lang
+          Language:
+          = link_to_unless_current "English", locale: "en"
+          = link_to_unless_current "Spanish", locale: "es"
         - if user_signed_in?
           = link_to "New Post", new_post_path
           = link_to "Curate", posts_path
