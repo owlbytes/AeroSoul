@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150411115312) do
+ActiveRecord::Schema.define(:version => 20150424184440) do
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
@@ -131,6 +131,9 @@ ActiveRecord::Schema.define(:version => 20150411115312) do
     t.string   "unconfirmed_email"
     t.string   "provider"
     t.string   "uid"
+    t.string   "username"
+    t.string   "instagram"
+    t.string   "twitter"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

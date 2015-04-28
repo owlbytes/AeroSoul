@@ -1,5 +1,10 @@
-%h1 users
-%h2 maybe community?
 
-- @users.each do |user|
-  %h3= link_to user.first_name, user
+#users
+  %h1 users
+
+
+  - @users.each do |user|
+    %h3= link_to user.username, user
+    %h4= user.instagram
+    
+

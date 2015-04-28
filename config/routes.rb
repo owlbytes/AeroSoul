@@ -1,17 +1,19 @@
 ArtOfTheStreets::Application.routes.draw do
+
   devise_for :users, controllers: {:omniauth_callbacks => "omniauth_callbacks"}
 
-    devise_scope :user do
-      resources :users, only: :index do
-        resources :stars, only: :index
-        member do
-          get :my_posts
-        end
+  devise_scope :user do
+    resources :users, only: :index do
+      resources :stars, only: :index
+      member do
+        get :my_posts
       end
     end
+  end
 
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
     #devise routes information
+    resources :users
 
     # get '/users/auth/facebook/callback', to: "omniauth_callbacks#facebook"
 
@@ -23,8 +25,7 @@ ArtOfTheStreets::Application.routes.draw do
       end
     end
 
-
-    #routes for search via textacular (all hail Aaron Patterson)
+    
     resources :searches 
     resources :about
     resources :terms

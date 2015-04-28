@@ -21,6 +21,7 @@
 *= require "tags"
 *= require "admin"
 *= require "Tos_About"
+*= require "user"
  */
 
 html {

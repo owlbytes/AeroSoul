@@ -1,7 +1,14 @@
 es:
   posts:
     show:
-      score: "Puntuación"
       uncheck: "Desactive la casilla si el arte ha sido removido o ya no está allí"
     edit: "Editar"
+    destroy: "Delete"
+  stars:
+    save: "Add to Favorite"
+    unsave: "Remove From Favorite"
+  voting:
+    upvote: "Upvote"
+    downvote: "Downvote"
+    score: "Puntuación"
 

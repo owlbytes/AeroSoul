@@ -4,6 +4,13 @@
 en:
   posts:
     show:
-      score: "Score"
       uncheck: "Uncheck the box if art has been removed or is no longer there"
     edit: "Edit"
+    destroy: "Delete"
+  stars:
+    save: "Add to Favorite"
+    unsave: "Remove From Favorite"
+  voting:
+    upvote: "Upvote"
+    downvote: "Downvote"
+    score: "Score"
