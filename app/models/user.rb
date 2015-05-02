@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   #voting
   has_many :evaluations, class_name: "RSEvaluation", as: :source
 
-  has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum
+  has_reputation :scores, source: {reputation: :scores, of: :posts}, aggregated_by: :sum
 
   def voted_for?(post)
     evaluations.where(target_type: post.class, target_id: post.id).present?

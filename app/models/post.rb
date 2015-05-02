@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
   validates :description, presence: true
 
 #voting
-  has_reputation :votes, source: :user, aggregated_by: :sum
+  has_reputation :scores, source: :user, aggregated_by: :sum
 
 #stuff for geocoding
   geocoded_by :address
@@ -29,7 +29,7 @@ class Post < ActiveRecord::Base
   has_many :stars
 
   def record_vote_of_user(user, score)
-    add_or_update_evaluation(:votes, score, user)
+    add_or_update_evaluation(:scores, score, user)
   end
 
   def set_default_value_for_live

@@ -6,10 +6,10 @@ class PostsController < ApplicationController
     @mapposts = Post.all
     if params[:tag]
       # @posts = Post.tagged_with(params[:tag]).sort_by{|p| p.live}
-      @posts = Post.tagged_with(params[:tag]).find_with_reputation(:votes, :all, order: "votes desc")
+      @posts = Post.tagged_with(params[:tag]).find_with_reputation(:scores, :all, order: "scores desc")
     else
       # @posts = Post.sort_by{|p| p.live}
-      @posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
+      @posts = Post.find_with_reputation(:scores, :all, order: "score desc")
     end 
     
     #when making a request, this outlines how the server will respond. Used in conjunction with google maps (to show data points) and infinite scroll (.js)
