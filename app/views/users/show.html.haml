@@ -7,13 +7,16 @@
 - if present?
   %a{:href => "http://www.twitter.com/#{@user.twitter}", :target => "_blank"} Twitter
 
+- @user_posts.each do |post|
+  = link_to image_tag(post.photo_url(:post_index)), post
+
 - if can? :edit, @user
   = link_to "edit", edit_user_path(@user)
 
 - if can? :destroy, @post
   = link_to "destroy", user_path(@user), :method => :delete
 
-// show user's photos
+/ // show user's photos
 
-- @user.posts do |post|
-  = link_to image_tag(post.photo_url(:post_index)), post
+/ - @user.posts do |post|
+/   = link_to image_tag(post.photo_url(:post_index)), post

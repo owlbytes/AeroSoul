@@ -5,6 +5,6 @@
 
   - @users.each do |user|
     %h3= link_to user.username, user
-    %h4= user.instagram
-    
+    = link_to image_tag(user.photo_url), user
+
 
