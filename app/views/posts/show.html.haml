@@ -26,7 +26,8 @@
     %br
     %h1= @post.title
     %h3= @post.description
-    %br
+    = link_to @post.user.username, user_path(@post.user_id)
+
     #PostShowTags
       = raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')
     %br
