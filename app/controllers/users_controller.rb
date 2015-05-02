@@ -1,7 +1,7 @@
 class UsersController < ApplicationController 
 
   def index
-    @users = User.all
+    @users = User.find(:all, order: "posts_count desc")
   end
 
   def show

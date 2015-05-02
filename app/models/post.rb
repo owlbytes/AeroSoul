@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
   self.per_page = 6
 
 #relationships
-  belongs_to :user
+  belongs_to :user, :counter_cache => true
   has_many :scores
   has_many :stars
 
