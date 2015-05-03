@@ -18,11 +18,11 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem "acts-as-taggable-on"
 gem "geocoder"
-gem 'will_paginate', '~> 3.0'
 gem "fog", "~> 1.29.0"
 gem 'activerecord-reputation-system', require: 'reputation_system'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'simple_form'
+gem 'will_paginate', '~> 3.0'
 
 group :production do
   gem 'puma'

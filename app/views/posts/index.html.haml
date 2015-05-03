@@ -1,3 +1,4 @@
+
 #Index.container.sixteen.columns
   #tag_cloud.sixteen.columns
     - tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class|
@@ -12,5 +13,4 @@
           = link_to image_tag(post.photo_url(:post_index), :class => :live), post
         - else 
           = link_to image_tag(post.photo_url(:post_index)), post
-
-   
+  
