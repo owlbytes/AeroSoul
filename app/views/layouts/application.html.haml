@@ -63,7 +63,9 @@
           = link_to 'Logout',  destroy_user_session_path, method: :delete
           = link_to "New Post", new_post_path
           = link_to "My Favorites", user_stars_path(current_user)
-          = link_to "My Profile", edit_user_registration_path
+          = link_to "My Profile", user_path(current_user)
+          
+          = link_to "Edit Profile", edit_user_registration_path
           = link_to "Curate", posts_path
           
           
