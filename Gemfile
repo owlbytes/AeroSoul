@@ -24,6 +24,9 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'simple_form'
 gem 'will_paginate', '~> 3.0'
 
+gem 'bourbon'
+
+
 group :production do
   gem 'puma'
   gem 'rails_12factor'
