@@ -1,21 +1,42 @@
-.FormPage
-  = form_for(@post) do |f|
-    .container
-      .five.columns.alpha
-        %p
-      .seven.columns.omega#LeForm
-        .formtitle Contribute
-        .row
-          = f.text_field :title, :placeholder => "Title"  
-        .row
-          = f.text_field :address, :placeholder => "Address"
-          .formtext (include street, city, and country)
-        .row
-          = f.text_area :description, :placeholder => "Description"  
-        .row
-          = f.text_field :tag_list, :placeholder => "Tags"  
-          .formtext (seperate the tags with commas)
-        .row
-          = f.file_field :photo, :placeholder => "Photo"
-        .row
-          = f.submit "Submit"
+/ .FormPage
+/   = form_for(@post) do |f|
+/     .container
+/       .five.columns.alpha
+/         %p
+/       .seven.columns.omega#LeForm
+/         .formtitle Contribute
+/         .row
+/           = f.text_field :title, :placeholder => "Title"  
+/         .row
+/           = f.text_field :address, :placeholder => "Address"
+/           .formtext (include street, city, and country)
+/         .row
+/           = f.text_area :description, :placeholder => "Description"  
+/         .row
+/           = f.text_field :tag_list, :placeholder => "Tags"  
+/           .formtext (seperate the tags with commas)
+/         .row
+/           = f.file_field :photo, :placeholder => "Photo"
+/         .row
+/           = f.submit "Submit"
+
+:css
+  .FormPage{
+    background-image: url(#{randomized_background_image});
+  }
+.FormPage  
+  .form
+    = simple_form_for(@post) do |f|
+      %h1 Contribute
+      .row
+        = f.input :title,:placeholder => "Title"
+      .row
+        = f.input :address,:placeholder => "Address"
+      .row
+        = f.input :details,:placeholder => "Details"
+      .row
+        = f.input :tag_list,:placeholder => "Tags"
+      .row
+        = f.input :photo, as: :file
+          
+      = f.submit "Submit" 

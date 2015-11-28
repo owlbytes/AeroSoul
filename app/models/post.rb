@@ -1,14 +1,14 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :description, :photo, :remote_image_url, :tag_list, :address, :live 
+  attr_accessible :title, :description, :photo, :remote_image_url, :tag_list, :address, :live, :details
   mount_uploader :photo, ImageUploader
 
 
 
   before_create :set_default_value_for_live
 
-#validation
-  validates :title, presence: true
-  validates :description, presence: true
+# #validation
+#   validates :title, presence: true
+#   validates :description, presence: true
 
 #voting
   has_reputation :scores, source: :user, aggregated_by: :sum

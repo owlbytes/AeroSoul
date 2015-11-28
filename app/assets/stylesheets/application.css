@@ -14,7 +14,6 @@
 *= require "mailer"
 *= require "maps"
 *= require "navigation"
-*= require "new"
 *= require "PostsIndex"
 *= require "PostsShow"
 *= require "slideshow"

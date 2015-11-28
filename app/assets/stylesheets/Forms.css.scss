@@ -72,12 +72,14 @@
     content: "";
     clear: both;
   }
-  input {
+  input,
+  #post_details {
     width: 13.375rem;
     padding: 0.5rem;
     float: right;
     border: 0.1rem solid black;
     font-size: 0.8rem;
+    max-height: 08rem;
 
   }
 
@@ -112,7 +114,8 @@ input[type="submit"] {
       float: none;
     }
     
-    input{
+    input,
+    #post_details {
       width:100%;
     }
   }
