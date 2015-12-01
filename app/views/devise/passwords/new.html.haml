@@ -1,0 +1,12 @@
+/ Code for loggin in/starting a new devise session
+:css
+  .FormPage{
+    background-image: url(#{randomized_background_image});
+  }
+.FormPage  
+  .form
+    = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+      %h1 Forgot your password?
+      .row
+      = f.input :email, :autofocus => true, :placeholder => "Email"    
+      = f.submit "Reset Your Password" 
