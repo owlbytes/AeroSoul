@@ -1,16 +1,14 @@
 // Code For Re-Sending Confirmation Instructions
+:css
+  .FormPage{
+    background-image: url(#{randomized_background_image});
+  }
+.FormPage  
+  .form
+    = simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+      %h1 Resend confirmation email
+      .row
+        = f.input :email, :autofocus => true, :placeholder => "Email"    
+      .row
+        = f.submit "Resend confirmation email" 
 
-
-.FormPage
-  = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
-    = devise_error_messages!
-    .container
-      .five.columns.alpha
-        %p
-      .seven.columns.omega#LeForm
-        .formtitle Resend confirmation instructions
-        .row
-        .row
-          = f.email_field :email, :autofocus => true, :placeholder => "Email"    
-        .row
-          = f.submit "Resend confirmation instructions" 
