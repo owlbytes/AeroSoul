@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :first_name, :last_name, :role, :email, :photo, :remote_image_url, :password, :password_confirmation, :remember_me, :confirmed_at
+  attr_accessible :first_name, :last_name, :role, :email, :photo, :remote_image_url, :password, :password_confirmation, :remember_me, :confirmed_at, :username, :instagram, :twitter
   mount_uploader :photo, ImageUploader
 
 
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   #voting
   has_many :evaluations, class_name: "RSEvaluation", as: :source
 
-  has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum
+  has_reputation :scores, source: {reputation: :scores, of: :posts}, aggregated_by: :sum
 
   def voted_for?(post)
     evaluations.where(target_type: post.class, target_id: post.id).present?

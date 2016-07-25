@@ -21,8 +21,20 @@
 *= require "tags"
 *= require "admin"
 *= require "Tos_About"
+<<<<<<< HEAD
  
+=======
+*= require "user"
+ */
+>>>>>>> ab47cc89caed0939928274130c2b650cc1c577ec
 
 html {
   font-family: 'Droid Sans', sans-serif;
+}
+body {
+  margin: 0;
+}
+
+*, *:before, *:after{
+  box-sizing: border-box;
 }

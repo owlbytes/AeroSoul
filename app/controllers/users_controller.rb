@@ -1,15 +1,17 @@
 class UsersController < ApplicationController 
 
   def index
-    @users = User.all
+    @users = User.find(:all, order: "posts_count desc")
   end
 
   def show
     @user = User.find params[:id]
+    @user_posts = @user.posts
   end
 
   def new
     @user = User.new
+    user.save
   end
 
   def create

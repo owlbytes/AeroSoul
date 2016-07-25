@@ -1,80 +1,80 @@
-
-#Navigation{
-  font-family: 'Droid Sans', sans-serif;
-  background-color: #000000;
-  color: #ffffff;
-  margin-top: 0px;
-}
-#Nav{
-  height: 50px;
-  line-height: 40px;
-  padding-bottom: 20px;
-  background-color: #000000;
-  a{
-  color: #ffffff;
-  font-size: 22px;    
-  }
-
-}
-
-#AccessibilityLink{
-  font-size: 0px;
-  padding: 0px;
-  margin: 0px;
-  color: #000000;
-  background-color: #000000;
-  text-decoration: none;
-}
-
-
-.generalsearchbar,
-.generalsearchbarsection,
-input[type="text"]{
+header{
+  background-color: black;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 3px;
+  padding: 1.25rem;
+
+  img {margin-bottom: 1rem;}
+  nav a {padding: 0 0.5rem;}
 }
 
+@media (min-width: 650px){
+  header{
+    position: relative;
+    img {
+      float: left;
+      margin-bottom: 0;
+    }
 
-#NavLogo{
-  float: left;
-  width: 40%;
-  line-height: 40px;
-  img{
-    padding-left: 30px;
-    line-height: 40px;
+    nav {
+      // float: right;
+      position: absolute;
+      right: 1.25rem;
+      bottom: 1.25rem;
+    }
+
+    &:after{
+      display:block;
+      content: "";
+      clear: both;
+    }
   }
 }
-#NavLinks{
-  float: left;
-  width: 60%;
-  line-height: 40px;
-  a{
-    float: right;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: center;
-    color: #ffffff;
-    line-height: 40px;
-  }
+
+.AccessibilityLink {
+  height: 0;
+  overflow: hidden;
 }
 
 
-///
-
-#Footer {
-  background-color: #000000;;
-  padding: 2px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+footer{
+  background-color: black;
   text-align: center;
-  a{
-    padding: 15px;
-    padding-top: 70px;
+  padding: 1.25rem;
+
+  .searchbar{
+    margin-bottom: 1rem;
+  }
+  nav a {padding: 0 0.5rem;}
+
+  .column1{margin-bottom:0.5rem;}
+  &:after{
+    display:block;
+    content: "";
+    clear: both;
   }
 }
 
-#SearchBarGeneric{
-  padding-bottom: 10px;
+@media (min-width: 450px){
+  footer{
+    div.column1,
+    div.column2{
+      display: inline-block;
+    }
+  }
+}
+
+@media (min-width: 780px){
+  footer{
+    .searchbar {
+      float: left;
+      margin-bottom: 0;
+    }
+    div.column1,
+    div.column2{
+      float: right;
+    }
+    nav {
+      margin-bottom:0;
+    }
+  }
 }

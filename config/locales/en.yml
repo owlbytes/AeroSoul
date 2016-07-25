@@ -2,4 +2,15 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  posts:
+    show:
+      uncheck: "Uncheck the box if art has been removed or is no longer there"
+    edit: "Edit"
+    destroy: "Delete"
+  stars:
+    save: "Add to Favorite"
+    unsave: "Remove From Favorite"
+  voting:
+    upvote: "Upvote"
+    downvote: "Downvote"
+    score: "Score"

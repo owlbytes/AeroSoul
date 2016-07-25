@@ -10,6 +10,9 @@ $(document).ready(function() {
             post: {
               live: liveStatus
             }
+          },
+          success:function (data){
+            $("#PostShowImage img").toggleClass("live", data.live)
           }
         });
     });

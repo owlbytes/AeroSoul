@@ -1,208 +1,119 @@
-//Background images
-
-// .form-background-1{
-//   background: url("_slideshow1.jpg");
-//   background-size: 100%;
-//   background-size:cover;
-//   background-repeat:no-repeat;
-//   background-position:center;
-//   width: 100%;
-//   height: 800px;
-//   padding-top: 03%; 
-// }
-
-// .form-background-2{
-//   background: url("_slideshow2.jpg");
-//   background-size: 100%;
-//   background-size:cover;
-//   background-repeat:no-repeat;
-//   background-position:center;
-//   width: 100%;
-//   height: 800px;
-//   padding-top: 03%; 
-// }
-
-// .form-background-3{
-//   background: url("_slideshow3.jpg");
-//   background-size: 100%;
-//   background-size:cover;
-//   background-repeat:no-repeat;
-//   background-position:center;
-//   width: 100%;
-//   height: 800px;
-//   padding-top: 03%; 
-// }
-
-// .form-background-4{
-//   background: url("_slideshow4.jpg");
-//   background-size: 100%;
-//   background-size:cover;
-//   background-repeat:no-repeat;
-//   background-position:center;
-//   width: 100%;
-//   height: 800px;
-//   padding-top: 03%; 
-// }
-
-
-// ["/assets/images/forms/1.jpg", "/assets/images/forms/2.jpg", "/assets/images/forms/1.jpg"]
-// $images: ('_slideshow1.jpg', '_slideshow8.jpg', '_slideshow6.jpg');
-// $img: nth($images, random(3)($images));
-
-// $img: nth($images, random(length($images)));
-
 
 .FormPage{
-  background-size: 100%;
-  background-size: cover;
+  background-size:cover;
   background-repeat:no-repeat;
   background-position:center;
   width: 100%;
-  height: 800px;
-  padding-top: 03%; 
-  // background: url(<%= "form_background_image"%>); 
+  height: auto;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
 }
 
-
-//SignUp
-#FormTOS{
-  font-size:small;
-  a{
-    text-decoration: underline;
-  }
-}
-
-// new post
-#post_photo{
-  font-size: 15px;
-  padding-left: 27%;
-}
-
-// Form Text
-.formtext{
-  color: black;
-  text-align: center;
-  font-size: 15px;
-}
-
-.formtitle{
-  color: black;
-  text-align: center;
-  font-size: 30px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-
-
-//////////////////////////////////////////
-
-#LeForm {
+.form {
   background-color: rgba(255,255,255, 0.9); 
-  text-align: center;
+  // padding: 2rem 10rem;
   margin-right: auto;
   margin-left: auto;
-  text-align: center;
-  border:5px solid #000000;
-  font-size: 22px;
-  line-height: 30px;
-  
-  input, 
-  label, 
-  a{
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-    color: #000000;
-  }
+  padding: 1rem 2rem;
+  max-width: 28rem;
+  border: 0.3rem solid black;
 
-  input[type="submit"] {
-    text-align: center; 
-    background-color: #000000;
-    color: #ffffff;   
-    text-align: center; 
-    padding: 20px; 
-    font-size:medium;
-    margin-left: auto;
-    margin-right: auto;
+  h1{text-align: center;}
+
+  .links{
+    text-align: center;
+    a{
+      color:white;
+      background-color: #333;
+      padding: 0.5rem;
+      margin: 1rem 0;
+      display: block;
+    }
   }
 }
- 
-#SMFacebook{
+
+.SMFacebook{
   a{
     color: #ffffff;
     display: block;
     background-color: #3b5998;
-    width: 300px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    text-align: center;
+    margin: 1rem 0;
   }
-  a:hover{
+  a:hover, a:focus{
   background-color: #ffffff;
   color: #3b5998;
   }
 
 }
 
-#SMGoogle{
+.SMGoogle{
   a{
     color: #ffffff;
     display: block;
     background-color: #ce0000;
-    width: 300px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    text-align: center;
+    margin: 1rem 0;
   }
-  a:hover{
+  a:hover, a:focus{
     background-color:#ffffff;
     color: #ce0000;
   }
 }
 
-#user_email,
-#user_password,
-#user_password_confirmation,
-#user_last_name,
-#user_first_name,
-#user_current_password{
-  font-size: 22px;
-  margin-right: auto;
-  margin-left: auto;
-  width: 300px;
-}
-
-label{
-  font-size: 22px;
-  font-weight: normal;
-}
-
-
-////errrrr
-.field {
-  input[type=text],
-  input[type=email],
-  input[type=password],
-  input[type=confirmation],
+.input{
+  margin: 0.5rem 0rem;
+  &:after{
+    display:block;
+    content: "";
+    clear: both;
+  }
   input {
-    display: inline-block;
+    width: 13.375rem;
+    padding: 0.5rem;
+    float: right;
+    border: 0.1rem solid black;
+    font-size: 0.8rem;
+
   }
 
   label{
-    display: inline-block;
-    padding: 4%;
+    float: left;
+    width:  5rem;
+    line-height: 2rem;
   }
 
-}
-
-#why{
-  input,
-  input[type=password]{
-    display: inline-block;
+  &.boolean{
+    label {
+      float: none;
+      width: auto;
+    }
   }
-  display: inline-block;
 }
- 
 
+input[type="submit"] {
+  color:white;
+  background-color: black;
+  padding: 0.5rem 0;
+  margin: 1rem 0;
+  display: block;
+  width: 100%;
+  font-size:1.5rem;
+  border: 0;
+}
 
-
-
+@media (max-width: 430px){
+  .input {
+    label{
+      float: none;
+    }
+    
+    input{
+      width:100%;
+    }
+  }
+}

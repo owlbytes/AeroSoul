@@ -10,7 +10,7 @@ gem "haml-rails"
 gem "carrierwave", :git => "https://github.com/carrierwaveuploader/carrierwave.git"
 gem "textacular", "~> 3.0"
 gem "devise"
-gem 'rmagick', '2.13.2', :require =>"RMagick"
+gem 'rmagick', '2.14.0', :require =>"RMagick"
 gem "omniauth"
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
@@ -19,9 +19,10 @@ gem 'omniauth-facebook'
 gem "acts-as-taggable-on"
 gem "geocoder"
 gem 'will_paginate', '~> 3.0'
-gem "fog", "~> 1.3.1"
+gem "fog", "~> 1.29.0"
 gem 'activerecord-reputation-system', require: 'reputation_system'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'simple_form'
 
 group :production do
   gem 'puma'
@@ -31,8 +32,9 @@ end
 
 group :development do
   gem 'erb2haml'
-  # gem "better_errors"
+  gem "better_errors"
   gem "binding_of_caller"
+  gem 'quiet_assets'
 end 
 
 group :development, :test do
